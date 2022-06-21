@@ -11,6 +11,8 @@
 		5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE286180DA00A2BFD7 /* MapView.swift */; };
 		5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */; };
 		5AFC8A04286180DC00A2BFD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */; };
+		5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */; };
+		5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1028621FA400A2BFD7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		5AFC89FE286180DA00A2BFD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		5AFC8A1028621FA400A2BFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		5AFC89FB286180DA00A2BFD7 /* CitiZen */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC8A0E28621F7C00A2BFD7 /* Model */,
+				5AFC8A0B2862185B00A2BFD7 /* ViewModel */,
 				5AFC8A0A2861F53E00A2BFD7 /* View */,
 				5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */,
 				5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */,
@@ -73,6 +79,22 @@
 				5AFC89FE286180DA00A2BFD7 /* MapView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5AFC8A0B2862185B00A2BFD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5AFC8A0E28621F7C00A2BFD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +169,8 @@
 			files = (
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
+				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +302,7 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +332,7 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
