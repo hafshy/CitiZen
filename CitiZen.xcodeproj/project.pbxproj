@@ -14,6 +14,7 @@
 		5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */; };
 		5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1028621FA400A2BFD7 /* Constants.swift */; };
 		5AFC8A142862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A122862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodeld */; };
+		5AFC8A162863214D00A2BFD7 /* SavedProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A152863214D00A2BFD7 /* SavedProgressViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		5AFC8A1028621FA400A2BFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedLocationDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5AFC8A152863214D00A2BFD7 /* SavedProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProgressViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */,
+				5AFC8A152863214D00A2BFD7 /* SavedProgressViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodeld in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
+				5AFC8A162863214D00A2BFD7 /* SavedProgressViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
