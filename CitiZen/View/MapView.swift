@@ -12,7 +12,6 @@ import CoreLocation
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     
-    
     var body: some View {
         ZStack {
             // MARK: Map Background
