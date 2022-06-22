@@ -24,7 +24,7 @@ struct MapView: View {
                 }
             
             // MARK: City and Progress
-            VStack() {
+            VStack(spacing: 4) {
                 HStack {
                     Text("Surabaya")
                         .font(.largeTitle)
@@ -33,17 +33,28 @@ struct MapView: View {
                         .frame(alignment: .topLeading)
                     Spacer()
                 }
-                Spacer()
-                
                 // TODO: Add Progress Here @Ken
-                
+                HStack {
+                    Text("80%")
+                        .font(.caption2)
+                    RoundedRectangle(cornerRadius: 2.5)
+                        .frame(width: UIScreen.main.bounds.width / 3.25 * 80 / 100, height: UIScreen.main.bounds.width / 78)
+                            .foregroundColor(.red)
+                            .overlay(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 2.5)
+                                    .stroke(lineWidth: 1)
+                                    .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
+                                    .foregroundColor(.gray)
+                            }
+                    Spacer()
+                }
+                Spacer()
             }
             .padding()
             
             // TODO: Add Achievements Button Here
             
         }
-        
     }
 }
 
