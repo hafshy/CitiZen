@@ -50,17 +50,25 @@ struct MapView: View {
                 }
                 Spacer()
                 
-                Image(systemName: "house")
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(.black)
-                    .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
-//                    .background(.white)
+                // TODO: Add Achievements Button Here
+                Button {
+                    
+                } label: {
+                    Image("trophy")
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundColor(.black)
+                        .frame(width: UIScreen.main.bounds.width / 10, height: UIScreen.main.bounds.width / 10)
+                        .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+                        .background(Color(.systemGray3))
+                        .cornerRadius(8)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(lineWidth: 4)
+                            .foregroundColor(.gray))
+                }
             }
             .padding()
-            
-            // TODO: Add Achievements Button Here
-            
         }
     }
 }
