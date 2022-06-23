@@ -13,6 +13,8 @@
 		5AFC8A04286180DC00A2BFD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */; };
 		5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */; };
 		5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1028621FA400A2BFD7 /* Constants.swift */; };
+		5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */; };
+		5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */; };
 		9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F87C12862C170007F1915 /* MapLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		5AFC8A1028621FA400A2BFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedLocationDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsViewModel.swift; sourceTree = "<group>"; };
 		9C2F87C12862C170007F1915 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */,
+				5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
+				5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */,
 				9C2F87C12862C170007F1915 /* MapLocation.swift */,
 			);
 			path = Model;
@@ -174,7 +180,9 @@
 				9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
+				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +387,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */,
+			);
+			currentVersion = 5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */;
+			path = SavedLocationsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AFC89F1286180DA00A2BFD7 /* Project object */;
 }
