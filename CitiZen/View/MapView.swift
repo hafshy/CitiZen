@@ -49,6 +49,13 @@ struct MapView: View {
                     Spacer()
                 }
                 Spacer()
+                
+                Image(systemName: "house")
+                    .resizable()
+                    .scaledToFill()
+                    .foregroundColor(.black)
+                    .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+//                    .background(.white)
             }
             .padding()
             
