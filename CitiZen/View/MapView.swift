@@ -11,6 +11,7 @@ import CoreLocation
 
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
+    @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     
     let allLocations = [
         MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
