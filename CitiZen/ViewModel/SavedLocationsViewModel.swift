@@ -42,7 +42,7 @@ class SavedLocationsViewModel: ObservableObject {
         }
     }
     
-    // MARK: To Save data on MapView, use savedLocationViewModel.addLocation(id)
+    // MARK: To Save data on MapView file, use savedLocationViewModel.addLocation(id)
     func addLocation(id: Int) {
         let newLocation = SavedLocation(context: container.viewContext)
         newLocation.locationID = Int16(id)
