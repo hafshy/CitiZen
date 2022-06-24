@@ -13,10 +13,13 @@ struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     
+    let notificationViewModel = NotificationManager()
+    
     let allLocations = [
         MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
-        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.28342, longitude: 112.63164)
+        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.276025, longitude: 112.645937)
     ]
+    
     
     var body: some View {
         ZStack {
@@ -66,7 +69,11 @@ struct MapView: View {
             .padding()
             
             // TODO: Add Achievements Button Here
-            
+            .onAppear{
+                notificationViewModel.requestAuthorization()
+                notificationViewModel.scheduleNotification(places: allLocations)
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
         }
         
     }

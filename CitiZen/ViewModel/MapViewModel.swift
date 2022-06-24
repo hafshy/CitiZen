@@ -33,7 +33,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         switch locationManager.authorizationStatus {
             
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
         case .restricted:
             print("Permission Restricted")
         case .denied:
@@ -46,6 +46,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
                     longitudeDelta: 0.01
                 )
             )
+            locationManager.allowsBackgroundLocationUpdates = true
         @unknown default:
             break
         }
