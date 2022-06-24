@@ -22,7 +22,7 @@ struct MapView: View {
                 .onAppear {
                     viewModel.checkLocationService()
                 }
-            
+
             // MARK: City and Progress
             VStack() {
                 HStack {

@@ -8,9 +8,9 @@
 import SwiftUI
 
 // To use this, add
-// CustomBottomSheet {
-//      *Sheets content here*
-// }
+//          CustomBottomSheet {
+//              *Sheets content here*
+//          }
 struct CustomBottomSheet<Content: View>: View {
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -25,7 +25,6 @@ struct CustomBottomSheet<Content: View>: View {
         GeometryReader { proxy -> AnyView in
             
             let height = proxy.frame(in: .global).height
-            let width = proxy.frame(in: .global).width
             
             return AnyView(
                 // MARK: Bottom Sheet Container
@@ -59,8 +58,7 @@ struct CustomBottomSheet<Content: View>: View {
                     }).onEnded({ value in
                         withAnimation(.spring()) {
                             let maxHeight = height - 100
-                            print(offset)
-                            print(lastOffset)
+                            
                             withAnimation(.spring()) {
                                 if ((-lastOffset == maxHeight && -offset < maxHeight) ||
                                     (-offset > maxHeight / 3 && -offset < maxHeight / 2)) {
@@ -70,11 +68,7 @@ struct CustomBottomSheet<Content: View>: View {
                                 } else {
                                     offset = 0
                                 }
-                                
-                                
                             }
-                            
-                            print(offset)
                             lastOffset = offset
                         }
                         lastOffset = offset
@@ -84,7 +78,6 @@ struct CustomBottomSheet<Content: View>: View {
                         lastOffset = -((height - 100) / 2)
                     }
             )
-            
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
