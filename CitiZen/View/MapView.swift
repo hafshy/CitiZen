@@ -41,7 +41,7 @@ struct MapView: View {
             .padding()
             
             // TODO: Add Achievements Button Here
-            
+            Shake()
         }
         
     }
