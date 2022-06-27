@@ -17,7 +17,8 @@ struct MapView: View {
     
     let allLocations = [
         MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
-        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.276025, longitude: 112.645937)
+        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.276025, longitude: 112.645937),
+        MapLocation(name: "Location 3",status: "Not Visited", latitude: -7.376025, longitude: 112.645937)
     ]
     
     
@@ -70,8 +71,7 @@ struct MapView: View {
             
             // TODO: Add Achievements Button Here
             .onAppear{
-                notificationViewModel.requestAuthorization()
-                notificationViewModel.scheduleNotification(places: allLocations)
+                notificationViewModel.requestAuthorization(places: allLocations)
                 UIApplication.shared.applicationIconBadgeNumber = 0
             }
         }
