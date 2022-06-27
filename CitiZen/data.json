@@ -1,0 +1,125 @@
+{
+    "total": 15,
+    "data": [
+        {
+            "id": 1,
+            "kategori": "Gedung Bersejarah",
+            "name": "Kantor Pos Kebonrojo",
+            "latitude": -8,13151338902556,
+            "longitude": 112,567407852035,
+            "alamat": "Jl. Kebon Rojo No. 10 Krembangan Selatan, Krembangan, Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "7.30 - 20.00",
+                "Selasa": "7.30 - 20.00",
+                "Rabu": "7.30 - 20.00",
+                "Kamis": "7.30 - 20.00",
+                "Jumat": "7.30 - 20.00",
+                "Sabtu": "7.30 - 20.00",
+                "Minggu": "7.30 - 20.00"
+            },
+            "trivia": "Usia bangunan 200 tahun lebih dan pernah jadi gedung Sekolah Bung Karno tahun 1915-1920. Sumber https://rri.co.id/surabaya/jawa-timur/1164153/kantor-pos-kebon-rojo-bekas-sekolahnya-bung-karno",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 2,
+            "kategori": "Gedung Bersejarah",
+            "name": "Hotel Majapahit",
+            "latitude": -7,25981079452021,
+            "longitude": 112,739946904177,
+            "alamat": "Jl. Tunjungan no.65 Genteng Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "00.00 - 24.00",
+                "Selasa": "00.00 - 24.00",
+                "Rabu": "00.00 - 24.00",
+                "Kamis": "00.00 - 24.00",
+                "Jumat": "00.00 - 24.00",
+                "Sabtu": "00.00 - 24.00",
+                "Minggu": "00.00 - 24.00",
+                "SiteTour": "14.00 (Senin-Minggu)"
+            },
+            "tour_price": "Rp 103.000 / org",
+            "trivia": "Hotel tertua di Indonesia sejak tahun 1911. Sumber: http://cagarbudaya.kemdikbud.go.id/cagarbudaya/detail/PO2013101000002/hotel-majapahit",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 3,
+            "kategori": "Gedung Bersejarah",
+            "name": "Museum Sepuluh November",
+            "latitude": -7,24542133857051,
+            "longitude": 112,737672666698,
+            "alamat": "Jl. Pahlawan, Alun - Alun Contong, Bubutan, Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "libur",
+                "Selasa": "8.00 - 15.00",
+                "Rabu": "8.00 - 15.00",
+                "Kamis": "8.00 - 15.00",
+                "Jumat": "8.00 - 15.00",
+                "Sabtu": "8.00 - 15.00",
+                "Minggu": "8.00 - 15.00"
+            },
+            "tour_price": "Rp 5.000 / org",
+            "trivia": "Terletak di bawah Tanah, seklias mirip monumen Louvre di Perancis. Sumber : https://www.tribunnewswiki.com/2021/08/03/museum-sepuluh-nopember",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 4,
+            "kategori": "Gedung Bersejarah",
+            "name": "Gedung Grahadi",
+            "latitude": -7,26302110659927,
+            "longitude": 112,743354514371,
+            "alamat": "Jl. Gubernur Suryo, Embong Kaliasin, Genteng, Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "00.00 - 24.00",
+                "Selasa": "00.00 - 24.00",
+                "Rabu": "00.00 - 24.00",
+                "Kamis": "00.00 - 24.00",
+                "Jumat": "00.00 - 24.00",
+                "Sabtu": "00.00 - 24.00",
+                "Minggu": "00.00 - 24.00"
+            },
+            "tour_price": "Rp 5.000 / org",
+            "trivia": "Paling sering dijadikan tempat singgah oleh Presiden Gusdur saat berkunjung ke Jawa Timur. Sumber: https://jatim.tribunnews.com/2017/02/06/ini-fakta-unik-gedung-negara-grahadi-yang-perlu-kamu-ketahui",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 5,
+            "kategori": "Gedung Bersejarah",
+            "name": "Balai Pemuda",
+            "latitude": -7,26418558555681,
+            "longitude": 112,745257541912,
+            "alamat": "Jl. Gubernur Suryo no.15, Embong Kaliasin, Genteng",
+            "jam_operasional":
+            {
+                "Senin": "9.00 - 21.00",
+                "Selasa": "9.00 - 21.00",
+                "Rabu": "9.00 - 21.00",
+                "Kamis": "9.00 - 21.00",
+                "Jumat": "9.00 - 21.00",
+                "Sabtu": "9.00 - 21.00",
+                "Minggu": "9.00 - 21.00"
+            },
+            "tour_price": "Rp 5.000 / org",
+            "trivia": "Merupakan ikon kaum elite sekaligus diskriminasi sosial pada zaman penjajahan belanda. Sumber: http://cagarbudaya.kemdikbud.go.id/cagarbudaya/detail/PO2016060100001/balai-pemuda",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        }
+    ]
+}
