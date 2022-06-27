@@ -15,6 +15,8 @@
 		5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1028621FA400A2BFD7 /* Constants.swift */; };
 		5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */; };
 		5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */; };
+		E2967AE8286401B800168F83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AE7286401B800168F83 /* DetailView.swift */; };
+		E2967AED286419AC00168F83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AEC286419AC00168F83 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		5AFC8A1028621FA400A2BFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedLocationDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsViewModel.swift; sourceTree = "<group>"; };
+		E200335428694D6900459F4B /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
+		E2967AE7286401B800168F83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E2967AEC286419AC00168F83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 				5AFC8A0A2861F53E00A2BFD7 /* View */,
 				5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */,
 				5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */,
+				E200335428694D6900459F4B /* Directions.geojson */,
 				5AFC8A02286180DC00A2BFD7 /* Preview Content */,
 			);
 			path = CitiZen;
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC89FE286180DA00A2BFD7 /* MapView.swift */,
+				E2967AE7286401B800168F83 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +97,7 @@
 			children = (
 				5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */,
 				5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */,
+				E2967AEC286419AC00168F83 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 			dependencies = (
 			);
 			name = CitiZen;
+			packageProductDependencies = (
+			);
 			productName = CitiZen;
 			productReference = 5AFC89F9286180DA00A2BFD7 /* CitiZen.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +157,8 @@
 				Base,
 			);
 			mainGroup = 5AFC89F0286180DA00A2BFD7;
+			packageReferences = (
+			);
 			productRefGroup = 5AFC89FA286180DA00A2BFD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,9 +188,11 @@
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				E2967AED286419AC00168F83 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

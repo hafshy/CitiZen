@@ -1,0 +1,51 @@
+{
+    "total": 15,
+    "data": [
+        {
+            "id": 1,
+            "kategori": "Gedung Bersejarah",
+            "name": "Kantor Pos Kebonrojo",
+            "latitude": -8,13151338902556,
+            "longitude": 112,567407852035,
+            "alamat": "Jl. Kebon Rojo No. 10 Krembangan Selatan, Krembangan, Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "7.30 - 20.00",
+                "Selasa": "7.30 - 20.00",
+                "Rabu": "7.30 - 20.00",
+                "Kamis": "7.30 - 20.00",
+                "Jumat": "7.30 - 20.00",
+                "Sabtu": "7.30 - 20.00",
+                "Minggu": "7.30 - 20.00"
+            }
+            "trivia": "Usia bangunan 200 tahun lebih dan pernah jadi gedung Sekolah Bung Karno tahun 1915-1920. Sumber https://rri.co.id/surabaya/jawa-timur/1164153/kantor-pos-kebon-rojo-bekas-sekolahnya-bung-karno",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 1,
+            "kategori": "Gedung Bersejarah",
+            "name": "Kantor Pos Kebonrojo",
+            "latitude": -8,13151338902556,
+            "longitude": 112,567407852035,
+            "alamat": "Jl. Kebon Rojo No. 10 Krembangan Selatan, Krembangan, Surabaya",
+            "jam_operasional":
+            {
+                "Senin": "7.30 - 20.00",
+                "Selasa": "7.30 - 20.00",
+                "Rabu": "7.30 - 20.00",
+                "Kamis": "7.30 - 20.00",
+                "Jumat": "7.30 - 20.00",
+                "Sabtu": "7.30 - 20.00",
+                "Minggu": "7.30 - 20.00"
+            }
+            "trivia": "Usia bangunan 200 tahun lebih dan pernah jadi gedung Sekolah Bung Karno tahun 1915-1920. Sumber https://rri.co.id/surabaya/jawa-timur/1164153/kantor-pos-kebon-rojo-bekas-sekolahnya-bung-karno",
+            "foto": [
+                "www.",
+                "www."
+            ]
+        },
+    ]
+}
