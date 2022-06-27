@@ -17,6 +17,9 @@
 		5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */; };
 		E2967AE8286401B800168F83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AE7286401B800168F83 /* DetailView.swift */; };
 		E2967AED286419AC00168F83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AEC286419AC00168F83 /* DetailViewModel.swift */; };
+		5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */; };
+		5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1928654A1800A2BFD7 /* BlurView.swift */; };
+		5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E200335428694D6900459F4B /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
 		E2967AE7286401B800168F83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E2967AEC286419AC00168F83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheet.swift; sourceTree = "<group>"; };
+		5AFC8A1928654A1800A2BFD7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEdge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 			children = (
 				5AFC89FE286180DA00A2BFD7 /* MapView.swift */,
 				E2967AE7286401B800168F83 /* DetailView.swift */,
+				5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */,
+				5AFC8A1928654A1800A2BFD7 /* BlurView.swift */,
+				5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,13 +195,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
+				5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
 				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
+				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
 				E2967AED286419AC00168F83 /* DetailViewModel.swift in Sources */,
+				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +336,8 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -354,6 +368,8 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
