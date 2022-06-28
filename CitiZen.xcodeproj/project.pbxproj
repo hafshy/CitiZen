@@ -22,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A26B19828696B3E00EA1977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A26B19A28696B3E00EA1977 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AFC89F9286180DA00A2BFD7 /* CitiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiZenApp.swift; sourceTree = "<group>"; };
@@ -78,7 +77,6 @@
 		5AFC89FB286180DA00A2BFD7 /* CitiZen */ = {
 			isa = PBXGroup;
 			children = (
-				5A26B19828696B3E00EA1977 /* Info.plist */,
 				5AFC8A0E28621F7C00A2BFD7 /* Model */,
 				5AFC8A0B2862185B00A2BFD7 /* ViewModel */,
 				5AFC8A0A2861F53E00A2BFD7 /* View */,
