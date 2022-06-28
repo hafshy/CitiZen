@@ -87,7 +87,7 @@ struct MapView: View {
             
             if offset < 0 {
                 CustomBottomSheet(content: {
-                    DetailView(item: detailViewModel.items.data[currentDetailId-1])
+                    DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
                 }, offset: $offset, lastOffset: $lastOffset)
                 
                 ZStack {

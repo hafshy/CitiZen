@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Binding var offset: CGFloat
     var item : Datum
     
     var body: some View {
@@ -19,11 +20,16 @@ struct DetailView: View {
                         .fontWeight(.bold)
                     
                     Spacer()
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .foregroundColor(.gray)
-                        .scaledToFill()
-                        .frame(width: 35, height: 35)
+                    
+                    Button {
+                        offset = 0
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                            .resizable()
+                            .foregroundColor(.gray)
+                            .scaledToFill()
+                            .frame(width: 35, height: 35)
+                    }
                 }
                 Text("\(item.category) | ") +
                 Text("CLOSE")
