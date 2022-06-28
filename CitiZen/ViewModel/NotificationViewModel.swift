@@ -33,6 +33,7 @@ class NotificationManager:NSObject, ObservableObject{
                 if(UserDefaults.standard.bool(forKey: "isNotificationalreadycreated") == false){
                     UserDefaults.standard.set(true, forKey: "isNotificationalreadycreated")
                     self.scheduleNotification(places: places)
+                    self.monitoring(places: places)
                 }
             }
         }
@@ -90,15 +91,16 @@ class NotificationManager:NSObject, ObservableObject{
         locationManager.startMonitoring(for: fenceRegion)
     }
     
-    func stopMonitoring(geotification: MapLocation) {
-        for region in locationManager.monitoredRegions {
+    func stopMonitoring(geotification: [MapLocation]) {
+        for location in geotification {
             guard
-                let circularRegion = region as? CLCircularRegion,
-                circularRegion.identifier == geotification.id.uuidString
+                let circularRegion = location.region as? CLCircularRegion
             else { continue }
             
             locationManager.stopMonitoring(for: circularRegion)
+            
         }
+        
     }
 }
 

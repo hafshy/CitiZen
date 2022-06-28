@@ -10,16 +10,11 @@ import MapKit
 import CoreLocation
 
 struct MapView: View {
-    
     @State var isAlert = false
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     
     let notificationViewModel = NotificationManager()
-    
-    init(){
-        notificationViewModel.monitoring(places: allLocations)
-    }
     
     let allLocations = [
         MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
