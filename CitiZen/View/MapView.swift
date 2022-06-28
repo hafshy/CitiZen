@@ -12,12 +12,11 @@ import CoreLocation
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
+    @StateObject private var detailViewModel = DetailViewModel()
     
-    
-    @State var isDetailView = true
+    @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
-    @GestureState var gestureOffset: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -30,8 +29,8 @@ struct MapView: View {
                 }
                 .onTapGesture(perform: {
                     withAnimation(.spring()) {
-                        if isDetailView {
-                            isDetailView = false
+                        if offset < 0 {
+                            offset = 0
                         }
                     }
                 })
@@ -48,10 +47,10 @@ struct MapView: View {
                 }
                 // TODO: Add Progress Here @Ken
                 HStack {
-                    Text("80%")
+                    Text("\(savedLocationViewModel.savedLocations.count / Constants.Defaults.totalLandmark)%")
                         .font(.caption2)
                     RoundedRectangle(cornerRadius: 2.5)
-                        .frame(width: UIScreen.main.bounds.width / 3.25 * 80 / 100, height: UIScreen.main.bounds.width / 78)
+                        .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
                         .foregroundColor(.red)
                         .overlay(alignment: .leading) {
                             RoundedRectangle(cornerRadius: 2.5)
@@ -66,7 +65,9 @@ struct MapView: View {
                 // TODO: Add Achievements Button Here
                 Button {
                     // TODO: Add Navigation Here
-                    
+                    withAnimation(.spring()) {
+                        offset = -(UIScreen.main.bounds.height - 100) / 2
+                    }
                 } label: {
                     Image("trophy")
                         .renderingMode(.template)
@@ -84,54 +85,11 @@ struct MapView: View {
             }
             .padding()
             
-            GeometryReader { proxy -> AnyView in
-                let height = proxy.frame(in: .global).height
-                return AnyView(
-                    // MARK: Bottom Sheet Container
-                    ZStack {
-                        // MARK: Background Blur
-                        BlurView(style: .systemMaterial)
-                            .clipShape(CustomEdge(corner: [.topLeft, .topRight], radius: 32))
-                        // MARK: Bottom Sheet Content
-                        // TODO: Add Converter behind capsule
-                        VStack {
-                            Capsule()
-                                .fill(.primary)
-                                .frame(
-                                    width: 40,
-                                    height: 4,
-                                    alignment: .center
-                                )
-                                .padding(.top, 12)
-                            DetailView()
-                            Spacer()
-                        }
-                    }
-                        .offset(y: isDetailView ? height - 300 : offset + height + 300 )
-                        .offset(y: -offset > 0 ? -offset <= (height - 300) ? offset : -(height - 300) : 0)
-                        .gesture(DragGesture().updating($gestureOffset, body: { value, out, _ in
-                            out = value.translation.height
-                            onChange(height: height)
-                        }).onEnded({ value in
-                            let maxHeight = height - 100
-                            
-                            withAnimation(.spring()) {
-                                if (-offset > 300 && -offset < maxHeight ) {
-                                    offset = -(maxHeight / 1.65)
-                                } else {
-                                    offset = 0
-                                }
-                                if isDetailView == false {
-                                    offset = 0
-                                }
-                            }
-                            lastOffset = offset
-                        }))
-                )
-            }
-            .ignoresSafeArea(.all, edges: .bottom)
-            
-            if isDetailView {
+            if offset < 0 {
+                CustomBottomSheet(content: {
+                    DetailView(item: detailViewModel.items.data[currentDetailId-1])
+                }, offset: $offset, lastOffset: $lastOffset)
+                
                 ZStack {
                     VStack {
                         Spacer()
@@ -159,11 +117,6 @@ struct MapView: View {
                     }
                 }
             }
-        }
-    }
-    func onChange(height: CGFloat) {
-        DispatchQueue.main.async {
-            self.offset = max(-(height - 200), gestureOffset + lastOffset)
         }
     }
 }

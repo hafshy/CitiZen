@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DetailView: View {
+    var item : Datum
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Ciputra Watepark")
+                    Text(item.name)
                         .font(.title2)
                         .fontWeight(.bold)
                     
@@ -23,7 +25,7 @@ struct DetailView: View {
                         .scaledToFill()
                         .frame(width: 35, height: 35)
                 }
-                Text("Amusement Park | ") +
+                Text("\(item.category) | ") +
                 Text("CLOSE")
                     .foregroundColor(.red)
                 
@@ -42,40 +44,75 @@ struct DetailView: View {
                         Text("Address")
                             .font(.headline)
                         
-                        Text("Parking lot, Kawasan, Jl. Waterpark Boulevard Jl. Citraland Surabaya, Made, Kec. Sambikerep, Kota SBY, Jawa Timur 60219")
+                        Text(item.adress)
                             .font(.caption)
                     }
                     
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Details")
+                        Text("Trivia")
                             .font(.headline)
                         
-                        Text("Parking lot, Kawasan, Jl. Waterpark Boulevard Jl. Citraland Surabaya, Made, Kec. Sambikerep, Kota SBY, Jawa Timur 60219")
+                        Text(item.trivia)
                             .font(.caption)
                     }
                     
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Opended")
+                        Text("Jam Operasional")
                             .font(.headline)
                         
-                        Text("Parking lot, Kawasan, Jl. Waterpark Boulevard Jl. Citraland Surabaya, Made, Kec. Sambikerep, Kota SBY, Jawa Timur 60219")
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Senin")
+                                Text("Selasa")
+                                Text("Rabu")
+                                Text("Kamis")
+                                Text("Jumat")
+                                Text("Sabtu")
+                                Text("Minggu")
+                                if item.operasionalHours.siteTour == nil {
+                                    
+                                } else {
+                                    Text("Site Tour")
+                                }
+                            }
                             .font(.caption)
+                            
+                            VStack(alignment: .leading) {
+                                Text(item.operasionalHours.senin)
+                                Text(item.operasionalHours.selasa)
+                                Text(item.operasionalHours.rabu)
+                                Text(item.operasionalHours.kamis)
+                                Text(item.operasionalHours.jumat)
+                                Text(item.operasionalHours.sabtu)
+                                Text(item.operasionalHours.minggu)
+                                if item.operasionalHours.siteTour == nil {
+                                    
+                                } else {
+                                    Text(item.operasionalHours.siteTour ?? "")
+                                }
+                            }
+                            .font(.caption)
+                        }
                     }
                     
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("Price")
-                            .font(.headline)
+                    if item.tourPrice == nil {
                         
-                        Text("Week Day Rp 75.000 Week End Rp 95.000")
-                            .font(.caption)
+                    } else {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Price")
+                                .font(.headline)
+                            
+                            Text(item.tourPrice ?? "")
+                                .font(.caption)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Website")
                             .font(.headline)
                         
-                        Text("http://www.ciputrawaterparksurabaya.com/new2/")
-                            .font(.caption)
+//                        Text(item.)
+//                            .font(.caption)
                     }
                 }
             }
@@ -84,8 +121,8 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView()
+//    }
+//}
