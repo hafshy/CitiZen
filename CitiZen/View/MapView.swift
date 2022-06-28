@@ -57,15 +57,15 @@ struct MapView: View {
             .onAppear {
                 viewModel.checkLocationService()
             }
-                .onTapGesture(perform: {
-                    withAnimation(.spring()) {
-                        if offset < 0 {
-                            offset = 0
-                        }
+            .onTapGesture(perform: {
+                withAnimation(.spring()) {
+                    if offset < 0 {
+                        offset = 0
                     }
-                })
+                }
+            })
             
-
+            
             // MARK: City and Progress
             VStack(spacing: 4) {
                 HStack {
@@ -96,9 +96,9 @@ struct MapView: View {
                 // TODO: Add Achievements Button Here
                 Button {
                     // TODO: Add Navigation Here
-//                    withAnimation(.spring()) {
-//                        offset = -(UIScreen.main.bounds.height - 100) / 2
-//                    }
+                    //                    withAnimation(.spring()) {
+                    //                        offset = -(UIScreen.main.bounds.height - 100) / 2
+                    //                    }
                 } label: {
                     Image("trophy")
                         .renderingMode(.template)
@@ -147,10 +147,11 @@ struct MapView: View {
                         .border(.gray, width: 1)
                     }
                 }
-            // TODO: Add Achievements Button Here
-            .onAppear{
-                notificationViewModel.requestAuthorization(places: allLocations)
-                UIApplication.shared.applicationIconBadgeNumber = 0
+                // TODO: Add Achievements Button Here
+                .onAppear{
+                    notificationViewModel.requestAuthorization(places: allLocations)
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                }
             }
         }
     }
