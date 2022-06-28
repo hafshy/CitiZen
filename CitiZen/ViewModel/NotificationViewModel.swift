@@ -8,8 +8,15 @@
 import SwiftUI
 import MapKit
 import UserNotifications
+import CoreLocation
 
-class NotificationManager{
+class NotificationManager:NSObject, ObservableObject{
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
     @State private var isNotificationalreadycreated = false
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
@@ -32,8 +39,6 @@ class NotificationManager{
     }
     
     func scheduleNotification(places: [MapLocation]){
-        var counter:Int = 1
-        
         for place in places {
             let content = UNMutableNotificationContent()
             content.title = "You arrive at"
@@ -47,22 +52,80 @@ class NotificationManager{
                 identifier: UUID().uuidString)
             region.notifyOnExit = false
             region.notifyOnEntry = true
-//            locationManager.startMonitoring(for: region)
             
             let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
-            
             let request = UNNotificationRequest(
                 identifier: UUID().uuidString,
                 content: content,
                 trigger: trigger)
             
             UNUserNotificationCenter.current().add(request)
-            
-            counter+=1
         }
     }
     
-//    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-//        print("masuk landmark")
-//    }
+    func monitoring(places:[MapLocation]){
+        for place in places {
+            let region = CLCircularRegion(
+                center: place.coordinate,
+                radius: 5,
+                identifier: UUID().uuidString)
+            region.notifyOnExit = false
+            region.notifyOnEntry = true
+            startMonitoring(geotification: place)
+        }
+    }
+    
+    func startMonitoring(geotification: MapLocation) {
+        // 1
+        if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            print(123)
+            return
+        }else{
+            print(5555)
+        }
+        
+        // 2
+        let fenceRegion = geotification.region
+        // 3
+        locationManager.startMonitoring(for: fenceRegion)
+    }
+    
+    func stopMonitoring(geotification: MapLocation) {
+        for region in locationManager.monitoredRegions {
+            guard
+                let circularRegion = region as? CLCircularRegion,
+                circularRegion.identifier == geotification.id.uuidString
+            else { continue }
+            
+            locationManager.stopMonitoring(for: circularRegion)
+        }
+    }
 }
+
+extension NotificationManager: CLLocationManagerDelegate {
+    func locationManager(
+        _ manager: CLLocationManager,
+        didEnterRegion region: CLRegion
+    ) {
+        if region is CLCircularRegion {
+            handleEvent(for: region)
+        }
+    }
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didExitRegion region: CLRegion
+    ) {
+        if region is CLCircularRegion {
+            handleEvent(for: region)
+        }
+    }
+    
+    func handleEvent(for region: CLRegion) {
+        // Show an alert if application is active
+        if UIApplication.shared.applicationState == .active {
+            print("Triggered")
+        }
+    }
+}
+
