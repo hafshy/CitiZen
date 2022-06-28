@@ -9,6 +9,7 @@ import CoreLocation
 import MapKit
 
 struct Constants {
+    
     struct Defaults {
         static let location = CLLocationCoordinate2D(
             latitude: -7.285374204077755,
@@ -22,4 +23,5 @@ struct Constants {
         
         static let totalLandmark = 10
     }
+    
 }

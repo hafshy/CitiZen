@@ -51,6 +51,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
                     longitudeDelta: 0.01
                 )
             )
+            locationManager.allowsBackgroundLocationUpdates = true
         @unknown default:
             break
         }
@@ -59,4 +60,6 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationPermission()
     }
+    
+    
 }
