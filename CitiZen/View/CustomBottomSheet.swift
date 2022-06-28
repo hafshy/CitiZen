@@ -12,13 +12,15 @@ import SwiftUI
 //              *Sheets content here*
 //          }
 struct CustomBottomSheet<Content: View>: View {
-    @State var offset: CGFloat = 0
-    @State var lastOffset: CGFloat = 0
+    @Binding var offset: CGFloat
+    @Binding var lastOffset: CGFloat
     @GestureState var gestureOffset: CGFloat = 0
     let content: () -> Content
     
-    init(@ViewBuilder content: @escaping () -> Content) {
+    init(@ViewBuilder content: @escaping () -> Content, offset: Binding<CGFloat>, lastOffset: Binding<CGFloat>) {
         self.content = content
+        self._offset = offset
+        self._lastOffset = lastOffset
     }
     
     var body: some View {
