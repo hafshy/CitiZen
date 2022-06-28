@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A26B19B28696B3E00EA1977 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A26B19A28696B3E00EA1977 /* MapKit.framework */; };
 		5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */; };
 		5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE286180DA00A2BFD7 /* MapView.swift */; };
 		5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A26B19828696B3E00EA1977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A26B19A28696B3E00EA1977 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AFC89F9286180DA00A2BFD7 /* CitiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiZenApp.swift; sourceTree = "<group>"; };
 		5AFC89FE286180DA00A2BFD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -40,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A26B19B28696B3E00EA1977 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A26B19928696B3E00EA1977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A26B19A28696B3E00EA1977 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5AFC89F0286180DA00A2BFD7 = {
 			isa = PBXGroup;
 			children = (
 				5AFC89FB286180DA00A2BFD7 /* CitiZen */,
 				5AFC89FA286180DA00A2BFD7 /* Products */,
+				5A26B19928696B3E00EA1977 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +78,7 @@
 		5AFC89FB286180DA00A2BFD7 /* CitiZen */ = {
 			isa = PBXGroup;
 			children = (
+				5A26B19828696B3E00EA1977 /* Info.plist */,
 				5AFC8A0E28621F7C00A2BFD7 /* Model */,
 				5AFC8A0B2862185B00A2BFD7 /* ViewModel */,
 				5AFC8A0A2861F53E00A2BFD7 /* View */,
@@ -322,6 +336,7 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -354,6 +369,7 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
