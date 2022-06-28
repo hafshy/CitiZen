@@ -39,15 +39,56 @@ extension View {
 }
 
 struct Shake: View {
-    @State private var showingAlert = false
-    
+   // @State private var showingAlert = false
+    @State private var showPopUp = false
     var body: some View {
         Text("")
-            .onShake {showingAlert = true
+            .onShake {
+                withAnimation
+                {
+                    showPopUp = true
+                }
+                
             }
-            .alert("Congrats Your Progress Has Been Saved", isPresented: $showingAlert) {
-                        Button("OK", role: .cancel) { }
-                    }
+                if $showPopUp.wrappedValue {
+                    
+                        ZStack {
+                             Color.white
+                             VStack {
+                                 Spacer ()
+                                 Image(systemName: "checkmark")
+                                     .resizable()
+                                     .scaledToFit()
+                                     .frame(width: 40)
+                                 Text("Congrats!")
+                                     .font(.title)
+                                     .bold()
+                                 Text("Your Progress Has Been Recorded")
+                                     .font(.caption2)
+                                 Spacer ()
+                                 Button(action: {
+                                     withAnimation{
+                                         self.showPopUp = false
+                                     }
+                                     
+                                     
+                                 }, label: {
+                                     Text("Close")
+                                 })
+                             }.padding()
+                         }
+                        .frame(width: 300, height: 200)
+                        .cornerRadius(20).shadow(radius: 20)
+                    
+                  
+                    
+                }
+            }
+          //  .onShake {showingAlert = true
+      //      }
+        //    .alert("Congrats Your Progress Has Been Saved", isPresented: $showingAlert) {
+          //              Button("OK", role: .cancel) { }
+               //     }
     }
                       
 
@@ -56,4 +97,4 @@ struct Shake_Previews: PreviewProvider {
         Shake()
     }
 }
-}
+
