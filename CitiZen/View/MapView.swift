@@ -11,7 +11,7 @@ import CoreLocation
 
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
-    
+    @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct MapView: View {
                 .onAppear {
                     viewModel.checkLocationService()
                 }
-            
+
             // MARK: City and Progress
             VStack() {
                 HStack {

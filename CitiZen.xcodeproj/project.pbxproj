@@ -13,6 +13,11 @@
 		5AFC8A04286180DC00A2BFD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */; };
 		5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */; };
 		5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1028621FA400A2BFD7 /* Constants.swift */; };
+		5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */; };
+		5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */; };
+		5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */; };
+		5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1928654A1800A2BFD7 /* BlurView.swift */; };
+		5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */; };
 		A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D45EFE2862ABED001FFEDD /* Shake.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +29,11 @@
 		5AFC8A03286180DC00A2BFD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		5AFC8A1028621FA400A2BFD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedLocationDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsViewModel.swift; sourceTree = "<group>"; };
+		5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheet.swift; sourceTree = "<group>"; };
+		5AFC8A1928654A1800A2BFD7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEdge.swift; sourceTree = "<group>"; };
 		A5D45EFE2862ABED001FFEDD /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				5AFC89FE286180DA00A2BFD7 /* MapView.swift */,
+				5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */,
+				5AFC8A1928654A1800A2BFD7 /* BlurView.swift */,
+				5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */,
 				A5D45EFE2862ABED001FFEDD /* Shake.swift */,
 			);
 			path = View;
@@ -88,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC8A0C2862186A00A2BFD7 /* MapViewModel.swift */,
+				5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
+				5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,10 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
+				5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */,
 				A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
+				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
+				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +326,8 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -336,6 +358,8 @@
 				DEVELOPMENT_TEAM = 56YNX87MHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -377,6 +401,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */,
+			);
+			currentVersion = 5AFC8A132862C48700A2BFD7 /* SavedLocationDataModel.xcdatamodel */;
+			path = SavedLocationsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AFC89F1286180DA00A2BFD7 /* Project object */;
 }
