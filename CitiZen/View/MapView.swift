@@ -53,6 +53,7 @@ struct MapView: View {
                 viewModel.checkLocationService()
             }
             
+
             // MARK: City and Progress
             VStack() {
                 HStack {
