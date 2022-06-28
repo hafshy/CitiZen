@@ -65,9 +65,9 @@ struct MapView: View {
                 // TODO: Add Achievements Button Here
                 Button {
                     // TODO: Add Navigation Here
-                    withAnimation(.spring()) {
-                        offset = -(UIScreen.main.bounds.height - 100) / 2
-                    }
+//                    withAnimation(.spring()) {
+//                        offset = -(UIScreen.main.bounds.height - 100) / 2
+//                    }
                 } label: {
                     Image("trophy")
                         .renderingMode(.template)
