@@ -21,31 +21,18 @@ struct MapView: View {
     
     let notificationViewModel = NotificationManager()
     
-    let allLocations = [
-        MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
-        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.276025, longitude: 112.645937),
-        MapLocation(name: "Location 3",status: "Not Visited", latitude: -7.376025, longitude: 112.645937)
-    ]
-    
-    
-    let allLocations = [
-        MapLocation(name: "Location 1",status: "Visited", latitude: -7.28842, longitude: 112.63164),
-        MapLocation(name: "Location 2",status: "Not Visited", latitude: -7.28342, longitude: 112.63164)
-    ]
-    
     var body: some View {
         ZStack {
             // MARK: Map Background
             Map(coordinateRegion: $viewModel.currentCoordinate,
                 showsUserLocation: true,
-                annotationItems: allLocations,
+                annotationItems: viewModel.allLocations,
                 annotationContent: { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     VStack{
                         Image(systemName: "mappin.circle.fill")
                             .font(.title)
                             .foregroundColor(location.status=="Visited" ? .red : .gray)
-                        
                         Image(systemName: "arrowtriangle.down.fill")
                             .font(.caption)
                             .foregroundColor(location.status=="Visited" ? .red : .gray)
@@ -53,7 +40,7 @@ struct MapView: View {
                         Text(location.name)
                     }.onTapGesture {
                         //action here
-                        print("Clicked")
+                        
                     }
                 }
             })
@@ -61,7 +48,8 @@ struct MapView: View {
             .accentColor(.green)    // TODO: Change Color Scheme
             .onAppear {
                 viewModel.checkLocationService()
-                notificationViewModel.requestAuthorization(places: allLocations)
+                notificationViewModel.requestAuthorization(places: viewModel.allLocations)
+                viewModel.loadAllLocation()
                 UIApplication.shared.applicationIconBadgeNumber = 0
             }
             .onTapGesture(perform: {
