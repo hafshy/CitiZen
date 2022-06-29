@@ -353,6 +353,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -366,8 +367,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hafshy.CitiZen;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -387,6 +388,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -400,8 +402,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hafshy.CitiZen;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

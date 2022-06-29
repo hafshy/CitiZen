@@ -56,6 +56,8 @@ struct MapView: View {
             .accentColor(.green)    // TODO: Change Color Scheme
             .onAppear {
                 viewModel.checkLocationService()
+                notificationViewModel.requestAuthorization(places: allLocations)
+                UIApplication.shared.applicationIconBadgeNumber = 0
             }
             .onTapGesture(perform: {
                 withAnimation(.spring()) {
@@ -146,11 +148,6 @@ struct MapView: View {
                         .cornerRadius(8)
                         .border(.gray, width: 1)
                     }
-                }
-                // TODO: Add Achievements Button Here
-                .onAppear{
-                    notificationViewModel.requestAuthorization(places: allLocations)
-                    UIApplication.shared.applicationIconBadgeNumber = 0
                 }
             }
         }
