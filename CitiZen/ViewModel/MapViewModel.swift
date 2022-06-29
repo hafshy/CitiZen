@@ -10,6 +10,9 @@ import CoreLocation
 import MapKit
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    
+    @Published var allLocations:[MapLocation] = []
+    
     @Published var currentCoordinate = MKCoordinateRegion(
         center: Constants.Defaults.location,
         span: Constants.Defaults.mapSpan
@@ -61,5 +64,16 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         checkLocationPermission()
     }
     
+    func loadAllLocation(){
+        var savedLocation = SavedLocationsViewModel()
+        var detailedViewModel = DetailViewModel()
+        allLocations = detailedViewModel.items.data.map({ (datum) -> MapLocation in
+            MapLocation.init(name: datum.name, status: savedLocation.savedLocations.contains(where:{
+                let savedID:Int = Int(bitPattern: $0.id)
+                return savedID == datum.id
+            }) ? "Visited" : "Not Visited", latitude: datum.latitude, longitude: datum.longitude,icon: datum.icon)
+        })
+        
+    }
     
 }
