@@ -18,6 +18,7 @@ struct MapView: View {
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
+    @State var isOpen = false
     
     let notificationViewModel = NotificationManager()
     
@@ -107,9 +108,13 @@ struct MapView: View {
             .padding()
             
             if offset < 0 {
-                CustomBottomSheet(content: {
+//                CustomBottomSheet(content: {
+//                    DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
+//                }, offset: $offset, lastOffset: $lastOffset)
+                
+                BottomSheetView(isOpen: $isOpen, maxHeight: UIScreen.main.bounds.height / 1.25) {
                     DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
-                }, offset: $offset, lastOffset: $lastOffset)
+                }
                 
                 ZStack {
                     VStack {
