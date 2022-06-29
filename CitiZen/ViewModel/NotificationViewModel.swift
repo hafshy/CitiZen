@@ -20,6 +20,7 @@ class NotificationManager:NSObject, ObservableObject{
     @State private var isNotificationalreadycreated = false
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
+    @Published var showPopUp = false
     
     func requestAuthorization(places: [MapLocation]){
         let option:UNAuthorizationOptions = [.badge,.sound,.alert]

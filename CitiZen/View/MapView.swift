@@ -143,6 +143,7 @@ struct MapView: View {
                     }
                 }
             }
+            Shake(showArrivedPopUp: $isAlert)
         }
     }
 }
