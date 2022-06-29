@@ -20,32 +20,38 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     func checkLocationService() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager!.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         } else {
             print("Location Service Disabled")
         }
     }
     
+    // NOTE: If location's not detected, try to
+    // -    check Simulators location, make sure it's not None
+    // -    restart Simulator and re-run
+    //
+    // NOTE: Request 'always' will be prompted to users when they are in Geofences Radius
     private func checkLocationPermission() {
         guard let locationManager = locationManager else { return }
         
         switch locationManager.authorizationStatus {
             
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
         case .restricted:
             print("Permission Restricted")
         case .denied:
             print("Permission Denied")
         case .authorizedAlways, .authorizedWhenInUse:
             currentCoordinate = MKCoordinateRegion(
-                center: locationManager.location!.coordinate,
+                center: locationManager.location?.coordinate ?? Constants.Defaults.location,
                 span: MKCoordinateSpan(
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01
                 )
             )
+            locationManager.allowsBackgroundLocationUpdates = true
         @unknown default:
             break
         }

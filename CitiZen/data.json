@@ -1,0 +1,250 @@
+{
+    "total": 10,
+    "data": [
+        {
+            "id": 1,
+            "category": "Gedung Bersejarah",
+            "name": "Kantor Pos Kebonrojo",
+            "icon": "",
+            "latitude": -8.13151338902556,
+            "longitude": 112.567407852035,
+            "adress": "Jl. Kebon Rojo No. 10 Krembangan Selatan, Krembangan, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "7.30 - 20.00",
+                "Selasa": "7.30 - 20.00",
+                "Rabu": "7.30 - 20.00",
+                "Kamis": "7.30 - 20.00",
+                "Jumat": "7.30 - 20.00",
+                "Sabtu": "7.30 - 20.00",
+                "Minggu": "7.30 - 20.00"
+            },
+            "trivia": "Usia bangunan 200 tahun lebih dan pernah jadi gedung Sekolah Bung Karno tahun 1915-1920.",
+            "cerita": "Kantor Pos Kebon Rojo merupakan salah satu bangunan kuno di Surabaya yang dibangun oleh Daendels di masa kolonial Belanda. Dibangun pada awal tahun 1800, bangunan ini telah mengalami berbagai macam pergantian fungsi seperti pernah menjadi tempat tinggal Bupati Surabaya, bangunan sekolah SMP-SMA, markas besar kepolisian, hingga akhirnya tahun 1926 direnovasi, dan 1928 gdeung ini siap difungsikan menjadi gedung Kantor Pos Besar. Dalam peristiwa perang 10 November, ggedung ini menjadi sasaran mayarakat pribumi lantaran tempat ini merupakan objek vital namun rombongan sekutu dengan cepat menduduki gedung ini begitu sampai di Surabaya. Sumber: https://rri.co.id/surabaya/jawa-timur/1164153/kantor-pos-kebon-rojo-bekas-sekolahnya-bung-karno",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 2,
+            "category": "Gedung Bersejarah",
+            "name": "Hotel Majapahit",
+            "icon": "",
+            "latitude": -7.25981079452021,
+            "longitude": 112.739946904177,
+            "adress": "Jl. Tunjungan no.65 Genteng Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "00.00 - 24.00",
+                "Selasa": "00.00 - 24.00",
+                "Rabu": "00.00 - 24.00",
+                "Kamis": "00.00 - 24.00",
+                "Jumat": "00.00 - 24.00",
+                "Sabtu": "00.00 - 24.00",
+                "Minggu": "00.00 - 24.00",
+                "SiteTour": "14.00 (Senin-Minggu)"
+            },
+            "tour_price": "Rp 103.000 / org",
+            "trivia": "Hotel tertua di Indonesia sejak tahun 1911. ",
+            "cerita": "Pada mulanya tanah tempat Hotel Majapahit ini dibeli oleh keluarga Sarkies pada tahun 1900. Keluarga ini adalah keturunan etnis Armenia yang memiliki jaringan bisnis hotel tersebar di Asia Tenggara. Pembangunan hotel dimulai pada tahun 1910, hingga akhirnya diresmikan operasionalnya tanggal 1 Juli 1911 dengan nama Hotel Oranje. Sejak pertama kali berdiri, hotel ini telah mengalami lima kali proses pergantian nama, tergantung siapa pemilik  yang mendominasi. Pada masa penjajahan Jepang 1942, nama hotel ini berubah menjadi Hotel Yamato. Kemudian saat peristiwa perobekan bendera 19 September 1945, berubah nama lagi menjadi Hotel Merdeka. Ketika Sarkies bersaudara kembali mendominasi, nama hotel menjadi Lucas Martin Sarkies Hotel (LMS). Pada tahun 1969, namanya baru menjadi Hotel Majapahit. Itu pun masih mengalami perubahan tahun 1993 saat kepemilikan berpindah ke Mandarin Oriental Groups menjadi Mandarin Oriental Hotel Majapahit Surabaya. Terakhir tahun 2006, di bawah PT. Sekman Wisata, nama hotel kembal menjadi Hotel Majapahit. Selain dipakai sebagai hotel, Hotel Majapahit pada tahun 1945 pernah digunakan sebagai tempat tahanan sementara untuk wanita dan anak - anak Belanda. Sumber: http://cagarbudaya.kemdikbud.go.id/cagarbudaya/detail/PO2013101000002/hotel-majapahit",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 3,
+            "category": "Monumen",
+            "name": "Tugu Pahlawan",
+            "icon": "",
+            "latitude": -7.24578945254802,
+            "longitude": 112.737837230822,
+            "adress": "Jl. Pahlawan, Alun - Alun Contong, Bubutan, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "libur",
+                "Selasa": "8.00 - 15.00",
+                "Rabu": "8.00 - 15.00",
+                "Kamis": "8.00 - 15.00",
+                "Jumat": "8.00 - 15.00",
+                "Sabtu": "8.00 - 15.00",
+                "Minggu": "8.00 - 15.00"
+            },
+            "tour_price": "Rp 5.000 / org",
+            "trivia": "Bentuknya mirip paku terbalik dan terdiri dari 10 lengkungan 11 ruas, tinggi 45 yard yang merepresentasikan momen Penting Kota Surabaya, 10-11-1945. Sumber: https://www.goodnewsfromindonesia.id/2016/03/30/fakta-tugu-pahlawan-yang-menjadi-wujud-perjuangan-rebut-kemerdekaan",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 4,
+            "category": "Ruang Publik",
+            "name": "Kya Kya",
+            "icon": "",
+            "latitude": -7.23827653783601,
+            "longitude": 112.744271612234,
+            "adress": "Jl. Kembang Jepun, Bongkaran, Pabean, Cantikan, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "00.00 - 24.00",
+                "Selasa": "00.00 - 24.00",
+                "Rabu": "00.00 - 24.00",
+                "Kamis": "00.00 - 24.00",
+                "Jumat": "00.00 - 24.00",
+                "Sabtu": "00.00 - 24.00",
+                "Minggu": "00.00 - 24.00"
+            },
+            "trivia": "Nama Kya Kya sebagai pusat kuliner yang diresmikan tepat ketika ulang tahun Surabaya tahun 2003 ini memiliki arti jalan - jalan dalam Bahasa Hokien. Sumber : http://ayorek.org/2015/02/kya-kya-di-pecinan-surabaya/#sthash.NH6M8R81.dpbs",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 5,
+            "category": "Ruang Publik",
+            "name": "Siola",
+            "icon": "",
+            "latitude": -7.25650792430301,
+            "longitude": 112.737566312639,
+            "adress": "Jl. Tunjungan no.1 Genteng, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "libur",
+                "Selasa": "09.00 - 21.00",
+                "Rabu": "09.00 - 21.00",
+                "Kamis": "09.00 - 21.00",
+                "Jumat": "09.00 - 21.00",
+                "Sabtu": "09.00 - 21.00",
+                "Minggu": "09.00 - 21.00"
+            },
+            "trivia": "Mall pertama di Surabaya dan usia bangunannya sudah 100 tahun lebih karena telah berdiri sejak 1870-an. Sumber: https://etnis.id/siola-dari-pusat-perdagangan-menjadi-museum-di-surabaya/",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 6,
+            "category": "Ruang Publik",
+            "name": "Taman Prestasi",
+            "icon": "",
+            "latitude": -7.26133168292024,
+            "longitude": 112.742845109226,
+            "adress": "Jl. Ketabang Kali no.6, Ketabang, Genteng, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "06.00 - 21.00",
+                "Selasa": "06.00 - 21.00",
+                "Rabu": "06.00 - 21.00",
+                "Kamis": "06.00 - 21.00",
+                "Jumat": "06.00 - 21.00",
+                "Sabtu": "06.00 - 21.00",
+                "Minggu": "06.00 - 21.00"
+            },
+            "trivia": "Diresmikan tahun 1995 dan menjadi satu-satunya taman di surabaya yang memiliki koleksi lengkap permainan anak dan ada wisata air. Sumber: https://bappeko.surabaya.go.id/ecobis/wisata/kategori-detail/82",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 7,
+            "category": "Tempat Ibadah Bersejarah",
+            "name": "Masjid Cheng Ho",
+            "icon": "",
+            "latitude": -7.2522556693648,
+            "longitude": 112.746872281103,
+            "adress": "Jl. Gading no.2, Ketabang, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "4.00 - 22.00",
+                "Selasa": "4.00 - 22.00",
+                "Rabu": "4.00 - 22.00",
+                "Kamis": "4.00 - 22.00",
+                "Jumat": "4.00 - 22.00",
+                "Sabtu": "4.00 - 22.00",
+                "Minggu": "4.00 - 22.00"
+            },
+            "trivia": "Satu - satunya masjid di Surabaya yang bentuknya mirip dengan klenteng. Sumber: https://www.idntimes.com/travel/journal/asrul-pauzi-hasibuan/5-hal-menarik-tentang-masjid-cheng-hoo-surabaya-c1c2?page=all",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 8,
+            "category": "Tempat Ibadah Bersejarah",
+            "name": "Klenteng Agung Kenjeran",
+            "icon": "",
+            "latitude": -7.247746202592,
+            "longitude": 112.801735866856,
+            "adress": "Jl. Sukolilo no.100, Sukolilo Baru, Bulak, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "7.00 - 20.00",
+                "Selasa": "7.00 - 20.00",
+                "Rabu": "7.00 - 20.00",
+                "Kamis": "7.00 - 20.00",
+                "Jumat": "7.00 - 20.00",
+                "Sabtu": "7.00 - 20.00",
+                "Minggu": "7.00 - 20.00"
+            },
+            "trivia": "Klenteng dengan pemandangan tepi laut dan memiliki tinggi patung Dewi Kwan Im setinggi 20 m. Sumber: https://travel.tribunnews.com/2022/01/26/5-fakta-unik-klenteng-sanggar-agung-surabaya-dibangun-megah-menghadap-lautan",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 9,
+            "category": "Tempat Ibadah Bersejarah",
+            "name": "Gereja Santa Perawan Maria",
+            "icon": "",
+            "latitude": -7.24210387037263,
+            "longitude": 112.736784474211,
+            "adress": "Jl. Kepanjen no.4-6, Krembangan Selatan, Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "8.00 - 16.00",
+                "Selasa": "8.00 - 16.00",
+                "Rabu": "8.00 - 16.00",
+                "Kamis": "8.00 - 16.00",
+                "Jumat": "8.00 - 16.00",
+                "Sabtu": "8.00 - 12.00",
+                "Minggu": "8.00 - 12.00"
+            },
+            "trivia": "Gereja tertua di Surabaya dengan umur 130 tahun lebih. Sumber: https://www.detik.com/jatim/budaya/d-6096235/gereja-katolik-kelahiran-santa-perawan-surabaya-ini-berusia-212-tahun",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        },
+        {
+            "id": 10,
+            "category": "Tempat Ibadah Bersejarah",
+            "name": "Pura Agung Jagat Karana",
+            "icon": "",
+            "latitude": -7.23217024703634,
+            "longitude": 112.722105545463,
+            "adress": "Jl. Ikan Lumba-Lumba No.1, Perak Bar., Kec. Krembangan, Kota Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "7.00 - 16.00",
+                "Selasa": "7.00 - 16.00",
+                "Rabu": "7.00 - 16.00",
+                "Kamis": "7.00 - 16.00",
+                "Jumat": "7.00 - 16.00",
+                "Sabtu": "7.00 - 16.00",
+                "Minggu": "7.00 - 16.00"
+            },
+            "trivia": "Pura tertua dan terbesar di Surabaya. Saat ini umur bangunannya mencapai 54 tahun. Sumber: https://www.idntimes.com/travel/destination/akbar-30/fakta-pura-agung-jagat-karana-di-surabaya-c1c2?page=all",
+            "photo": [
+                "www.",
+                "www."
+            ]
+        }
+    ]
+}

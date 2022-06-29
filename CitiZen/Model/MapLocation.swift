@@ -9,12 +9,23 @@ import CoreLocation
 import MapKit
 
 struct MapLocation: Identifiable {
-    let id = UUID()
-    let name: String
-    let status: String
-    let latitude: Double
-    let longitude: Double
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    var id = UUID()
+    var name: String
+    var status: String
+    var latitude: Double
+    var longitude: Double
+    var coordinate: CLLocationCoordinate2D
+    var region:CLCircularRegion
+    
+    init(name:String, status:String, latitude:Double, longitude:Double) {
+        self.name = name
+        self.status = status
+        self.latitude = latitude
+        self.longitude = longitude
+        self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        self.region = CLCircularRegion(
+            center: self.coordinate,
+            radius: 2,
+            identifier: UUID().uuidString)
     }
 }

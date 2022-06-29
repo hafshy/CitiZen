@@ -21,6 +21,7 @@ struct Constants {
             longitudeDelta: 0.01
         )
         
+        static let totalLandmark = 10
     }
     
 }
