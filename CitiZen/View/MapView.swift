@@ -10,21 +10,59 @@ import MapKit
 import CoreLocation
 
 struct MapView: View {
+    @State var isAlert = false
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
+    @StateObject private var detailViewModel = DetailViewModel()
+    
+    @State var currentDetailId = 1
+    @State var offset: CGFloat = 0
+    @State var lastOffset: CGFloat = 0
+    
+    let notificationViewModel = NotificationManager()
     
     var body: some View {
         ZStack {
             // MARK: Map Background
-            Map(coordinateRegion: $viewModel.currentCoordinate, showsUserLocation: true)
-                .ignoresSafeArea()
-                .accentColor(.green)    // TODO: Change Color Scheme
-                .onAppear {
-                    viewModel.checkLocationService()
+            Map(coordinateRegion: $viewModel.currentCoordinate,
+                showsUserLocation: true,
+                annotationItems: viewModel.allLocations,
+                annotationContent: { location in
+                MapAnnotation(coordinate: location.coordinate) {
+                    VStack{
+                        Image(systemName: "mappin.circle.fill")
+                            .font(.title)
+                            .foregroundColor(location.status=="Visited" ? .red : .gray)
+                        Image(systemName: "arrowtriangle.down.fill")
+                            .font(.caption)
+                            .foregroundColor(location.status=="Visited" ? .red : .gray)
+                            .offset(x: 0, y: -5)
+                        Text(location.name)
+                    }.onTapGesture {
+                        //action here
+                        
+                    }
                 }
-
+            })
+            .ignoresSafeArea()
+            .accentColor(.green)    // TODO: Change Color Scheme
+            .onAppear {
+                viewModel.checkLocationService()
+                notificationViewModel.requestAuthorization(places: viewModel.allLocations)
+                viewModel.loadAllLocation()
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+            .onTapGesture(perform: {
+                withAnimation(.spring()) {
+                    if offset < 0 {
+                        offset = 0
+                    }
+                }
+            })
+            
+            
             // MARK: City and Progress
-            VStack() {
+            VStack(spacing: 4) {
                 HStack {
                     Text("Surabaya")
                         .font(.largeTitle)
@@ -33,17 +71,79 @@ struct MapView: View {
                         .frame(alignment: .topLeading)
                     Spacer()
                 }
+                // TODO: Add Progress Here @Ken
+                HStack {
+                    Text("\(savedLocationViewModel.savedLocations.count / Constants.Defaults.totalLandmark)%")
+                        .font(.caption2)
+                    RoundedRectangle(cornerRadius: 2.5)
+                        .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
+                        .foregroundColor(.red)
+                        .overlay(alignment: .leading) {
+                            RoundedRectangle(cornerRadius: 2.5)
+                                .stroke(lineWidth: 1)
+                                .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
+                                .foregroundColor(.gray)
+                        }
+                    Spacer()
+                }
                 Spacer()
                 
-                // TODO: Add Progress Here @Ken
-                
+                // TODO: Add Achievements Button Here
+                Button {
+                    // TODO: Add Navigation Here
+                    //                    withAnimation(.spring()) {
+                    //                        offset = -(UIScreen.main.bounds.height - 100) / 2
+                    //                    }
+                } label: {
+                    Image("trophy")
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundColor(.black)
+                        .frame(width: UIScreen.main.bounds.width / 10, height: UIScreen.main.bounds.width / 10)
+                        .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+                        .background(Color(.systemGray3))
+                        .cornerRadius(8)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(lineWidth: 4)
+                            .foregroundColor(.gray))
+                }
             }
             .padding()
             
-            // TODO: Add Achievements Button Here
-            Shake()
+            if offset < 0 {
+                CustomBottomSheet(content: {
+                    DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
+                }, offset: $offset, lastOffset: $lastOffset)
+                
+                ZStack {
+                    VStack {
+                        Spacer()
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width, height: 100)
+                            .foregroundColor(Color(.systemGray3))
+                            .border(.black, width: 1)
+                    }
+                    .ignoresSafeArea()
+                    
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Image(systemName: "paperplane.fill")
+                                .font(.body)
+                                .foregroundColor(.white)
+                            Text("Navigate")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 360, height: 48)
+                        .background(.blue)
+                        .cornerRadius(8)
+                        .border(.gray, width: 1)
+                    }
+                }
+            }
         }
-        
     }
 }
 
