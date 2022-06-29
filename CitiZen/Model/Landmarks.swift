@@ -33,7 +33,7 @@ struct Datum: Codable {
     let operasionalHours: OperasionalHours
     let trivia: String
     let cerita: String?
-    let photo: [Photo]
+    let photo: [String]
     let tourPrice: String?
 
     enum CodingKeys: String, CodingKey {
@@ -61,11 +61,6 @@ struct OperasionalHours: Codable {
         case siteTour = "SiteTour"
     }
 }
-
-enum Photo: String, Codable {
-    case www = "www."
-}
-
 
 extension Bundle {
     func decode<T: Decodable>(file: String) -> T {

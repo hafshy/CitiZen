@@ -96,9 +96,9 @@ struct MapView: View {
                 // TODO: Add Achievements Button Here
                 Button {
                     // TODO: Add Navigation Here
-                    //                    withAnimation(.spring()) {
-                    //                        offset = -(UIScreen.main.bounds.height - 100) / 2
-                    //                    }
+                                        withAnimation(.spring()) {
+                                            offset = -(UIScreen.main.bounds.height - 100) / 2
+                                        }
                 } label: {
                     Image("trophy")
                         .renderingMode(.template)
@@ -133,18 +133,23 @@ struct MapView: View {
                     
                     VStack {
                         Spacer()
-                        HStack {
-                            Image(systemName: "paperplane.fill")
-                                .font(.body)
-                                .foregroundColor(.white)
-                            Text("Navigate")
-                                .font(.headline)
-                                .foregroundColor(.white)
+                        
+                        Button {
+                            detailViewModel.openMap(latitude: detailViewModel.items.data[currentDetailId-1].latitude, longitude: detailViewModel.items.data[currentDetailId-1].longitude)
+                        } label: {
+                            HStack {
+                                Image(systemName: "paperplane.fill")
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                                Text("Navigate")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: 360, height: 48)
+                            .background(.blue)
+                            .cornerRadius(8)
+                            .border(.gray, width: 1)
                         }
-                        .frame(width: 360, height: 48)
-                        .background(.blue)
-                        .cornerRadius(8)
-                        .border(.gray, width: 1)
                     }
                 }
                 // TODO: Add Achievements Button Here
