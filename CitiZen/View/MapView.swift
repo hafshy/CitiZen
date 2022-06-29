@@ -40,7 +40,11 @@ struct MapView: View {
                         Text(location.name)
                     }.onTapGesture {
                         //action here
-                        
+                        print(location.id)
+                        withAnimation(.spring()) {
+                            currentDetailId = location.id
+                            offset = -(UIScreen.main.bounds.height - 100) / 2
+                        }
                     }
                 }
             })
@@ -91,9 +95,7 @@ struct MapView: View {
                 // TODO: Add Achievements Button Here
                 Button {
                     // TODO: Add Navigation Here
-                                        withAnimation(.spring()) {
-                                            offset = -(UIScreen.main.bounds.height - 100) / 2
-                                        }
+                                        
                 } label: {
                     Image("trophy")
                         .renderingMode(.template)
