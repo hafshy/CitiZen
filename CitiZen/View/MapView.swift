@@ -32,23 +32,36 @@ struct MapView: View {
                     MapAnnotation(coordinate: location.coordinate) {
                         ZStack{
                             VStack{
-                                Image("Background Pin")
-                                    .renderingMode(.template)
-                                    .foregroundColor(location.status=="Visited" ? .yellow : .gray)
-                                Image(location.category)
-                                    .offset(x: 0, y: -80)
+                                ZStack {
+                                    Image("Background Pin")
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
+                                        .scaledToFit()
+                                        .frame(width: 40.0)
+                                        
+                                    Image(location.category)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30.0)
+                                        .offset(x: 0, y: -4)
+                                }
+                                .onTapGesture {
+                                    //action here
+                                    print(location.id)
+                                    withAnimation(.spring()) {
+                                        currentDetailId = location.id
+                                        offset = -(UIScreen.main.bounds.height - 100) / 2
+                                        lastOffset = -(UIScreen.main.bounds.height - 100) / 2
+                                    }
+                                }
                                     
                                 Text(location.name)
+                                    .font(.caption2)
+                                    .bold()
                             }
-                        }.onTapGesture {
-                            //action here
-                            print(location.id)
-                            withAnimation(.spring()) {
-                                currentDetailId = location.id
-                                offset = -(UIScreen.main.bounds.height - 100) / 2
-                            }
+                            
                         }
-                        
                     }
                 })
                 .ignoresSafeArea()
@@ -59,14 +72,6 @@ struct MapView: View {
                     viewModel.loadAllLocation()
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
-                //            .onTapGesture(perform: {
-                //                withAnimation(.spring()) {
-                //                    if offset < 0 {
-                //                        offset = 0
-                //                    }
-                //                }
-                //            })
-                
                 
                 // MARK: City and Progress
                 VStack(spacing: 4) {
@@ -109,22 +114,14 @@ struct MapView: View {
                                 .stroke(lineWidth: 4)
                                 .foregroundColor(.gray))
                     }
-                    
-//                    // TODO: Add Achievements Button Here
-//                    Button {
-//                        // TODO: Add Navigation Here
-//                        
-//                    } label: {
-//                        
-//                    }
                 }
                 .padding()
                 
+                CustomBottomSheet(content: {
+                    DetailView(offset: $offset, lastOffset: $lastOffset, item: detailViewModel.items.data[currentDetailId-1])
+                }, offset: $offset, lastOffset: $lastOffset)
+                
                 if offset < 0 {
-                    CustomBottomSheet(content: {
-                        DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
-                    }, offset: $offset, lastOffset: $lastOffset)
-                    
                     ZStack {
                         VStack {
                             Spacer()

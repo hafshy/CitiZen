@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var offset: CGFloat
+    @Binding var lastOffset: CGFloat
     var item : Datum
     
     var body: some View {
@@ -22,7 +23,10 @@ struct DetailView: View {
                     Spacer()
                     
                     Button {
-                        offset = 0
+                        withAnimation {
+                            offset = 0
+                            lastOffset = 0
+                        }
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .resizable()
