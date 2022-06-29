@@ -65,13 +65,13 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     }
     
     func loadAllLocation(){
-        var savedLocation = SavedLocationsViewModel()
-        var detailedViewModel = DetailViewModel()
+        let savedLocation = SavedLocationsViewModel()
+        let detailedViewModel = DetailViewModel()
         allLocations = detailedViewModel.items.data.map({ (datum) -> MapLocation in
             MapLocation.init(id: datum.id, name: datum.name, status: savedLocation.savedLocations.contains(where:{
                 let savedID:Int = Int(bitPattern: $0.id)
                 return savedID == datum.id
-            }) ? "Visited" : "Not Visited", latitude: datum.latitude, longitude: datum.longitude,icon: datum.icon)
+            }) ? "Visited" : "Not Visited", latitude: datum.latitude, longitude: datum.longitude,icon: datum.icon, category: datum.category)
         })
         
     }
