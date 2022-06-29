@@ -56,13 +56,13 @@ struct MapView: View {
                 viewModel.loadAllLocation()
                 UIApplication.shared.applicationIconBadgeNumber = 0
             }
-            .onTapGesture(perform: {
-                withAnimation(.spring()) {
-                    if offset < 0 {
-                        offset = 0
-                    }
-                }
-            })
+//            .onTapGesture(perform: {
+//                withAnimation(.spring()) {
+//                    if offset < 0 {
+//                        offset = 0
+//                    }
+//                }
+//            })
             
             
             // MARK: City and Progress
