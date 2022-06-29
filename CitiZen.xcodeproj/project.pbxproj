@@ -129,7 +129,6 @@
 			children = (
 				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
 				E200335C286A96C200459F4B /* Landmarks.swift */,
-				9C2F87C12862C170007F1915 /* MapLocation.swift */,
 				5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */,
 				9C2F87C12862C170007F1915 /* MapLocation.swift */,
 			);
@@ -354,7 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CitiZen/Preview Content\"";
-				DEVELOPMENT_TEAM = X9YA9W2VUZ;
+				DEVELOPMENT_TEAM = Y734863RRD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
@@ -373,7 +372,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHunt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHuntz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -389,7 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CitiZen/Preview Content\"";
-				DEVELOPMENT_TEAM = X9YA9W2VUZ;
+				DEVELOPMENT_TEAM = Y734863RRD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
@@ -408,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHunt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CitiZen.LocalHuntz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

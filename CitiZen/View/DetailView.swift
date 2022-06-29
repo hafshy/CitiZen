@@ -35,13 +35,14 @@ struct DetailView: View {
                 Text("CLOSE")
                     .foregroundColor(.red)
                 
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
-                        ForEach(0 ..< 3) { item in
-                            Image(systemName: "square")
+                        ForEach(item.photo, id: \.self) { num in
+                            Image("\(num)")
                                 .resizable()
-                                .scaledToFit()
+                                .scaledToFill()
                                 .frame(width: 120, height: 120)
+                                .clipped()
                         }
                     }
                 }
@@ -111,14 +112,6 @@ struct DetailView: View {
                             Text(item.tourPrice ?? "")
                                 .font(.caption)
                         }
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("Website")
-                            .font(.headline)
-                        
-//                        Text(item.)
-//                            .font(.caption)
                     }
                 }
             }
