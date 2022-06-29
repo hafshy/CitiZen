@@ -16,6 +16,7 @@
 //   let landmarks = try? newJSONDecoder().decode(Landmarks.self, from: jsonData)
 
 import Foundation
+import MapKit
 
 // MARK: - Landmarks
 struct Landmarks: Codable {
