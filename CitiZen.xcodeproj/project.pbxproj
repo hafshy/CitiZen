@@ -25,7 +25,6 @@
 		E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335E286A97B100459F4B /* DetailViewModel.swift */; };
 		E2003363286AB61F00459F4B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E2003362286AB61F00459F4B /* data.json */; };
 		E2967AE8286401B800168F83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AE7286401B800168F83 /* DetailView.swift */; };
-		E2F773F0286C4583008EE525 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F773EF286C4583008EE525 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		E200335E286A97B100459F4B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E2003362286AB61F00459F4B /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		E2967AE7286401B800168F83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		E2F773EF286C4583008EE525 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 				5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */,
 				5AFC8A1928654A1800A2BFD7 /* BlurView.swift */,
 				5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */,
-				E2F773EF286C4583008EE525 /* Test.swift */,
 				9C407149286C17900033CE54 /* AchievementView.swift */,
 			);
 			path = View;
@@ -215,7 +212,6 @@
 			files = (
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
 				9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */,
-				E2F773F0286C4583008EE525 /* Test.swift in Sources */,
 				9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */,
 				5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,

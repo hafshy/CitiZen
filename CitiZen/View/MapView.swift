@@ -122,10 +122,6 @@ struct MapView: View {
                     DetailView(offset: $offset, lastOffset: $lastOffset, item: detailViewModel.items.data[currentDetailId-1])
                 }, offset: $offset, lastOffset: $lastOffset)
                 
-                BottomSheetView(isOpen: $isOpen, maxHeight: UIScreen.main.bounds.height / 1.25) {
-                    DetailView(offset: $offset, item: detailViewModel.items.data[currentDetailId-1])
-                }
-                
                 if offset < 0 {
                     ZStack {
                         VStack {
