@@ -75,48 +75,53 @@ struct MapView: View {
                 }
                 
                 // MARK: City and Progress
-                VStack(spacing: 4) {
-                    HStack {
-                        Text("Surabaya")
-                            .font(.largeTitle)
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(alignment: .topLeading)
-                        Spacer()
-                    }
-                    // TODO: Add Progress Here @Ken
-                    HStack {
-                        Text("\(savedLocationViewModel.savedLocations.count / Constants.Defaults.totalLandmark)%")
-                            .font(.caption2)
-                        RoundedRectangle(cornerRadius: 2.5)
-                            .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
-                            .foregroundColor(.red)
-                            .overlay(alignment: .leading) {
-                                RoundedRectangle(cornerRadius: 2.5)
-                                    .stroke(lineWidth: 1)
-                                    .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
-                                    .foregroundColor(.gray)
+                VStack {
+                    HStack(alignment: .top) {
+                        VStack(spacing: 4) {
+                            HStack {
+                                Text("Surabaya")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                    .frame(alignment: .topLeading)
+                                Spacer()
                             }
-                        Spacer()
+                            // TODO: Add Progress Here @Ken
+                            HStack {
+                                Text("\(savedLocationViewModel.savedLocations.count / Constants.Defaults.totalLandmark)%")
+                                    .font(.caption2)
+                                RoundedRectangle(cornerRadius: 2.5)
+                                    .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
+                                    .foregroundColor(.red)
+                                    .overlay(alignment: .leading) {
+                                        RoundedRectangle(cornerRadius: 2.5)
+                                            .stroke(lineWidth: 1)
+                                            .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
+                                            .foregroundColor(.gray)
+                                    }
+                                Spacer()
+                            }
+                        }
+                        NavigationLink(destination: AchievementView()) {
+                            Image("trophy")
+                                .renderingMode(.template)
+                                .resizable()
+                                .scaledToFill()
+                                .foregroundColor(.yellow)
+                                .frame(width: UIScreen.main.bounds.width / 7.3, height: UIScreen.main.bounds.width / 7.3)
+                                .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+                                .background(.black)
+                                .cornerRadius(8)
+                                .overlay(RoundedRectangle(cornerRadius: 8)
+                                    .stroke(lineWidth: 4)
+                                    .foregroundColor(.black))
+                        }
+                        
                     }
                     Spacer()
-                    
-                    NavigationLink(destination: AchievementView()) {
-                        Image("trophy")
-                            .renderingMode(.template)
-                            .resizable()
-                            .scaledToFill()
-                            .foregroundColor(.black)
-                            .frame(width: UIScreen.main.bounds.width / 10, height: UIScreen.main.bounds.width / 10)
-                            .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
-                            .background(Color(.systemGray3))
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 4)
-                                .foregroundColor(.gray))
-                    }
                 }
                 .padding()
+                .padding(.horizontal)
                 
                 CustomBottomSheet(content: {
                     DetailView(offset: $offset, lastOffset: $lastOffset, item: detailViewModel.items.data[currentDetailId-1])
