@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var offset: CGFloat
+    @Binding var lastOffset: CGFloat
     var item : Datum
     
     var body: some View {
@@ -22,7 +23,10 @@ struct DetailView: View {
                     Spacer()
                     
                     Button {
-                        offset = 0
+                        withAnimation {
+                            offset = 0
+                            lastOffset = 0
+                        }
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .resizable()
@@ -35,19 +39,20 @@ struct DetailView: View {
                 Text("CLOSE")
                     .foregroundColor(.red)
                 
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
-                        ForEach(0 ..< 3) { item in
-                            Image(systemName: "square")
+                        ForEach(item.photo, id: \.self) { num in
+                            Image("\(num)")
                                 .resizable()
-                                .scaledToFit()
+                                .scaledToFill()
                                 .frame(width: 120, height: 120)
+                                .clipped()
                         }
                     }
                 }
                 VStack(alignment: .leading, spacing: 15) {
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Address")
+                        Text("Alamat")
                             .font(.headline)
                         
                         Text(item.adress)
@@ -105,7 +110,7 @@ struct DetailView: View {
                         
                     } else {
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("Price")
+                            Text("Harga")
                                 .font(.headline)
                             
                             Text(item.tourPrice ?? "")
@@ -113,12 +118,17 @@ struct DetailView: View {
                         }
                     }
                     
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("Website")
-                            .font(.headline)
+                    if item.cerita == nil {
                         
-//                        Text(item.)
-//                            .font(.caption)
+                    } else {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Cerita")
+                                .font(.headline)
+                            
+                            Text(item.cerita ?? "")
+                                .font(.caption)
+                        }
+                        .padding(.bottom, UIScreen.main.bounds.height / 2.5)
                     }
                 }
             }

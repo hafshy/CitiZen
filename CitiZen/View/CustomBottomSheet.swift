@@ -76,8 +76,8 @@ struct CustomBottomSheet<Content: View>: View {
                         lastOffset = offset
                     }))
                     .onAppear {
-                        offset = -((height - 100) / 2)
-                        lastOffset = -((height - 100) / 2)
+                        offset = 0
+                        lastOffset = 0
                     }
             )
         }

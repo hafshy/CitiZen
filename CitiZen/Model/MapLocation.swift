@@ -9,7 +9,7 @@ import CoreLocation
 import MapKit
 
 struct MapLocation: Identifiable {
-    var id = UUID()
+    var id: Int
     var name: String
     var status: String
     var latitude: Double
@@ -17,8 +17,10 @@ struct MapLocation: Identifiable {
     var coordinate: CLLocationCoordinate2D
     var region:CLCircularRegion
     var icon:String
+    var category: String
     
-    init(name:String, status:String, latitude:Double, longitude:Double, icon:String) {
+    init(id:Int, name:String, status:String, latitude:Double, longitude:Double, icon:String, category:String) {
+        self.id = id
         self.name = name
         self.status = status
         self.latitude = latitude
@@ -29,5 +31,6 @@ struct MapLocation: Identifiable {
             radius: 10,
             identifier: UUID().uuidString)
         self.icon = icon
+        self.category = category
     }
 }
