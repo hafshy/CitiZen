@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var offset: CGFloat
+    @Binding var lastOffset: CGFloat
     var item : Datum
     
     var body: some View {
@@ -22,7 +23,10 @@ struct DetailView: View {
                     Spacer()
                     
                     Button {
-                        offset = 0
+                        withAnimation {
+                            offset = 0
+                            lastOffset = 0
+                        }
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .resizable()
@@ -48,7 +52,7 @@ struct DetailView: View {
                 }
                 VStack(alignment: .leading, spacing: 15) {
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Address")
+                        Text("Alamat")
                             .font(.headline)
                         
                         Text(item.adress)
@@ -106,12 +110,25 @@ struct DetailView: View {
                         
                     } else {
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("Price")
+                            Text("Harga")
                                 .font(.headline)
                             
                             Text(item.tourPrice ?? "")
                                 .font(.caption)
                         }
+                    }
+                    
+                    if item.cerita == nil {
+                        
+                    } else {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Cerita")
+                                .font(.headline)
+                            
+                            Text(item.cerita ?? "")
+                                .font(.caption)
+                        }
+                        .padding(.bottom, UIScreen.main.bounds.height / 2.5)
                     }
                 }
             }

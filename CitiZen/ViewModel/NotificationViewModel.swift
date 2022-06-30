@@ -97,9 +97,7 @@ class NotificationManager:NSObject, ObservableObject{
             guard
                 let circularRegion = location.region as? CLCircularRegion
             else { continue }
-            
             locationManager.stopMonitoring(for: circularRegion)
-            
         }
         
     }
@@ -110,6 +108,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didEnterRegion region: CLRegion
     ) {
+        print("Enter")
         if region is CLCircularRegion {
             handleEvent(for: region)
         }
@@ -119,15 +118,17 @@ extension NotificationManager: CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didExitRegion region: CLRegion
     ) {
-        if region is CLCircularRegion {
-            handleEvent(for: region)
-        }
+        print("Exit")
+//        if region is CLCircularRegion {
+//            handleEvent(for: region)
+//        }
     }
     
     func handleEvent(for region: CLRegion) {
         // Show an alert if application is active
         if UIApplication.shared.applicationState == .active {
-            print("Triggered")
+            print("aktif")
+            showPopUp = true
         }
     }
 }
