@@ -68,8 +68,8 @@ struct MapView: View {
                 .accentColor(.green)    // TODO: Change Color Scheme
                 .onAppear {
                     viewModel.checkLocationService()
-                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                     viewModel.loadAllLocation()
+                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
