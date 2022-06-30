@@ -10,16 +10,14 @@ import MapKit
 import CoreLocation
 
 struct MapView: View {
-    @State var isAlert = false
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     @StateObject private var detailViewModel = DetailViewModel()
+    @StateObject private var notificationViewModel = NotificationManager()
     
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
-    
-    let notificationViewModel = NotificationManager()
     
     var body: some View {
         ZStack {
@@ -48,8 +46,8 @@ struct MapView: View {
             .accentColor(.green)    // TODO: Change Color Scheme
             .onAppear {
                 viewModel.checkLocationService()
-                notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                 viewModel.loadAllLocation()
+                notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                 UIApplication.shared.applicationIconBadgeNumber = 0
             }
             .onTapGesture(perform: {
@@ -143,7 +141,9 @@ struct MapView: View {
                     }
                 }
             }
-            Shake(showArrivedPopUp: $isAlert)
+            if notificationViewModel.showPopUp {
+                Shake()
+            }
         }
     }
 }

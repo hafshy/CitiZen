@@ -41,10 +41,9 @@ extension View {
 struct Shake: View {
     // @State private var showingAlert = false
     @State var showPopUp = false
-    @Binding var showArrivedPopUp: Bool
+    @State var showArrivedPopUp = true
     var body: some View {
-        if $showArrivedPopUp.wrappedValue {
-            
+        if showArrivedPopUp {
             ZStack {
                 Color.white
                 VStack {
@@ -77,7 +76,7 @@ struct Shake: View {
             .cornerRadius(20).shadow(radius: 20)
         }
         
-        if $showPopUp.wrappedValue {
+        if showPopUp {
             
             ZStack {
                 Color.white
