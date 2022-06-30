@@ -119,6 +119,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         didExitRegion region: CLRegion
     ) {
         print("Exit")
+        showPopUp = false
 //        if region is CLCircularRegion {
 //            handleEvent(for: region)
 //        }

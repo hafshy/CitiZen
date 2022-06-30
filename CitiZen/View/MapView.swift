@@ -158,9 +158,8 @@ struct MapView: View {
                         }
                     }
                 }
-                if notificationViewModel.showPopUp {
-                    Shake()
-                }
+                
+                Shake(showArrivedPopUp: $notificationViewModel.showPopUp)
             }
             .navigationBarHidden(true)
             
