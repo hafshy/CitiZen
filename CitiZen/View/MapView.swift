@@ -156,6 +156,7 @@ struct MapView: View {
                 }
             }
             .navigationBarHidden(true)
+            Shake(showArrivedPopUp: $isAlert)
         }
     }
 }
