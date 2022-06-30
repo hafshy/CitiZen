@@ -20,6 +20,7 @@ class NotificationManager:NSObject, ObservableObject{
     @State private var isNotificationalreadycreated = false
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
+    @Published var showPopUp = false
     
     func requestAuthorization(places: [MapLocation]){
         let option:UNAuthorizationOptions = [.badge,.sound,.alert]
@@ -96,9 +97,7 @@ class NotificationManager:NSObject, ObservableObject{
             guard
                 let circularRegion = location.region as? CLCircularRegion
             else { continue }
-            
             locationManager.stopMonitoring(for: circularRegion)
-            
         }
         
     }
@@ -109,6 +108,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didEnterRegion region: CLRegion
     ) {
+        print("Enter")
         if region is CLCircularRegion {
             handleEvent(for: region)
         }
@@ -118,9 +118,10 @@ extension NotificationManager: CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didExitRegion region: CLRegion
     ) {
-        if region is CLCircularRegion {
-            handleEvent(for: region)
-        }
+        print("Exit")
+//        if region is CLCircularRegion {
+//            handleEvent(for: region)
+//        }
     }
     
     func handleEvent(for region: CLRegion) {
