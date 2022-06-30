@@ -127,7 +127,8 @@ extension NotificationManager: CLLocationManagerDelegate {
     func handleEvent(for region: CLRegion) {
         // Show an alert if application is active
         if UIApplication.shared.applicationState == .active {
-            print("Triggered")
+            print("aktif")
+            showPopUp = true
         }
     }
 }

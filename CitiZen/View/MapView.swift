@@ -10,17 +10,15 @@ import MapKit
 import CoreLocation
 
 struct MapView: View {
-    @State var isAlert = false
     @StateObject private var viewModel = MapViewModel()
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     @StateObject private var detailViewModel = DetailViewModel()
+    @StateObject private var notificationViewModel = NotificationManager()
     
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
     @State var isOpen = false
-    
-    let notificationViewModel = NotificationManager()
     
     var body: some View {
         NavigationView{
@@ -160,9 +158,12 @@ struct MapView: View {
                         }
                     }
                 }
+                if notificationViewModel.showPopUp {
+                    Shake()
+                }
             }
             .navigationBarHidden(true)
-            Shake(showArrivedPopUp: $isAlert)
+            
         }
     }
 }
