@@ -18,6 +18,7 @@ struct MapView: View {
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
+    @State var isOpen = false
     
     let notificationViewModel = NotificationManager()
     
