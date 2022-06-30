@@ -158,12 +158,12 @@ struct MapView: View {
                         }
                     }
                 }
+                if notificationViewModel.showPopUp {
+                    Shake()
+                }
             }
             .navigationBarHidden(true)
-            Shake(showArrivedPopUp: $isAlert)
-            if notificationViewModel.showPopUp {
-                Shake()
-            }
+            
         }
     }
 }
