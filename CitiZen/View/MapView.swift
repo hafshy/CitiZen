@@ -86,7 +86,7 @@ struct MapView: View {
                             }
                             // TODO: Add Progress Here @Ken
                             HStack {
-                                Text("\(savedLocationViewModel.savedLocations.count / Constants.Defaults.totalLandmark)%")
+                                Text("\((savedLocationViewModel.savedLocations.count) * 100 / (Constants.Defaults.totalLandmark))%")
                                     .font(.caption2)
                                 RoundedRectangle(cornerRadius: 2.5)
                                     .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
@@ -159,7 +159,7 @@ struct MapView: View {
                     }
                 }
                 
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp)
+                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel)
             }
             .navigationBarHidden(true)
             

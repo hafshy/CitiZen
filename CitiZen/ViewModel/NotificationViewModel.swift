@@ -11,16 +11,16 @@ import UserNotifications
 import CoreLocation
 
 class NotificationManager:NSObject, ObservableObject{
+    @State private var isNotificationalreadycreated = false
+    @Published var showPopUp = false
     
     override init() {
         super.init()
         locationManager.delegate = self
     }
     
-    @State private var isNotificationalreadycreated = false
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
-    @Published var showPopUp = false
     
     func requestAuthorization(places: [MapLocation]){
         let option:UNAuthorizationOptions = [.badge,.sound,.alert]

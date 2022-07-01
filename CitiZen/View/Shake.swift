@@ -42,6 +42,7 @@ struct Shake: View {
     // @State private var showingAlert = false
     @State var showPopUp = false
     @Binding var showArrivedPopUp: Bool
+    @ObservedObject var saveViewModel: SavedLocationsViewModel
     var body: some View {
         ZStack {
             if showArrivedPopUp || showPopUp {
@@ -75,6 +76,12 @@ struct Shake: View {
                     {
                         showArrivedPopUp = false
                         showPopUp = true
+                        // CHANGE 2 to ID
+                        if !saveViewModel.savedLocations.contains(where: { item in
+                            return Int(item.locationID) == 2
+                        }) {
+                            saveViewModel.addLocation(id: 2)
+                        }
                     }
                 }
                 .frame(width: 300, height: 200)
@@ -100,8 +107,6 @@ struct Shake: View {
                             withAnimation{
                                 self.showPopUp = false
                             }
-                            
-                            
                         }, label: {
                             Text("Close")
                         })
@@ -109,23 +114,7 @@ struct Shake: View {
                 }
                 .frame(width: 300, height: 200)
                 .cornerRadius(20).shadow(radius: 20)
-                
-                
-                
             }
         }
     }
-    //  .onShake {showingAlert = true
-    //      }
-    //    .alert("Congrats Your Progress Has Been Saved", isPresented: $showingAlert) {
-    //              Button("OK", role: .cancel) { }
-    //     }
 }
-
-
-//struct Shake_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//    }
-//}
-
