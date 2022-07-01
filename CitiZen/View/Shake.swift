@@ -41,86 +41,80 @@ extension View {
 struct Shake: View {
     // @State private var showingAlert = false
     @State var showPopUp = false
-    @State var showArrivedPopUp = true
+    @Binding var showArrivedPopUp: Bool
+    @ObservedObject var saveViewModel: SavedLocationsViewModel
     var body: some View {
-        if showArrivedPopUp {
-            ZStack {
-                Color.white
-                VStack {
-                    Spacer ()
-                    Text("You are Arrived!")
-                        .font(.title2)
-                        .bold()
-                    Image(systemName: "iphone.radiowaves.left.and.right")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80)
-                    Text("Shake,Shake!")
-                        .font(.title)
-                        .bold()
-                    Text("Shake Your Phone To Save The Progress")
-                        .font(.caption2)
-                    Spacer ()
-                }.padding()
+        ZStack {
+            if showArrivedPopUp || showPopUp {
+                Color(.gray)
+                    .opacity(0.3)
+                    .ignoresSafeArea()
             }
-            .onShake {
-                withAnimation
-                {
-                    showArrivedPopUp = false
-                    showPopUp = true
-                    
+
+            if showArrivedPopUp {
+                ZStack {
+                    Color(.white)
+                    VStack {
+                        Spacer ()
+                        Text("You are Arrived!")
+                            .font(.title2)
+                            .bold()
+                        Image(systemName: "iphone.radiowaves.left.and.right")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                        Text("Shake,Shake!")
+                            .font(.title)
+                            .bold()
+                        Text("Shake Your Phone To Save The Progress")
+                            .font(.caption2)
+                        Spacer ()
+                    }.padding()
                 }
-                
-            }
-            .frame(width: 300, height: 200)
-            .cornerRadius(20).shadow(radius: 20)
-        }
-        
-        if showPopUp {
-            
-            ZStack {
-                Color.white
-                VStack {
-                    Spacer ()
-                    Image(systemName: "checkmark")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40)
-                    Text("Congrats!")
-                        .font(.title)
-                        .bold()
-                    Text("Your Progress Has Been Recorded")
-                        .font(.caption2)
-                    Spacer ()
-                    Button(action: {
-                        withAnimation{
-                            self.showPopUp = false
+                .onShake {
+                    withAnimation
+                    {
+                        showArrivedPopUp = false
+                        showPopUp = true
+                        // CHANGE 2 to ID
+                        if !saveViewModel.savedLocations.contains(where: { item in
+                            return Int(item.locationID) == 2
+                        }) {
+                            saveViewModel.addLocation(id: 2)
                         }
-                        
-                        
-                    }, label: {
-                        Text("Close")
-                    })
-                }.padding()
+                    }
+                }
+                .frame(width: 300, height: 200)
+                .cornerRadius(20).shadow(radius: 20)
             }
-            .frame(width: 300, height: 200)
-            .cornerRadius(20).shadow(radius: 20)
             
-            
-            
+            if showPopUp {
+                ZStack {
+                    Color.white
+                    VStack {
+                        Spacer ()
+                        Image(systemName: "checkmark")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40)
+                        Text("Congrats!")
+                            .font(.title)
+                            .bold()
+                        Text("Your Progress Has Been Recorded")
+                            .font(.caption2)
+                        Spacer ()
+                        Button(action: {
+                            withAnimation{
+                                self.showPopUp = false
+                            }
+                        }, label: {
+                            Text("Close")
+                        })
+                    }.padding()
+                }
+                .frame(width: 300, height: 200)
+                .cornerRadius(20).shadow(radius: 20)
+            }
         }
     }
-    //  .onShake {showingAlert = true
-    //      }
-    //    .alert("Congrats Your Progress Has Been Saved", isPresented: $showingAlert) {
-    //              Button("OK", role: .cancel) { }
-    //     }
 }
-
-
-//struct Shake_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//    }
-//}
-
