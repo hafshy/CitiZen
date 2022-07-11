@@ -78,7 +78,7 @@ struct Shake: View {
                         showPopUp = true
                         // CHANGE 2 to ID
                         if !saveViewModel.savedLocations.contains(where: { item in
-                            return Int(item.locationID) == 2
+                            Int(item.locationID) == 2
                         }) {
                             saveViewModel.addLocation(id: 2)
                         }

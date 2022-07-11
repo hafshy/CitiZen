@@ -35,7 +35,9 @@ struct MapView: View {
                                     Image("Background Pin")
                                         .resizable()
                                         .renderingMode(.template)
-                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
+                                        .foregroundColor(savedLocationViewModel.savedLocations.contains(where: { saved in
+                                            saved.locationID == location.id
+                                        }) ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
                                         
@@ -47,11 +49,17 @@ struct MapView: View {
                                 }
                                 .onTapGesture {
                                     //action here
-                                    print(location.id)
+                                    currentDetailId = location.id
                                     withAnimation(.spring()) {
-                                        currentDetailId = location.id
                                         offset = -(UIScreen.main.bounds.height - 100) / 2
                                         lastOffset = -(UIScreen.main.bounds.height - 100) / 2
+                                        viewModel.currentCoordinate = MKCoordinateRegion(
+                                            center: CLLocationCoordinate2D(
+                                                latitude: location.latitude + offset * 0.00001,
+                                                longitude: location.longitude
+                                        ),
+                                            span: Constants.Defaults.mapSpan
+                                        )
                                     }
                                 }
                                     
