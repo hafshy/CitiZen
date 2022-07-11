@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A0287C58A500EA1977 /* ChatView.swift */; };
+		5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */; };
 		5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */; };
 		5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE286180DA00A2BFD7 /* MapView.swift */; };
 		5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A26B1A0287C58A500EA1977 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		5AFC89F9286180DA00A2BFD7 /* CitiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiZenApp.swift; sourceTree = "<group>"; };
 		5AFC89FE286180DA00A2BFD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				5AFC8A1B28654A3900A2BFD7 /* CustomEdge.swift */,
 				9C407149286C17900033CE54 /* AchievementView.swift */,
 				A5D45EFE2862ABED001FFEDD /* Shake.swift */,
+				5A26B1A0287C58A500EA1977 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */,
 				E200335E286A97B100459F4B /* DetailViewModel.swift */,
 				9CE958C628641CD9008D848C /* NotificationViewModel.swift */,
+				5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,9 +231,11 @@
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
 				E200335D286A96C200459F4B /* Landmarks.swift in Sources */,
 				E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */,
+				5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */,
 				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */,
 				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
