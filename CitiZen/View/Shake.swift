@@ -42,16 +42,21 @@ struct Shake: View {
     // @State private var showingAlert = false
     @State var showPopUp = false
     @Binding var showArrivedPopUp: Bool
+    @Binding var currenLocationId: Int
     @ObservedObject var saveViewModel: SavedLocationsViewModel
     var body: some View {
         ZStack {
-            if showArrivedPopUp || showPopUp {
+            if showPopUp || (showArrivedPopUp && !saveViewModel.savedLocations.contains(where: { item in
+                Int(item.locationID) == currenLocationId && currenLocationId != -1
+            })) {
                 Color(.gray)
                     .opacity(0.3)
                     .ignoresSafeArea()
             }
 
-            if showArrivedPopUp {
+            if showArrivedPopUp && !saveViewModel.savedLocations.contains(where: { item in
+                Int(item.locationID) == currenLocationId && currenLocationId != -1
+            }) {
                 ZStack {
                     Color(.white)
                     VStack {
@@ -78,9 +83,9 @@ struct Shake: View {
                         showPopUp = true
                         // CHANGE 2 to ID
                         if !saveViewModel.savedLocations.contains(where: { item in
-                            Int(item.locationID) == 2
+                            Int(item.locationID) == currenLocationId && currenLocationId != -1
                         }) {
-                            saveViewModel.addLocation(id: 2)
+                            saveViewModel.addLocation(id: currenLocationId)
                         }
                     }
                 }
