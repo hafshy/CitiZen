@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct AchievementView: View {
+    let columns = [GridItem(.flexible()),
+                       GridItem(.flexible())]
     var body: some View {
-        Text("Coming Soon :)")
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                            ForEach(0..<10) { item in
+                                AchievementCardView()
+                                
+                            }}
+                .padding(.horizontal)
+            }
+        
+        .navigationTitle("My Achievement")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

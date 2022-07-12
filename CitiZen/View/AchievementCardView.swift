@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AchievementCardView: View {
-    @State var rating: Int = 3
+    @State var rating: Int = 2
     
     var maxRating = 5
     
