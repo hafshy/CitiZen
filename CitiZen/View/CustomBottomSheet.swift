@@ -32,7 +32,7 @@ struct CustomBottomSheet<Content: View>: View {
                 // MARK: Bottom Sheet Container
                 ZStack {
                     // MARK: Background Blur
-                    BlurView(style: .systemMaterial)
+                    BlurView(style: .systemUltraThinMaterial)
                         .clipShape(CustomEdge(corner: [.topLeft, .topRight], radius: 32))
                     
                     // MARK: Bottom Sheet Content

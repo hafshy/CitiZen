@@ -13,6 +13,7 @@ import CoreLocation
 class NotificationManager:NSObject, ObservableObject{
     @State private var isNotificationalreadycreated = false
     @Published var showPopUp = false
+    @Published var currentLocationId = -1
     
     override init() {
         super.init()
@@ -51,7 +52,7 @@ class NotificationManager:NSObject, ObservableObject{
             let region = CLCircularRegion(
                 center: place.coordinate,
                 radius: 5,
-                identifier: UUID().uuidString)
+                identifier: String(place.id))
             region.notifyOnExit = false
             region.notifyOnEntry = true
             
@@ -71,7 +72,7 @@ class NotificationManager:NSObject, ObservableObject{
                 center: place.coordinate,
                 radius: 5,
                 identifier: String(place.id))
-            region.notifyOnExit = false
+            region.notifyOnExit = true
             region.notifyOnEntry = true
             startMonitoring(geotification: region)
         }
@@ -118,6 +119,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         didExitRegion region: CLRegion
     ) {
         print("Exit")
+        currentLocationId = -1
         showPopUp = false
     }
     
@@ -126,7 +128,8 @@ extension NotificationManager: CLLocationManagerDelegate {
         if UIApplication.shared.applicationState == .active {
             print("aktif")
             print(region.identifier)
-            //showPopUp = true
+            currentLocationId = Int(region.identifier) ?? -1
+            showPopUp = true
         }
     }
 }
