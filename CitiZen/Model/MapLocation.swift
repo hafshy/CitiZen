@@ -29,7 +29,7 @@ struct MapLocation: Identifiable {
         self.region = CLCircularRegion(
             center: self.coordinate,
             radius: 10,
-            identifier: UUID().uuidString)
+            identifier: String(id))
         self.icon = icon
         self.category = category
     }
