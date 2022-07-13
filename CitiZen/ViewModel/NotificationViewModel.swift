@@ -15,10 +15,10 @@ class NotificationManager:NSObject, ObservableObject{
     @Published var showPopUp = false
     @Published var currentLocationId = -1
     
-    override init() {
-        super.init()
-        locationManager.delegate = self
-    }
+//    override init() {
+//        super.init()
+//        locationManager.delegate = self
+//    }
     
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
