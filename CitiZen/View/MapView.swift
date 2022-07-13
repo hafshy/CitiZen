@@ -19,6 +19,7 @@ struct MapView: View {
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
     @State var isOpen = false
+    @State var isOnBoarding = LocalStorage.myUserBool
     
     var body: some View {
         NavigationView{
@@ -74,9 +75,10 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .accentColor(.green)    // TODO: Change Color Scheme
                 .onAppear {
-                    viewModel.checkLocationService()
-                    viewModel.loadAllLocation()
-                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
+                    isOnBoarding.toggle()
+//                    viewModel.checkLocationService()
+//                    viewModel.loadAllLocation()
+//                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
@@ -161,13 +163,15 @@ struct MapView: View {
                                 .frame(width: 360, height: 48)
                                 .background(.blue)
                                 .cornerRadius(8)
-                                .border(.gray, width: 1)
                             }
                         }
                     }
                 }
                 
                 Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel)
+            }
+            .fullScreenCover(isPresented: $isOnBoarding) {
+                OnBoardingView()
             }
             .navigationBarHidden(true)
             
