@@ -29,4 +29,20 @@ class ChatDataController: ObservableObject {
             print("Could not save the data")
         }
     }
+    
+    func sendText(landmarkId: Int, landmarkName: String, landmarkIconName: String, isUser: Bool, text: String, complete: Bool, context: NSManagedObjectContext) {
+        let message = Message(context: context)
+        message.date = Date.now
+        message.messageID = UUID()
+        message.text = text
+        message.senderType = isUser ? .send : .receive
+        message.messageType = .text
+        message.conversation = Chat(context: context)
+        message.conversation?.id = Int16(landmarkId)
+        message.conversation?.landmarkName = landmarkName
+        message.conversation?.landmarkIconName = landmarkIconName
+        message.conversation?.completedCount += complete ? 1 : 0
+        
+        save(context: context)
+    }
 }

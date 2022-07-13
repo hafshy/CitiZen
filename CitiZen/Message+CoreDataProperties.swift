@@ -17,16 +17,16 @@ public enum SenderType: Int16 {
 
 @objc
 public enum MessageType: Int16 {
-    case Photo
-    case Text
+    case photo
+    case text
 }
 
 extension Message {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Message> {
         return NSFetchRequest<Message>(entityName: "Message")
     }
-
+    
     @NSManaged public var date: Date?
     @NSManaged public var messageID: UUID?
     @NSManaged public var text: String?
@@ -34,7 +34,7 @@ extension Message {
     @NSManaged public var messageType: MessageType
     @NSManaged public var photo: Data?
     @NSManaged public var conversation: Chat?
-
+    
     public var wrappedDate: Date {
         date ?? Date.now
     }
@@ -53,5 +53,5 @@ extension Message {
 }
 
 extension Message : Identifiable {
-
+    
 }
