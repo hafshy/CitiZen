@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChatView: View {
     @StateObject private var viewModel = ChatViewModel()
+    @Environment(\.managedObjectContext) var moc
+    
     let landmarkID: Int
     
     let columns = [GridItem(.flexible(minimum: 10))]
@@ -22,10 +24,25 @@ struct ChatView: View {
                     }
                 }
                 HStack {
-                    Image(systemName: "camera.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 20)
+                    Button {
+                        viewModel.showSheet = true
+                    } label: {
+                        Image(systemName: "camera.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 20)
+                            .foregroundColor(.gray)
+                    }
+                    .confirmationDialog("Pick Image", isPresented: $viewModel.showSheet) {
+                        Button("Camera") {
+                            viewModel.showImagePicker = true
+                            viewModel.sourceType = .camera
+                        }
+                        Button("Photo Library") {
+                            viewModel.showImagePicker = true
+                            viewModel.sourceType = .photoLibrary
+                        }
+                    }
                     HStack {
                         TextField("Message", text: $viewModel.enteredMessage)
                             .padding(12)
@@ -34,6 +51,7 @@ struct ChatView: View {
                             .scaledToFit()
                             .frame(height: 20)
                             .padding(.trailing, 12)
+                            .foregroundColor(.gray)
                     }
                     .frame(height: 36)
                     .background(
@@ -47,6 +65,9 @@ struct ChatView: View {
                 .padding()
                 .background(.thinMaterial)
             }
+        }
+        .sheet(isPresented: $viewModel.showImagePicker) {
+            Text("Sheet")
         }
     }
 }

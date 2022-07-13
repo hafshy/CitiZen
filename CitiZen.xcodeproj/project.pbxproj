@@ -11,6 +11,11 @@
 		5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */; };
 		5A26B1AA287C70D400EA1977 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A9287C70D400EA1977 /* ChatModel.swift */; };
 		5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */; };
+		5A26B1C6287E648700EA1977 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1C2287E648700EA1977 /* Message+CoreDataClass.swift */; };
+		5A26B1C7287E648700EA1977 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1C3287E648700EA1977 /* Message+CoreDataProperties.swift */; };
+		5A26B1C8287E648700EA1977 /* Chat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1C4287E648700EA1977 /* Chat+CoreDataClass.swift */; };
+		5A26B1C9287E648700EA1977 /* Chat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1C5287E648700EA1977 /* Chat+CoreDataProperties.swift */; };
+		5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */; };
 		5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */; };
 		5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE286180DA00A2BFD7 /* MapView.swift */; };
 		5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */; };
@@ -38,6 +43,11 @@
 		5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		5A26B1A9287C70D400EA1977 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		5A26B1B0287C723800EA1977 /* ChatDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5A26B1C2287E648700EA1977 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5A26B1C3287E648700EA1977 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5A26B1C4287E648700EA1977 /* Chat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chat+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5A26B1C5287E648700EA1977 /* Chat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chat+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataController.swift; sourceTree = "<group>"; };
 		5AFC89F9286180DA00A2BFD7 /* CitiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiZenApp.swift; sourceTree = "<group>"; };
 		5AFC89FE286180DA00A2BFD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -76,8 +86,13 @@
 		5A26B1AE287C721B00EA1977 /* ChatModel */ = {
 			isa = PBXGroup;
 			children = (
+				5A26B1C2287E648700EA1977 /* Message+CoreDataClass.swift */,
+				5A26B1C3287E648700EA1977 /* Message+CoreDataProperties.swift */,
+				5A26B1C4287E648700EA1977 /* Chat+CoreDataClass.swift */,
+				5A26B1C5287E648700EA1977 /* Chat+CoreDataProperties.swift */,
 				5A26B1A9287C70D400EA1977 /* ChatModel.swift */,
 				5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */,
+				5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */,
 			);
 			path = ChatModel;
 			sourceTree = "<group>";
@@ -245,17 +260,22 @@
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
 				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
+				5A26B1C6287E648700EA1977 /* Message+CoreDataClass.swift in Sources */,
 				9C40714A286C17900033CE54 /* AchievementView.swift in Sources */,
+				5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
 				E200335D286A96C200459F4B /* Landmarks.swift in Sources */,
 				E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */,
 				5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */,
+				5A26B1C8287E648700EA1977 /* Chat+CoreDataClass.swift in Sources */,
 				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
 				5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */,
 				5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */,
 				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
+				5A26B1C9287E648700EA1977 /* Chat+CoreDataProperties.swift in Sources */,
+				5A26B1C7287E648700EA1977 /* Message+CoreDataProperties.swift in Sources */,
 				5A26B1AA287C70D400EA1977 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

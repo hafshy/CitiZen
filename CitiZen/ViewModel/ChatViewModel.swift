@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class ChatViewModel: ObservableObject {
     @Published var enteredMessage = ""
+    @Published var showSheet = false
+    @Published var showImagePicker = false
+    @Published var sourceType: UIImagePickerController.SourceType = .camera
 }
