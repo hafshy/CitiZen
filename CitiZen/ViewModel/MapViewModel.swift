@@ -11,6 +11,11 @@ import MapKit
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
+    override init() {
+        super.init()
+        locationManager?.delegate = self
+    }
+    
     @Published var allLocations:[MapLocation] = []
     
     @Published var currentCoordinate = MKCoordinateRegion(
