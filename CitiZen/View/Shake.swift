@@ -50,71 +50,96 @@ struct Shake: View {
                     .opacity(0.3)
                     .ignoresSafeArea()
             }
-
-            if showArrivedPopUp {
-                ZStack {
-                    Color(.white)
-                    VStack {
-                        Spacer ()
-                        Text("You are Arrived!")
-                            .font(.title2)
-                            .bold()
-                        Image(systemName: "iphone.radiowaves.left.and.right")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80)
-                        Text("Shake,Shake!")
-                            .font(.title)
-                            .bold()
-                        Text("Shake Your Phone To Save The Progress")
-                            .font(.caption2)
-                        Spacer ()
-                    }.padding()
-                }
-                .onShake {
-                    withAnimation
-                    {
-                        showArrivedPopUp = false
-                        showPopUp = true
-                        // CHANGE 2 to ID
-                        if !saveViewModel.savedLocations.contains(where: { item in
-                            return Int(item.locationID) == 2
-                        }) {
-                            saveViewModel.addLocation(id: 2)
-                        }
-                    }
-                }
-                .frame(width: 300, height: 200)
-                .cornerRadius(20).shadow(radius: 20)
-            }
             
-            if showPopUp {
-                ZStack {
-                    Color.white
-                    VStack {
-                        Spacer ()
-                        Image(systemName: "checkmark")
+                if showArrivedPopUp {
+                    ZStack {
+                        Color.yellow
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 130, height: 130)
+                        VStack {
+                            Spacer ()
+                            Text("You are Arrived!")
+                                .font(.title2)
+                                .bold()
+                            Spacer ()
+                            Spacer ()
+                            Image("ShakeImage")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 90)
+                            Spacer ()
+                            Spacer ()
+                            Text("Shake,Shake!")
+                                .font(.title)
+                                .bold()
+                            Text("Shake Your Phone To Save The Progress")
+                                .font(.caption2)
+                                .foregroundColor(.white)
+                            Spacer ()
+                        }.padding()
+                    }
+                    .onShake {
+                        withAnimation
+                        {
+                            showArrivedPopUp = false
+                            showPopUp = true
+                            
+                        }
+                        
+                    }
+                    .frame(width: 300, height: 300)
+                    .cornerRadius(20).shadow(radius: 20)
+                }
+                
+                if showPopUp {
+                    
+                    ZStack {
+                        Color.yellow
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 130, height: 130)
+                        Image("HotelMajapahit")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 40)
-                        Text("Congrats!")
-                            .font(.title)
-                            .bold()
-                        Text("Your Progress Has Been Recorded")
-                            .font(.caption2)
-                        Spacer ()
-                        Button(action: {
-                            withAnimation{
-                                self.showPopUp = false
-                            }
-                        }, label: {
-                            Text("Close")
-                        })
-                    }.padding()
+                            .frame(width: 115)
+                        VStack {
+                            Spacer()
+                            Text("Selamat Datang Di Hotel Majapahit!")
+                                .font(.subheadline)
+                                .bold()
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Text("Ayo Abadikan Momen Unik Di Sini")
+                                .font(.caption2)
+                                .bold()
+                            Button(action: {
+                                withAnimation{
+                                    self.showPopUp = false
+                                }
+                                
+                                
+                            }, label: {
+                                Text("BERIKUTNYA")
+                                    .padding(.horizontal,50)
+                                    .padding(.vertical,10)
+                                    .background(.black)
+                                    .foregroundColor(.yellow)
+                                    .font(.caption)
+                                    .cornerRadius(10) .shadow(radius: 20)
+                                
+                            })
+                        }.padding()
+                    }
+                    .frame(width: 300, height: 300)
+                    .cornerRadius(20).shadow(radius: 20)
+                    
+                    
+                    
                 }
-                .frame(width: 300, height: 200)
-                .cornerRadius(20).shadow(radius: 20)
             }
-        }
-    }
+}
 }
