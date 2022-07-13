@@ -138,7 +138,7 @@ struct MapView: View {
                         
                         VStack {
                             Spacer()
-                            
+    
                             Button {
                                 detailViewModel.openMap(latitude: detailViewModel.items.data[currentDetailId-1].latitude, longitude: detailViewModel.items.data[currentDetailId-1].longitude)
                             } label: {

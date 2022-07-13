@@ -71,7 +71,7 @@ class NotificationManager:NSObject, ObservableObject{
                 center: place.coordinate,
                 radius: 5,
                 identifier: String(place.id))
-            region.notifyOnExit = false
+            region.notifyOnExit = true
             region.notifyOnEntry = true
             startMonitoring(geotification: region)
         }
