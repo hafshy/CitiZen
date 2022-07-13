@@ -26,6 +26,7 @@ struct OnBoardingView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     @StateObject private var notificationViewModel = NotificationManager()
+    @EnvironmentObject var viewModel: AuthtenticationVM
     
     @Environment(\.presentationMode) var mode
     
@@ -78,11 +79,11 @@ struct OnBoardingView: View {
                     if self.currentStep < onBoardingSteps.count - 1 {
                         self.currentStep += 1
                     } else {
-                        mode.wrappedValue.dismiss()
-                        LocalStorage.myUserBool = true
                         mapViewModel.checkLocationService()
                         mapViewModel.loadAllLocation()
                         notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
+                        viewModel.userSession = true
+                        LocalStorage.myUserBool = true
                     }
                 }
             } label: {

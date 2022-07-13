@@ -26,6 +26,8 @@
 		E200335D286A96C200459F4B /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335C286A96C200459F4B /* Landmarks.swift */; };
 		E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335E286A97B100459F4B /* DetailViewModel.swift */; };
 		E2003363286AB61F00459F4B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E2003362286AB61F00459F4B /* data.json */; };
+		E253EE1B287E84910098999A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253EE1A287E84910098999A /* ContentViewModel.swift */; };
+		E253EE1D287E84CB0098999A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253EE1C287E84CB0098999A /* ContentView.swift */; };
 		E2967AE8286401B800168F83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AE7286401B800168F83 /* DetailView.swift */; };
 		E2E9BC84287D11C80098E15D /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9BC83287D11C80098E15D /* OnBoardingView.swift */; };
 		E2E9BC87287D11DD0098E15D /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9BC86287D11DD0098E15D /* OnBoardingViewModel.swift */; };
@@ -53,6 +55,8 @@
 		E200335C286A96C200459F4B /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
 		E200335E286A97B100459F4B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E2003362286AB61F00459F4B /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		E253EE1A287E84910098999A /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E253EE1C287E84CB0098999A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E2967AE7286401B800168F83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E2E9BC83287D11C80098E15D /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		E2E9BC86287D11DD0098E15D /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		5AFC8A0A2861F53E00A2BFD7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E253EE1C287E84CB0098999A /* ContentView.swift */,
 				5AFC89FE286180DA00A2BFD7 /* MapView.swift */,
 				E2967AE7286401B800168F83 /* DetailView.swift */,
 				5AFC8A17286549AC00A2BFD7 /* CustomBottomSheet.swift */,
@@ -132,6 +137,7 @@
 				E200335E286A97B100459F4B /* DetailViewModel.swift */,
 				9CE958C628641CD9008D848C /* NotificationViewModel.swift */,
 				E2E9BC86287D11DD0098E15D /* OnBoardingViewModel.swift */,
+				E253EE1A287E84910098999A /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			files = (
 				9C73E23A287187080040C71B /* AchievementCardView.swift in Sources */,
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
+				E253EE1D287E84CB0098999A /* ContentView.swift in Sources */,
 				9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */,
 				E2E9BC84287D11C80098E15D /* OnBoardingView.swift in Sources */,
 				9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */,
@@ -239,6 +246,7 @@
 				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				E253EE1B287E84910098999A /* ContentViewModel.swift in Sources */,
 				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 				E2E9BC87287D11DD0098E15D /* OnBoardingViewModel.swift in Sources */,
 			);
