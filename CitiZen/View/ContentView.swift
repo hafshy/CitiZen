@@ -11,7 +11,6 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthtenticationVM
     
     var body: some View {
-        NavigationView {
             Group {
                 // if not logged in show login
                 if viewModel.userSession == false {
@@ -21,7 +20,6 @@ struct ContentView: View {
                     MapView()
                 }
             }
-        }
     }
 }
 

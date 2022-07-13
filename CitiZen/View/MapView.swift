@@ -75,7 +75,7 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .accentColor(.green)    // TODO: Change Color Scheme
                 .onAppear {
-                    isOnBoarding.toggle()
+//                    isOnBoarding.toggle()
 //                    viewModel.checkLocationService()
 //                    viewModel.loadAllLocation()
 //                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
