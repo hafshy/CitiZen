@@ -159,7 +159,7 @@ struct MapView: View {
                     }
                 }
 
-//                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel)
+                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel, Location: $Location)
 
             }
             .navigationBarHidden(true)

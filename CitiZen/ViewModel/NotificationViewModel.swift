@@ -13,6 +13,7 @@ import CoreLocation
 class NotificationManager:NSObject, ObservableObject{
     @State private var isNotificationalreadycreated = false
     @Published var showPopUp = false
+    @Published var currentLocationId = -1
     
     override init() {
         super.init()
@@ -51,7 +52,7 @@ class NotificationManager:NSObject, ObservableObject{
             let region = CLCircularRegion(
                 center: place.coordinate,
                 radius: 5,
-                identifier: UUID().uuidString)
+                identifier: String(place.id))
             region.notifyOnExit = false
             region.notifyOnEntry = true
             
@@ -65,7 +66,6 @@ class NotificationManager:NSObject, ObservableObject{
         }
     }
     
-
 //    func monitoring(places:[MapLocation]){
 //        for place in places {
 //            let region = CLCircularRegion(
@@ -101,7 +101,6 @@ class NotificationManager:NSObject, ObservableObject{
 //        }
 //
 //    }
-
 }
 
 //extension NotificationManager: CLLocationManagerDelegate {
