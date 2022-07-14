@@ -123,18 +123,20 @@ struct ChatView: View {
                             Image(systemName: "xmark")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: 20)
+                                .frame(height: 12)
                                 .padding(.leading, 12)
                                 .foregroundColor(.gray)
                                 .onTapGesture {
-                                    viewModel.tempImage = nil
-                                    viewModel.enteredMessage = ""
+                                    withAnimation {
+                                        viewModel.tempImage = nil
+                                        viewModel.enteredMessage = ""
+                                    }
                                 }
                             Image(uiImage: viewModel.tempImage ?? UIImage(named: "trophy")!)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, alignment: .leading)
-                                .padding()
+                                .padding(8)
                             Spacer()
                         }
                         Image(systemName: "paperplane.fill")
@@ -147,7 +149,7 @@ struct ChatView: View {
                                 if !viewModel.enteredMessage.isEmpty && viewModel.tempImage == nil {
                                     withAnimation {
                                         ChatDataController()
-                                            .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
+                                            .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: true, text: viewModel.enteredMessage, complete: true, context: moc)
                                         viewModel.enteredMessage = ""
                                         value.scrollTo(bottomID)
                                     }
@@ -177,13 +179,6 @@ struct ChatView: View {
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $viewModel.showImagePicker) {
                 ImagePicker(image: $viewModel.tempImage, isShown: $viewModel.showImagePicker, sourceType: viewModel.sourceType)
-                    .onDisappear {
-                        if viewModel.tempImage != nil {
-                            
-                        } else {
-                            print("NO")
-                        }
-                    }
             }
         }
     }
