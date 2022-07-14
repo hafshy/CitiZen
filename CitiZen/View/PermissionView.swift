@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct PermissionView: View {
+    
+    @StateObject var mapViewModel: MapViewModel
+    @StateObject var notificationViewModel: NotificationManager
+    @EnvironmentObject var viewModel: AuthtenticationVM
+    
     var body: some View {
         VStack{
             Spacer().frame(height: 50)
@@ -33,6 +38,10 @@ struct PermissionView: View {
             Spacer()
             Button {
                 print(123)
+                mapViewModel.checkLocationService()
+                notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
+                viewModel.userSession = true
+                LocalStorage.myUserBool = true
             } label: {
                 Text("ASD")
             }
@@ -41,8 +50,8 @@ struct PermissionView: View {
     }
 }
 
-struct PermissionView_Previews: PreviewProvider {
-    static var previews: some View {
-        PermissionView()
-    }
-}
+//struct PermissionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PermissionView(mapViewModel: <#MapViewModel#>, notificationViewModel: <#NotificationManager#>)
+//    }
+//}
