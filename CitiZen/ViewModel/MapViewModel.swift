@@ -135,7 +135,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         didExitRegion region: CLRegion
     ) {
         print("Exit")
-        currentLocationId = -1
+//        currentLocationId = -1
         showPopUp = false
     }
 
@@ -144,7 +144,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         if UIApplication.shared.applicationState == .active {
             print("aktif")
             print(region.identifier)
-            currentLocationId = Int(region.identifier) ?? -1
+//            currentLocationId = Int(region.identifier) ?? -1
             showPopUp = true
         }
     }
