@@ -13,4 +13,5 @@ class ChatViewModel: ObservableObject {
     @Published var showSheet = false
     @Published var showImagePicker = false
     @Published var sourceType: UIImagePickerController.SourceType = .camera
+    @Published var tempImage: UIImage?
 }

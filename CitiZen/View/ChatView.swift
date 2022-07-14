@@ -41,6 +41,15 @@ struct ChatView: View {
                 //                .background(.blue)
             } else {
                 // Photo
+                ZStack {
+                    Image(uiImage: UIImage(data: message.photo!)!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, alignment: .center)
+                        .cornerRadius(16)
+                }
+                .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
+                .padding(.vertical, 8)
             }
             
             if message.senderType == .receive {
@@ -96,19 +105,38 @@ struct ChatView: View {
                         }
                     }
                     HStack {
-                        TextField("Message", text: $viewModel.enteredMessage)
-                            .focused($isInputActive)
-                            .onSubmit {
-                                if !viewModel.enteredMessage.isEmpty {
-                                    withAnimation {
-                                        ChatDataController()
-                                            .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
-                                        viewModel.enteredMessage = ""
-                                        value.scrollTo(bottomID)
+                        if (viewModel.tempImage == nil) {
+                            TextField("Message", text: $viewModel.enteredMessage)
+                                .focused($isInputActive)
+                                .onSubmit {
+                                    if !viewModel.enteredMessage.isEmpty {
+                                        withAnimation {
+                                            ChatDataController()
+                                                .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
+                                            viewModel.enteredMessage = ""
+                                            value.scrollTo(bottomID)
+                                        }
                                     }
                                 }
-                            }
-                            .padding(12)
+                                .padding(12)
+                        } else {
+                            Image(systemName: "xmark")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 20)
+                                .padding(.leading, 12)
+                                .foregroundColor(.gray)
+                                .onTapGesture {
+                                    viewModel.tempImage = nil
+                                    viewModel.enteredMessage = ""
+                                }
+                            Image(uiImage: viewModel.tempImage ?? UIImage(named: "trophy")!)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, alignment: .leading)
+                                .padding()
+                            Spacer()
+                        }
                         Image(systemName: "paperplane.fill")
                             .resizable()
                             .scaledToFit()
@@ -116,7 +144,7 @@ struct ChatView: View {
                             .padding(.trailing, 12)
                             .foregroundColor(.gray)
                             .onTapGesture {
-                                if !viewModel.enteredMessage.isEmpty {
+                                if !viewModel.enteredMessage.isEmpty && viewModel.tempImage == nil {
                                     withAnimation {
                                         ChatDataController()
                                             .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
@@ -124,9 +152,17 @@ struct ChatView: View {
                                         value.scrollTo(bottomID)
                                     }
                                 }
+                                if (viewModel.tempImage != nil) {
+                                    withAnimation {
+                                        ChatDataController()
+                                            .sendPhoto(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", photo: viewModel.tempImage!, complete: false, context: moc)
+                                        viewModel.tempImage = nil
+                                        value.scrollTo(bottomID)
+                                    }
+                                }
                             }
                     }
-                    .frame(height: 36)
+//                    .frame(height: 36)
                     .background(
                         Color(.white)
                             .clipShape(
@@ -140,7 +176,14 @@ struct ChatView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $viewModel.showImagePicker) {
-                Text("Sheet")
+                ImagePicker(image: $viewModel.tempImage, isShown: $viewModel.showImagePicker, sourceType: viewModel.sourceType)
+                    .onDisappear {
+                        if viewModel.tempImage != nil {
+                            
+                        } else {
+                            print("NO")
+                        }
+                    }
             }
         }
     }
