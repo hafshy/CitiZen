@@ -72,10 +72,9 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .accentColor(.green)    // TODO: Change Color Scheme
                 .onAppear {
-//                    isOnBoarding.toggle()
-                    viewModel.loadAllLocation()
                     viewModel.checkLocationService()
                     notificationViewModel.requestAuthorization(places: viewModel.allLocations)
+                    viewModel.loadAllLocation()
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
