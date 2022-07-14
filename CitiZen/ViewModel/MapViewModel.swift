@@ -13,7 +13,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     override init() {
         super.init()
-        locationManager?.delegate = self
+        locationManager2.delegate = self
     }
     
     @Published var allLocations:[MapLocation] = []
@@ -24,6 +24,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     )
     
     var locationManager: CLLocationManager?
+    let locationManager2 = CLLocationManager()
     
     func checkLocationService() {
         if CLLocationManager.locationServicesEnabled() {
@@ -103,7 +104,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         // 2
         let fenceRegion = geotification
         // 3
-        locationManager?.startMonitoring(for: fenceRegion)
+        locationManager2.startMonitoring(for: fenceRegion)
     }
     
     func stopMonitoring(geotification: [MapLocation]) {
@@ -111,7 +112,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             guard
                 let circularRegion = location.region as? CLCircularRegion
             else { continue }
-            locationManager?.stopMonitoring(for: circularRegion)
+            locationManager2.stopMonitoring(for: circularRegion)
         }
         
     }

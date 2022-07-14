@@ -11,8 +11,9 @@ import SwiftUI
 struct CitiZenApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(AuthtenticationVM.shared)
+//            ContentView()
+//                .environmentObject(AuthtenticationVM.shared)
+            MapView()
         }
     }
 }

@@ -79,8 +79,6 @@ struct OnBoardingView: View {
                     if self.currentStep < onBoardingSteps.count - 1 {
                         self.currentStep += 1
                     } else {
-                        mapViewModel.loadAllLocation()
-                        mapViewModel.checkLocationService()
                         notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
                         viewModel.userSession = true
                         LocalStorage.myUserBool = true
