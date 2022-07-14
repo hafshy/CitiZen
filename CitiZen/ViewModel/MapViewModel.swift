@@ -13,7 +13,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     override init() {
         super.init()
-        locationManager2.delegate = self
+        locationManagerMonitoring.delegate = self
     }
     
     @Published var allLocations:[MapLocation] = []
@@ -24,7 +24,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     )
     
     var locationManager: CLLocationManager?
-    let locationManager2 = CLLocationManager()
+    
+    let locationManagerMonitoring = CLLocationManager()
     
     func checkLocationService() {
         if CLLocationManager.locationServicesEnabled() {
@@ -92,7 +93,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             startMonitoring(geotification: region)
         }
     }
-    
+
     func startMonitoring(geotification: CLRegion) {
         // 1
         if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
@@ -104,17 +105,17 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         // 2
         let fenceRegion = geotification
         // 3
-        locationManager2.startMonitoring(for: fenceRegion)
+        locationManagerMonitoring.startMonitoring(for: fenceRegion)
     }
-    
+
     func stopMonitoring(geotification: [MapLocation]) {
         for location in geotification {
             guard
                 let circularRegion = location.region as? CLCircularRegion
             else { continue }
-            locationManager2.stopMonitoring(for: circularRegion)
+            locationManagerMonitoring.stopMonitoring(for: circularRegion)
         }
-        
+
     }
 }
 
@@ -128,7 +129,7 @@ extension NotificationManager: CLLocationManagerDelegate {
             handleEvent(for: region)
         }
     }
-    
+
     func locationManager(
         _ manager: CLLocationManager,
         didExitRegion region: CLRegion
@@ -137,7 +138,7 @@ extension NotificationManager: CLLocationManagerDelegate {
         currentLocationId = -1
         showPopUp = false
     }
-    
+
     func handleEvent(for region: CLRegion) {
         // Show an alert if application is active
         if UIApplication.shared.applicationState == .active {

@@ -22,6 +22,7 @@
 		9C40714A286C17900033CE54 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C407149286C17900033CE54 /* AchievementView.swift */; };
 		9C5CAA6F287E8AF70040BBBF /* challenge_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C5CAA6E287E8AF70040BBBF /* challenge_data.json */; };
 		9C73E23A287187080040C71B /* AchievementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73E239287187080040C71B /* AchievementCardView.swift */; };
+		9CD46B4A287FAA5F008440B4 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD46B49287FAA5F008440B4 /* PermissionView.swift */; };
 		9CDFA52C287D225C0055C745 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFA52B287D225C0055C745 /* Challenges.swift */; };
 		9CDFA530287D234A0055C745 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFA52F287D234A0055C745 /* AchievementViewModel.swift */; };
 		9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE958C628641CD9008D848C /* NotificationViewModel.swift */; };
@@ -54,6 +55,7 @@
 		9C5CAA6E287E8AF70040BBBF /* challenge_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = challenge_data.json; sourceTree = "<group>"; };
 		9C73E239287187080040C71B /* AchievementCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCardView.swift; sourceTree = "<group>"; };
 		9CCBF7E22865617000BE889D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9CD46B49287FAA5F008440B4 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		9CDFA52B287D225C0055C745 /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
 		9CDFA52F287D234A0055C745 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		9CE958C628641CD9008D848C /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				A5D45EFE2862ABED001FFEDD /* Shake.swift */,
 				9C73E239287187080040C71B /* AchievementCardView.swift */,
 				E2E9BC83287D11C80098E15D /* OnBoardingView.swift */,
+				9CD46B49287FAA5F008440B4 /* PermissionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				9C73E23A287187080040C71B /* AchievementCardView.swift in Sources */,
 				9CDFA52C287D225C0055C745 /* Challenges.swift in Sources */,
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
+				9CD46B4A287FAA5F008440B4 /* PermissionView.swift in Sources */,
 				E253EE1D287E84CB0098999A /* ContentView.swift in Sources */,
 				9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */,
 				E2E9BC84287D11C80098E15D /* OnBoardingView.swift in Sources */,

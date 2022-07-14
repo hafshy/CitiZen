@@ -15,10 +15,10 @@ class NotificationManager:NSObject, ObservableObject{
     @Published var showPopUp = false
     @Published var currentLocationId = -1
     
-//    override init() {
-//        super.init()
-//        locationManager.delegate = self
-//    }
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
     
     static let instance = NotificationManager()
     let locationManager = CLLocationManager()
@@ -113,7 +113,7 @@ class NotificationManager:NSObject, ObservableObject{
 //            handleEvent(for: region)
 //        }
 //    }
-//    
+//
 //    func locationManager(
 //        _ manager: CLLocationManager,
 //        didExitRegion region: CLRegion
@@ -122,7 +122,7 @@ class NotificationManager:NSObject, ObservableObject{
 //        currentLocationId = -1
 //        showPopUp = false
 //    }
-//    
+//
 //    func handleEvent(for region: CLRegion) {
 //        // Show an alert if application is active
 //        if UIApplication.shared.applicationState == .active {
@@ -133,4 +133,4 @@ class NotificationManager:NSObject, ObservableObject{
 //        }
 //    }
 //}
-
+//
