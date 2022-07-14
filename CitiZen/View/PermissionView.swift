@@ -38,6 +38,7 @@ struct PermissionView: View {
             Spacer()
             Button {
                 print(123)
+                mapViewModel.loadAllLocation()
                 mapViewModel.checkLocationService()
                 notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
                 viewModel.userSession = true
