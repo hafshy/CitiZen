@@ -25,6 +25,7 @@
 		9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE958C628641CD9008D848C /* NotificationViewModel.swift */; };
 		A52582B5287FCE0300A79C35 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52582B4287FCE0300A79C35 /* Challenges.swift */; };
 		A52582B7287FCE1A00A79C35 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52582B6287FCE1A00A79C35 /* AchievementViewModel.swift */; };
+		A52582B8287FCEDF00A79C35 /* AchievementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73E239287187080040C71B /* AchievementCardView.swift */; };
 		A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D45EFE2862ABED001FFEDD /* Shake.swift */; };
 		E200335D286A96C200459F4B /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335C286A96C200459F4B /* Landmarks.swift */; };
 		E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335E286A97B100459F4B /* DetailViewModel.swift */; };
@@ -240,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52582B8287FCEDF00A79C35 /* AchievementCardView.swift in Sources */,
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
 				A52582B5287FCE0300A79C35 /* Challenges.swift in Sources */,
 				9CD46B4A287FAA5F008440B4 /* PermissionView.swift in Sources */,
