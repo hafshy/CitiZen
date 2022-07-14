@@ -44,6 +44,7 @@ struct Shake: View {
     @Binding var showArrivedPopUp: Bool
     @ObservedObject var saveViewModel: SavedLocationsViewModel
     @Binding var Location:MapLocation
+    
     var body: some View {
         ZStack {
             if showArrivedPopUp || showPopUp {
@@ -120,6 +121,13 @@ struct Shake: View {
                         Button(action: {
                             withAnimation{
                                 self.showPopUp = false
+                                showArrivedPopUp = false
+                                // CHANGE 2 to ID
+                                if !saveViewModel.savedLocations.contains(where: { item in
+                                    Int(item.locationID) == $Location.id && Location.id != -1
+                                }) {
+                                    saveViewModel.addLocation(id: $Location.id)
+                                }
                             }
                             
                             

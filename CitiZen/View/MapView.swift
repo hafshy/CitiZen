@@ -156,8 +156,10 @@ struct MapView: View {
                         }
                     }
                 }
-
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel, Location: $Location)
+                if notificationViewModel.currentLocationId != -1 {
+                    Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId])
+                }
+               
 
             }
             .navigationBarHidden(true)
