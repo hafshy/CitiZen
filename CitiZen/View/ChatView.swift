@@ -12,6 +12,7 @@ struct ChatView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var chats: FetchedResults<Chat>
     @Namespace var bottomID
+    @FocusState var isInputActive: Bool
     
     let landmarkID: Int
     let columns = [GridItem(.flexible(minimum: 10))]
@@ -37,7 +38,7 @@ struct ChatView: View {
                 }
                 .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
                 .padding(.vertical, 8)
-//                .background(.blue)
+                //                .background(.blue)
             } else {
                 // Photo
             }
@@ -52,9 +53,8 @@ struct ChatView: View {
     
     var body: some View {
         ScrollViewReader { value in
-        VStack {
-            
-            ScrollView {
+            VStack {
+                ScrollView {
                     if (
                         !chats.isEmpty && chats.contains(where: { chat in
                             chat.id == landmarkID
@@ -67,64 +67,81 @@ struct ChatView: View {
                                 BubbleChat(message: message)
                             }
                             EmptyView()
+                                .frame(height: 1)
                                 .id(bottomID)
                         }
                     }
-            }
-            HStack {
-                Button {
-                    viewModel.showSheet = true
-                } label: {
-                    Image(systemName: "camera.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 20)
-                        .foregroundColor(.gray)
                 }
-                .confirmationDialog("Pick Image", isPresented: $viewModel.showSheet) {
-                    Button("Camera") {
-                        viewModel.showImagePicker = true
-                        viewModel.sourceType = .camera
-                    }
-                    Button("Photo Library") {
-                        viewModel.showImagePicker = true
-                        viewModel.sourceType = .photoLibrary
-                    }
+                .onAppear {
+                    value.scrollTo(bottomID)
                 }
                 HStack {
-                    TextField("Message", text: $viewModel.enteredMessage)
-                        .padding(12)
-                    Image(systemName: "paperplane.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 20)
-                        .padding(.trailing, 12)
-                        .foregroundColor(.gray)
-                        .onTapGesture {
-                            ChatDataController()
-                                .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: "Hey", complete: true, context: moc)
-                            print(chats[0].messageArray.count)
-                            withAnimation {
-                                value.scrollTo(bottomID)
-                            }
+                    Button {
+                        viewModel.showSheet = true
+                    } label: {
+                        Image(systemName: "camera.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 20)
+                            .foregroundColor(.gray)
+                    }
+                    .confirmationDialog("Pick Image", isPresented: $viewModel.showSheet) {
+                        Button("Camera") {
+                            viewModel.showImagePicker = true
+                            viewModel.sourceType = .camera
                         }
+                        Button("Photo Library") {
+                            viewModel.showImagePicker = true
+                            viewModel.sourceType = .photoLibrary
+                        }
+                    }
+                    HStack {
+                        TextField("Message", text: $viewModel.enteredMessage)
+                            .focused($isInputActive)
+                            .onSubmit {
+                                if !viewModel.enteredMessage.isEmpty {
+                                    withAnimation {
+                                        ChatDataController()
+                                            .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
+                                        viewModel.enteredMessage = ""
+                                        value.scrollTo(bottomID)
+                                    }
+                                }
+                            }
+                            .padding(12)
+                        Image(systemName: "paperplane.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 20)
+                            .padding(.trailing, 12)
+                            .foregroundColor(.gray)
+                            .onTapGesture {
+                                if !viewModel.enteredMessage.isEmpty {
+                                    withAnimation {
+                                        ChatDataController()
+                                            .sendText(landmarkId: landmarkID, landmarkName: "Siola", landmarkIconName: "", isUser: false, text: viewModel.enteredMessage, complete: true, context: moc)
+                                        viewModel.enteredMessage = ""
+                                        value.scrollTo(bottomID)
+                                    }
+                                }
+                            }
+                    }
+                    .frame(height: 36)
+                    .background(
+                        Color(.white)
+                            .clipShape(
+                                RoundedRectangle(cornerRadius:12)
+                            )
+                    )
+                    .padding(.leading, 6)
                 }
-                .frame(height: 36)
-                .background(
-                    Color(.white)
-                        .clipShape(
-                            RoundedRectangle(cornerRadius:12)
-                        )
-                )
-                .padding(.leading, 6)
+                .padding()
+                .background(.thinMaterial)
             }
-            .padding()
-            .background(.thinMaterial)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $viewModel.showImagePicker) {
-            Text("Sheet")
-        }
+            .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $viewModel.showImagePicker) {
+                Text("Sheet")
+            }
         }
     }
 }
