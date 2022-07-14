@@ -44,6 +44,8 @@ struct Shake: View {
     @Binding var showArrivedPopUp: Bool
     @Binding var currenLocationId: Int
     @ObservedObject var saveViewModel: SavedLocationsViewModel
+    @Binding var Location:MapLocation
+    
     var body: some View {
         ZStack {
             if showPopUp || (showArrivedPopUp && !saveViewModel.savedLocations.contains(where: { item in
@@ -94,26 +96,41 @@ struct Shake: View {
             }
             
             if showPopUp {
+                
                 ZStack {
-                    Color.white
+                    Color.yellow
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 130, height: 130)
+                    Image("\(Location.icon)")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 115)
                     VStack {
-                        Spacer ()
-                        Image(systemName: "checkmark")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40)
-                        Text("Congrats!")
-                            .font(.title)
+                        Spacer()
+                        Text("Selamat Datang Di \(Location.name)!")
+                            .font(.subheadline)
                             .bold()
-                        Text("Your Progress Has Been Recorded")
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Text("Ayo Abadikan Momen Unik Di Sini")
                             .font(.caption2)
-                        Spacer ()
+                            .bold()
                         Button(action: {
                             withAnimation{
                                 self.showPopUp = false
                             }
                         }, label: {
-                            Text("Close")
+                            Text("BERIKUTNYA")
+                                .padding(.horizontal,50)
+                                .padding(.vertical,10)
+                                .background(.black)
+                                .foregroundColor(.yellow)
+                                .font(.caption)
+                                .cornerRadius(10) .shadow(radius: 20)
                         })
                     }.padding()
                 }
@@ -123,3 +140,108 @@ struct Shake: View {
         }
     }
 }
+    
+//    var body: some View {
+//        ZStack {
+//            if showArrivedPopUp || showPopUp {
+//                Color(.gray)
+//                    .opacity(0.3)
+//                    .ignoresSafeArea()
+//            }
+//
+//            if showArrivedPopUp {
+//                ZStack {
+//                    Color.yellow
+//                    Circle()
+//                        .fill(.white)
+//                        .frame(width: 130, height: 130)
+//                    VStack {
+//                        Spacer ()
+//                        Text("You are Arrived!")
+//                            .font(.title2)
+//                            .bold()
+//                        Spacer ()
+//                        Spacer ()
+//                        Image("ShakeImage")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 90)
+//                        Spacer ()
+//                        Spacer ()
+//                        Text("Shake,Shake!")
+//                            .font(.title)
+//                            .bold()
+//                        Text("Shake Your Phone To Save The Progress")
+//                            .font(.caption2)
+//                            .foregroundColor(.white)
+//                        Spacer ()
+//                    }.padding()
+//                }
+//                .onShake {
+//                    withAnimation
+//                    {
+//                        showArrivedPopUp = false
+//                        showPopUp = true
+//
+//                    }
+//
+//                }
+//                .frame(width: 300, height: 300)
+//                .cornerRadius(20).shadow(radius: 20)
+//            }
+//
+//            if showPopUp {
+//
+//                ZStack {
+//                    Color.yellow
+//                    Circle()
+//                        .fill(.white)
+//                        .frame(width: 130, height: 130)
+//                    Image("\(Location.icon)")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 115)
+//                    VStack {
+//                        Spacer()
+//                        Text("Selamat Datang Di \(Location.name)!")
+//                            .font(.subheadline)
+//                            .bold()
+//                        Spacer()
+//                        Spacer()
+//                        Spacer()
+//                        Spacer()
+//                        Spacer()
+//                        Text("Ayo Abadikan Momen Unik Di Sini")
+//                            .font(.caption2)
+//                            .bold()
+//                        Button(action: {
+//                            withAnimation{
+//                                self.showPopUp = false
+//                                showArrivedPopUp = false
+//                                // CHANGE 2 to ID
+//                                if !saveViewModel.savedLocations.contains(where: { item in
+//                                    Int(item.locationID) == $Location.id && Location.id != -1
+//                                }) {
+//                                    saveViewModel.addLocation(id: $Location.id)
+//                                }
+//                            }
+//
+//
+//                        }, label: {
+//                            Text("BERIKUTNYA")
+//                                .padding(.horizontal,50)
+//                                .padding(.vertical,10)
+//                                .background(.black)
+//                                .foregroundColor(.yellow)
+//                                .font(.caption)
+//                                .cornerRadius(10) .shadow(radius: 20)
+//
+//                        })
+//                    }.padding()
+//                }
+//                .frame(width: 300, height: 300)
+//                .cornerRadius(20).shadow(radius: 20)
+//            }
+//        }
+//    }
+//}
