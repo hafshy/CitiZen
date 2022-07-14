@@ -15,6 +15,8 @@ struct MapView: View {
     @StateObject private var detailViewModel = DetailViewModel()
     @StateObject private var notificationViewModel = NotificationManager()
     
+    @State var Location = MapLocation(id: 1, name: "Hotel Majapahit", status: "", latitude: 0, longitude: 0, icon: "HotelMajapahit", category: "")
+    
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -35,9 +37,7 @@ struct MapView: View {
                                     Image("Background Pin")
                                         .resizable()
                                         .renderingMode(.template)
-                                        .foregroundColor(savedLocationViewModel.savedLocations.contains(where: { saved in
-                                            saved.locationID == location.id
-                                        }) ? .yellow : .gray)
+                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
                                         
@@ -49,17 +49,11 @@ struct MapView: View {
                                 }
                                 .onTapGesture {
                                     //action here
-                                    currentDetailId = location.id
+                                    print(location.id)
                                     withAnimation(.spring()) {
+                                        currentDetailId = location.id
                                         offset = -(UIScreen.main.bounds.height - 100) / 2
                                         lastOffset = -(UIScreen.main.bounds.height - 100) / 2
-                                        viewModel.currentCoordinate = MKCoordinateRegion(
-                                            center: CLLocationCoordinate2D(
-                                                latitude: location.latitude + offset * 0.00001,
-                                                longitude: location.longitude
-                                        ),
-                                            span: Constants.Defaults.mapSpan
-                                        )
                                     }
                                 }
                                 Text(location.name)
@@ -143,7 +137,7 @@ struct MapView: View {
                         
                         VStack {
                             Spacer()
-    
+                            
                             Button {
                                 detailViewModel.openMap(latitude: detailViewModel.items.data[currentDetailId-1].latitude, longitude: detailViewModel.items.data[currentDetailId-1].longitude)
                             } label: {
@@ -162,7 +156,9 @@ struct MapView: View {
                         }
                     }
                 }
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel)
+
+                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel, Location: $Location)
+
             }
             .navigationBarHidden(true)
         }
