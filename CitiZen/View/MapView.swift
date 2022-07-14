@@ -15,6 +15,8 @@ struct MapView: View {
     @StateObject private var detailViewModel = DetailViewModel()
     @StateObject private var notificationViewModel = NotificationManager()
     
+    @State var Location = MapLocation(id: 1, name: "Hotel Majapahit", status: "", latitude: 0, longitude: 0, icon: "HotelMajapahit", category: "")
+    
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -159,7 +161,7 @@ struct MapView: View {
                     }
                 }
                 
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel)
+//                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, saveViewModel: savedLocationViewModel, Location: viewModel.allLocations[])
             }
             .navigationBarHidden(true)
             
