@@ -1,0 +1,552 @@
+[
+    {
+        "id": 1,
+        "name": "Kantor Pos Kebonrojo",
+        "icon": "kebon_rojo",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan bangunan sebelum kita eksplor gedung ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Didirikan tahun berapa ya gedung Kantor Pos Kebon Rojo ini?",
+                "choices": [
+                    "A. Tahun 1700-an",
+                    "B. Tahun 1800-an",
+                    "C. Tahun 1900-an"
+                ],
+                "answer": [
+                    "B. 1800"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Wah, sudah lebih dari 200 tahun ya usianya, keren ! Yuk kita lihat - lihat interior dalamnya. Katanya oke banget lho, foto dengan latar belakang plafon gedung yang berbentuk melengkung, cobain yaaa.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Anyway, masih pada inget ngga kalo dulu waktu kita berkirim surat, suratnya akan dimasukkan ke satu kota yang namanya Bis Surat. Kira - kira masih adakah di Kantor Pos Kebon Rojo? Kalau ada, boleh nih foto di sebelah salah satu benda paling berjasa pada zamannya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Selamat ya, kamu berhasil menemukan bis surat yang usianya 100 tahun lebih! Oiya, katanya nih dulu gedung ini sebelum jadi Kantor Pos, sempat jadi bangunan sekolahnya presiden pertama kita Ir. Soekarno. Coba foto plakat peresmiannya deh, kalo ngga salah waktu itu yang mengesahkan langsung oleh walikota Bu Tri Rismaharini",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Kantor Pos Kebon Rojo. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Hotel Majapahit",
+        "icon": "hotel_maja",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan bangunan sebelum kita eksplor gedung ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Masih pada inget ngga nih, di Hotel Majapahit ini terkenal karena peristiwa apanya?",
+                "choices": [
+                    "A. Pembunuhan Jendral Besar Inggris, A.W.S.Mallaby",
+                    "B. Proklamasi Kemerdekaan Indonesia 1945",
+                    "C. Perobekan bendera merah-putih-biru menjadi bendera merah-putih"
+                ],
+                "answer": [
+                    "C. Perobekan bendera merah-putih-biru menjadi bendera merah-putih"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Nah, katanya nih, peristiwa perobekan bendera tersebut di abadikan dalam suatu tulisan besar yang terpampang jelas di dinding Hotel yang menghadap ke jalan raya. Coba temukan dan foto di bawah tulisan itu ya karena ada cerita singkat yang menarik tentang perjuangan arek - arek Suroboyo",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Wah, memang keren ya perjuangan arek - arek Suroboyo tahun 1945 itu demi mempertahankan kemerdekaan Indonesia. Coba temukan satu plakat berwarna tembaga yang menceritakan detail mengenai pemuda Suroboyo yang merobek bendera biru tersebut. Kalau berhasil ketemu, coba foto di sebelahnya ya",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Wah, foto kamu keren - keren nih! Tinggal ambil angle foto kekinian di trotoar jl. Tunjungan yang ada di sebelah kaca - kaca besar Restoran Indigo (resto hotel) yang menghadap jalan raya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Hotel Majapahit Surabaya. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Tugu Pahlawan",
+        "icon": "tugu_pahlawan",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan monumen sebelum kita eksplor komplek bersejarah ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Sebagai salah satu monumen kebanggan kota Surabaya, apa tujuan Tugu Pahlawan dibangun ?",
+                "choices": [
+                    "A. Memperingati hari pahlawan 10 November 1945",
+                    "B. Memperingati hari kemerdekaan 17 Agustus 1945",
+                    "C. Memberingati hari ulang tahun Surabaya 31 Mei 1293"
+                ],
+                "answer": [
+                    "A. Memperingati hari pahlawan 10 November 1945"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Wow, luas sekali ya komplek Tugu Pahlawan. Sebagai mandatory check list, jangan lupa foto di depan gerbang yang ada Pak Soekarno dan Hatta ya! Beliau berdua adalah orang nomor 1 di Indonesia yang meresmikan penirian monumen ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Di sebelah belakang Tugu Pahlawan, ada gedung lucu berbentuk prisma segitiga yang unik banget nih. Foto di sebelahnya bisa kayak lagi liburan ke Muesum Louvre di Paris tipis - tipis.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Oh, ternyata gedung prisma itu museum yang ruangannya terletak di bawah tanah! Coba yuk kita masuk ke dalam dan foto di depan figur piramid terbalik yang ada banyak foto pahlawan. Katanya sih salah satu spot ikonik di sini selain patung - patung 3D lainnya juga menarik.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Tugu Pahlawan. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Kya Kya",
+        "icon": "kya_kya",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan gerbang Kya kya sebelum kita eksplor kawasan ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Besar dan tinggi ya gerbangnya. Arti dari Kya kya sendiri sebenarnya apa hayo?",
+                "choices": [
+                    "A. Selalu beruntung",
+                    "B. Jalan-jalan",
+                    "C. Keselamatan"
+                ],
+                "answer": [
+                    "B. Jalan-jalan"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Selain megah, setiap komponen dari gerbang memiliki makna tersendiri. Seperti dua naga yang berarti kekuasaan dan kesuburan, warna merah yang merupakan warna keberuntungan masyarakat Tionghoa, serta dua patung singa di sisi kanan kiri gerbang yang merupakan simbol penjaga kawasan. Supaya hari makin ceria, cobain deh foto di sebelah salah satu patung singa penjaga, dengan gaya/ekspresi mirip seperti patung itu hehehe. ",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Berikutnya, coba kita kunjungi salah satu barbershop tertua di Surabaya, Shin Hua. Berdasarkan info dari sumber terpercaya, bangunan ini sudah ada sejak tahun 1911 loh! Jangan lupa abadikan foto di depannya ya, kalau bisa foto juga bersama pemiliknya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Di dekat sini, sekitar jl. Samudra, ada gereja tua hasil akulturasi budaya Tionghoa dan Kristen, yaitu Gereja Kristen Abdiel Gloria (Gereja Kristus Tuhan). Gedungnya sendiri telah berdiri sejak tahun 1930an, namun aktivitas komunitas gereja masih berlangsung aktif hingga saat ini. Yuk foto di depan salah satu gereja kecil legendaris, sayang banget kan dilewati.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Kya kya. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Gedung Siola",
+        "icon": "siola",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan Gedung Siola sebelum kita eksplor bangunan ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Apakah ada yang tahu kalau SIOLA itu sebenarnya akronim dari lima pemiliknya, siapa aja ya kira - kira? ",
+                "choices": [
+                    "A. Soepomo-Ibrahim-Oesno-Lukman-Ambar",
+                    "B. Soetomo-Inggrit-Oentoro-Lao-Ana",
+                    "C. Soemitro-Ing Wibisono-Ong-Liem-Ang"
+                ],
+                "answer": [
+                    "C. Soemitro-Ing Wibisono-Ong-Liem-Ang"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Wah, pas di belakang tulisan Tunjungan, ada patung yang keliatannya heroik banget. Info yang beredar sih itu salah satu dari lima patung yang dibangun oleh Pemkot dan ABRI tahun 1970an untuk memperingati hari Pahlawan 10 November 1945. Oke banget tuh kayaknya foto disebelahnya. ",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Wah, ternyata di selasar trotoar sebelah tulisan tunjungan juga ada lokomotif berukuran besar! Infonya, lokomotif uap kuno ini memang pernah berfungsi di zaman kolonial Belanda. Coba foto di sampingnya deh supaya dapat gambaran berapa ukuran kendaraan kuno ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Anyway, di lantai dua dari gedung ini ada coworking space bernama KORIDOR, terus di depannya ada taman indoor minimalis-nya. Sambil cuci mata lihat yang hijau - hijau, yuk sempetin buat abadikan beberapa jepretan di sana",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Gedung Siola. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Taman Prestasi",
+        "icon": "taman_prestasi",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan Taman Prestasi sebelum kita eksplor ruang hijau ini dari ujung ke ujung.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Ada yang tahu kah kenapa dinamakan Taman Prestasi?",
+                "choices": [
+                    "A. Taman ini di-desain unutk tempat belajar anak - anak",
+                    "B. Taman ini memiliki pojok khusus yang berisi buku bacaan",
+                    "C. Taman ini berisi replika piala - piala prestasi kota Surabaya"
+                ],
+                "answer": [
+                    "C. Taman ini berisi replika piala - piala prestasi kota Surabaya"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Sekarang jelas kan ya kenapa dinamakan prestasi. Kalau gitu, yuk kita coba temukan salah satu replika piala tersebut. Bisa piala Adipura (penghargaan di bidang kebersihan), bisa juga piala Wahana Tata Nugraha (penghargaan di bidang lalu lintas). Jika suka ketemu salah satunya, bolehlah berfoto di sebelahnya untuk menunjukkan kebanggaan sebagai penduduk Surabaya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Denger-denger di sini ngga cuman piala aja yang dipamerkan oleh Pemkot Surabaya, tapi juga pessawat. Yap, di taman ini ada monumen pesawat jenis bomber B-26 Intruder yang sebelumnya pernah digunakan dalam perang mempertahankan kemerdekaan tahun 1950an. Wajib foto lah ya di dekat pesawat, sambil bergaya seolah - olah mau terbang!",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Sedikit menyambung dari landmark unik lainnya, ternyata dari Taman Prestasi pengunjung dapat melihat kondisi halaman dari rumah dinas gubernur Jawa Timur, Gedung Grahadi. Dan di sisi taman itu, ada anjungan sederhana tempat bersandar beberapa speedboat untuk menikmati wisata susur sungai. Seru banget ya! Mari lihat dari dekat dan berfoto ria dengan pemandangan Sungai Kalimas.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Taman Prestasi. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Masjid Cheng Ho",
+        "icon": "masjid_ch",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan bangunan Masjid Cheng Ho sebelum kita eksplor gedung ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Dari sekian banyak nama tokoh yang ada Indonesia, kenapa nama Cheng Hoo digunakan untuk menamakan masjd ini?",
+                "choices": [
+                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam.",
+                    "B. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah membuka jalur perdagangan di Indonesia dari Cina.",
+                    "C. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah bersekutu baik dengan kerajaan Islam di Indonesia."
+                ],
+                "answer": [
+                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho dan berkontribusi dalam penyebaran ajaran agama Islam."
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Supaya lebih tahu detail sejarah bangunan, coba cari plakat peresmian dari masjid ini deh. Rasanya masjid ini tidak terlalu kuno - kuno amat, sekitar 2000an lah dibangunnya. Kalau sudah ketemu, jangan lupa foto!",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Oiya, katanya di area masjid ini ada relief dan replika wapal beserta wajah dari Laksamana Cheng Ho. Kalau sudah ketemu, coba bergaya seperti seorang pelaut dan foto dengan gaya tersebut",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Selain sebagai tempat ibadah, Masjid Cheng Ho sendiri difungsikan untuk kegiatan lain seperti berolahraga. Apakah kamu bisa menemukan lapangan olahraga di area masjid ? Jika ada, coba foto sambil berpose sedang melakukan olahraga favoritmu di lapangan itu.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Yeay, kamu berhasil melengkapi momenmu di spot - spot unik Masjid Cheng Ho. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Gedung Grahadi",
+        "icon": "grahadi",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan bangunan sebelum kita eksplor gedung ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Gedung Grahadi ini kan gede banget ya, sebenarnya Fungsi Gedung Grahadi ini untuk apa ya ",
+                "choices": [
+                    "A. Kantor pemerintah provinsi Jawa Timur",
+                    "B. Rumah dinas gubernur Jawa Timur",
+                    "C. Guest House tamu kenegaraan"
+                ],
+                "answer": [
+                    "B. Rumah dinas gubernur Jawa Timur"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Sangat besar sekali ya untuk ukuran rumah dinas! Selain itu, kita bisa jalan sebentar lho ke taman cantik di seberang Gedung Grahadi lewat jembatan penyebrangan. Dari jembatan ini kita juga bisa ambil foto jalanan kota dengan latar belakang gedung - gedung perkantoran.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Nah, kalau sudah sampai di taman yang di maksud, FYI nama bekennya itu Taman Apsari dan sudah ada dari zaman penjajahn Belanda. Di sini ini ada satu patung pahlawan yang cukup terkenal yaitu patung Gubernur Suryo. Sabi lah ya swafoto bareng patungnya pak gubernur",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Keren banget! Setelah ini sambil eksplor - eksplor taman, katanya di area sekitar juga ada arca peninggalan kerajaaan Singosari, lebih tepatnya ketika diperintah oleh Raja Kertanegara. Mari ditengok sebentar, kapan lagi ya kan bisa foto dekat benda kuno yang berumur ratusan tahun di tengah Kota Surabaya ",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Kamu berhasil melengkapi momenmu di spot - spot unik Gedung Grahadi. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Gereja Katolik Kelahiran Santa Perawan Maria",
+        "icon": "gereja_pr",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan bangunan Gereja Katolik Kelahiran Santa Perawan Maria sebelum kita eksplor gedung ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Sebagai gereja katolik pertama di Surbaya, kira - kira Berapa usia Gereja Katolik Kelahiran Santa Perawan Maria?",
+                "choices": [
+                    "A. 200an tahun",
+                    "B. 300an tahun",
+                    "C. 400an tahun"
+                ],
+                "answer": [
+                    "A. 200an tahun"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Keren banget ya arsitektur gereja kalau dilihat dari luar. Dengan arsitektur bergaya Neo Gothic khas Eropa, tempat ibadah ini terlihat megah dan indah. Supaya kelihatan seperti sedang mengunjungi gereja di luar negeri, bisa dicoba ambil foto dari sisi tepat di depan pintu utama gereja, kemudian atur sedemikian rupa hingga terlihat pucuk atap dan bentang langit pada hari itu.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Wow, keren sekali! Oiya di halamn luar gereja ternyata ada relief yang bercerita tentang proses penyaliban Yesus. Kita coba mampir sebentar dan ambil foto di sana ya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Dan disebelah relief - relief ini, berdiri kokoh Goa Bunda Maria, salah satu bagian dari tempat beribadah juga. Sabi banget ini foto pakai latar belakang gua di area perkotaan, langsung cobain ya gengs.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Yeay, kamu berhasil melengkapi momenmu di spot - spot unik Gereja Kelahiran Santa Perawan Maria. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Pura Agung Jagat Karana",
+        "icon": "pura_agung",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan gerbang Pura Agung Kagat Karana sebelum kita eksplor tempat ibadah ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Sebagai pura tertua di Surbaya, kira - kira Berapa usia Gereja Katolik Kelahiran Santa Perawan Maria?",
+                "choices": [
+                    "A. 40an tahun",
+                    "B. 50an tahun",
+                    "C. 60an tahun"
+                ],
+                "answer": [
+                    "B. 50an tahun"
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Wah, baru tahu ada Pura sebagus ini di Surabaya, berasa di Bali hehehe. Dan ini ada patung Dewi Saraswati yang melambangkan keanggunan dan kecantikan. Coba Tirukan pose dewi tersebut tepat di sebelahnya, kemudian foto momennya",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Luas lahan dari tempat ibadah ini adalah 7.703 meter dan sering dijadikan pusat kegiatan keagamaan umat Hidu seperti Galungan, Kuningan, Saraswati, Melasti, dan Pecaruan. Rasanya kurang afdol juga nih kalau belum lihat Pura utama dan jangan lupa berfoto yang sopan di depan-nya ya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Sebagai satu - satunya Pura yang megah di Surabaya, dulu bangunan ini diresmikan oleh Gubernur Jawa Timur tahun 1987. Ada yang bisa melihat plakat tersebut? Coba difoto ya kalau sudah ketemu.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Yeay, kamu berhasil melengkapi momenmu di spot - spot unik Pura Agung Jagat Karana. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
+    }
+]

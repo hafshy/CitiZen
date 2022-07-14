@@ -11,6 +11,11 @@ import MapKit
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
+    override init() {
+        super.init()
+        locationManagerMonitoring.delegate = self
+    }
+    
     @Published var allLocations:[MapLocation] = []
     
     @Published var currentCoordinate = MKCoordinateRegion(
@@ -19,6 +24,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     )
     
     var locationManager: CLLocationManager?
+    
+    let locationManagerMonitoring = CLLocationManager()
     
     func checkLocationService() {
         if CLLocationManager.locationServicesEnabled() {
@@ -72,5 +79,77 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
                 Int($0.locationID) == datum.id
             }) ? "Visited" : "Not Visited", latitude: datum.latitude, longitude: datum.longitude,icon: datum.icon, category: datum.category)
         })
+        self.monitoring(places: allLocations)
+    }
+    
+    func monitoring(places:[MapLocation]){
+        for place in places {
+            let region = CLCircularRegion(
+                center: place.coordinate,
+                radius: 5,
+                identifier: String(place.id))
+            region.notifyOnExit = true
+            region.notifyOnEntry = true
+            startMonitoring(geotification: region)
+        }
+    }
+
+    func startMonitoring(geotification: CLRegion) {
+        // 1
+        if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            print(123)
+            return
+        }else{
+            print(5555)
+        }
+        // 2
+        let fenceRegion = geotification
+        // 3
+        locationManagerMonitoring.startMonitoring(for: fenceRegion)
+    }
+
+    func stopMonitoring(geotification: [MapLocation]) {
+        for location in geotification {
+            guard
+                let circularRegion = location.region as? CLCircularRegion
+            else { continue }
+            locationManagerMonitoring.stopMonitoring(for: circularRegion)
+        }
+
+    }
+}
+
+extension NotificationManager: CLLocationManagerDelegate {
+    func locationManager(
+        _ manager: CLLocationManager,
+        didEnterRegion region: CLRegion
+    ) {
+        print("Enter")
+        if region is CLCircularRegion {
+            handleEvent(for: region)
+        }
+    }
+
+    func locationManager(
+        _ manager: CLLocationManager,
+        didExitRegion region: CLRegion
+    ) {
+        print("Exit")
+        currentLocationId = -1
+        showPopUp = false
+    }
+
+    func handleEvent(for region: CLRegion) {
+        // Show an alert if application is active
+        print("aktif")
+        print(region.identifier)
+        currentLocationId = Int(region.identifier) ?? -1
+        showPopUp = true
+//        if UIApplication.shared.applicationState == .active {
+//            print("aktif")
+//            print(region.identifier)
+//            currentLocationId = Int(region.identifier) ?? -1
+//            showPopUp = true
+//        }
     }
 }

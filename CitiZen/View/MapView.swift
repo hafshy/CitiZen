@@ -63,12 +63,10 @@ struct MapView: View {
                                         )
                                     }
                                 }
-                                    
                                 Text(location.name)
                                     .font(.caption2)
                                     .bold()
                             }
-                            
                         }
                     }
                 })
@@ -77,7 +75,6 @@ struct MapView: View {
                 .onAppear {
                     viewModel.checkLocationService()
                     viewModel.loadAllLocation()
-                    notificationViewModel.requestAuthorization(places: viewModel.allLocations)
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
@@ -178,16 +175,13 @@ struct MapView: View {
                                 .frame(width: 360, height: 48)
                                 .background(.blue)
                                 .cornerRadius(8)
-                                .border(.gray, width: 1)
                             }
                         }
                     }
                 }
-                
                 Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel)
             }
             .navigationBarHidden(true)
-            
         }
     }
 }

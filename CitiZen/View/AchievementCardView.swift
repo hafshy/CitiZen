@@ -11,6 +11,7 @@ struct AchievementCardView: View {
     @Binding var achievement:Challenge
     @State var rating: Int = 0
     @State var status = "Visited"
+    @ObservedObject private var saveViewModel = SavedLocationsViewModel()
     
     var maxRating = 5
     
@@ -30,7 +31,9 @@ struct AchievementCardView: View {
                         Image(achievement.icon)
                             .resizable()
                             .renderingMode(.template)
-                            .foregroundColor(status == "Visited" ? .black:.white)
+                            .foregroundColor(saveViewModel.savedLocations.contains(where: { item in
+                                Int(item.locationID) == achievement.id
+                           }) ? .black : .white)
                             .scaledToFit()
                             .frame(height: UIScreen.main.bounds.width/5.2)
                         Text(achievement.name).lineLimit(2).multilineTextAlignment(.center)
@@ -39,7 +42,11 @@ struct AchievementCardView: View {
                     Spacer()
                 }
             }.padding(.horizontal)
-                .background(status == "Visited" ? .yellow:.gray)
+                .background(
+                    saveViewModel.savedLocations.contains(where: { item in
+                         Int(item.locationID) == achievement.id
+                    }) ? .yellow:.gray
+                )
                 .cornerRadius(20)
             HStack{
                 ForEach(1..<maxRating + 1, id:\.self){number in
