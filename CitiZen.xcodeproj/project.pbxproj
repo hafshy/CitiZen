@@ -30,6 +30,9 @@
 		9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F87C12862C170007F1915 /* MapLocation.swift */; };
 		9C40714A286C17900033CE54 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C407149286C17900033CE54 /* AchievementView.swift */; };
 		9C73E23A287187080040C71B /* AchievementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73E239287187080040C71B /* AchievementCardView.swift */; };
+		9CDFA52C287D225C0055C745 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFA52B287D225C0055C745 /* Challenges.swift */; };
+		9CDFA52E287D22AF0055C745 /* challenge_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CDFA52D287D22AF0055C745 /* challenge_data.json */; };
+		9CDFA530287D234A0055C745 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFA52F287D234A0055C745 /* AchievementViewModel.swift */; };
 		9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE958C628641CD9008D848C /* NotificationViewModel.swift */; };
 		A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D45EFE2862ABED001FFEDD /* Shake.swift */; };
 		E200335D286A96C200459F4B /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335C286A96C200459F4B /* Landmarks.swift */; };
@@ -64,6 +67,9 @@
 		9C407149286C17900033CE54 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		9C73E239287187080040C71B /* AchievementCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCardView.swift; sourceTree = "<group>"; };
 		9CCBF7E22865617000BE889D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9CDFA52B287D225C0055C745 /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
+		9CDFA52D287D22AF0055C745 /* challenge_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = challenge_data.json; path = ../../../../../Downloads/challenge_data.json; sourceTree = "<group>"; };
+		9CDFA52F287D234A0055C745 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		9CE958C628641CD9008D848C /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		A5D45EFE2862ABED001FFEDD /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		E200335C286A96C200459F4B /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 				5AFC8A0A2861F53E00A2BFD7 /* View */,
 				5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */,
 				E2003362286AB61F00459F4B /* data.json */,
+				9CDFA52D287D22AF0055C745 /* challenge_data.json */,
 				5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */,
 				5AFC8A02286180DC00A2BFD7 /* Preview Content */,
 			);
@@ -159,6 +166,7 @@
 				5AFC8A152863214D00A2BFD7 /* SavedLocationsViewModel.swift */,
 				E200335E286A97B100459F4B /* DetailViewModel.swift */,
 				9CE958C628641CD9008D848C /* NotificationViewModel.swift */,
+				9CDFA52F287D234A0055C745 /* AchievementViewModel.swift */,
 				5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
@@ -172,6 +180,7 @@
 				E200335C286A96C200459F4B /* Landmarks.swift */,
 				5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */,
 				9C2F87C12862C170007F1915 /* MapLocation.swift */,
+				9CDFA52B287D225C0055C745 /* Challenges.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 				5AFC8A04286180DC00A2BFD7 /* Preview Assets.xcassets in Resources */,
 				5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */,
 				E2003363286AB61F00459F4B /* data.json in Resources */,
+				9CDFA52E287D22AF0055C745 /* challenge_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C73E23A287187080040C71B /* AchievementCardView.swift in Sources */,
+				9CDFA52C287D225C0055C745 /* Challenges.swift in Sources */,
 				5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */,
 				9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */,
 				5A26B1D1287F0F9000EA1977 /* Chat+CoreDataProperties.swift in Sources */,
@@ -261,6 +272,7 @@
 				A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				9CDFA530287D234A0055C745 /* AchievementViewModel.swift in Sources */,
 				5A26B1D0287F0F9000EA1977 /* Chat+CoreDataClass.swift in Sources */,
 				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
 				9C40714A286C17900033CE54 /* AchievementView.swift in Sources */,
