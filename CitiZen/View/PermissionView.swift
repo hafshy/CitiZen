@@ -11,21 +11,32 @@ struct PermissionView: View {
     var body: some View {
         VStack{
             Spacer().frame(height: 50)
-            Text("Ok, We need some access!")
+            Text("Ok, We need some access!").font(.title2)
             Spacer()
-            HStack{
+            HStack(alignment: .top){
                 Image(systemName: "mappin.circle")
-                Text("Location")
+                VStack(alignment:.leading){
+                    Text("Location")
+                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
+                }
                 Spacer()
             }
-            HStack{
-                Text("ASDASD")
-                Spacer()
-            }
-            
-            
             Divider()
+            HStack(alignment: .top){
+                Image(systemName: "mappin.circle")
+                VStack(alignment:.leading){
+                    Text("Location")
+                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
+                }
+                Spacer()
+            }
             Spacer()
+            Button {
+                print(123)
+            } label: {
+                Text("ASD")
+            }
+
         }.padding()
     }
 }
