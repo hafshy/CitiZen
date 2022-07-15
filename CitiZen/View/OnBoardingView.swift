@@ -14,10 +14,9 @@ struct OnBoardingStep {
 }
 
 private let onBoardingSteps = [
-    OnBoardingStep(image: "", title: "Hello", description: "Desctiprion"),
-    OnBoardingStep(image: "", title: "Hello2", description: "Desctiprion2"),
-    OnBoardingStep(image: "", title: "Hello3", description: "Desctiprion3"),
-    OnBoardingStep(image: "", title: "Hello4", description: "Desctiprion4")
+    OnBoardingStep(image: "appstore", title: "LocalHunt", description: "Collect Your Local Landmarks"),
+    OnBoardingStep(image: "Onboarding2", title: "Temukan Landmark", description: "Ayo jelajahi kota-mu dengan mengunjungi landmark-landmark di sekitarmu"),
+    OnBoardingStep(image: "Onboarding3", title: "Selesaikan Misi", description: "Jalani misi-misi unik di setiap landmark dan jadikan kenangan"),
 ]
 
 struct OnBoardingView: View {
@@ -32,86 +31,93 @@ struct OnBoardingView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TabView(selection: $currentStep) {
-                    ForEach(0..<onBoardingSteps.count, id:\.self) { it in
-                        VStack {
-                            Image("Gedung Bersejarah")
-                                .resizable()
-                                .frame(width: 250, height: 250)
-                            
-                            Text(onBoardingSteps[it].title)
-                                .font(.title)
-                                .bold()
-                            
-                            Text(onBoardingSteps[it].description)
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 20)
-                        }
-                        .tag(it)
-                    }
+            ZStack{
+                VStack(alignment:.leading){
+                    Image("Onboardingbg")
+                    .edgesIgnoringSafeArea(.top)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
+                    Spacer()
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                
-                HStack{
-                    ForEach(0..<onBoardingSteps.count, id:\.self) { it in
-                        if it == currentStep {
-                            Rectangle()
-                                .frame(width: 65, height: 15)
-                                .cornerRadius(10)
-                                .foregroundColor(Color(.systemYellow))
-                        } else {
-                            Circle()
-                                .frame (width: 10, height: 10)
-                                .foregroundColor(.clear)
-                                .overlay(
-                                    Circle()
-                                        .stroke(lineWidth: 3)
-                                        .foregroundColor(Color(.systemYellow))
-                                )
+                VStack() {
+                    TabView(selection: $currentStep) {
+                        ForEach(0..<onBoardingSteps.count, id:\.self) { it in
+                            VStack() {
+                                Image(onBoardingSteps[it].image)
+                                    .resizable()
+                                    .frame(width: 250, height: 250)
+                                Spacer()
+                                Text(onBoardingSteps[it].title)
+                                    .font(.title)
+                                    .bold()
+                                Spacer().frame(height:10)
+                                Text(onBoardingSteps[it].description)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.horizontal, 20)
+                            }
+                            .tag(it)
                         }
                     }
-                }
-                .padding(.bottom)
-                
-                
-                if self.currentStep < onBoardingSteps.count - 1 {
-                    Button {
-                        if self.currentStep < onBoardingSteps.count - 1 {
-                            self.currentStep += 1
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    Spacer().frame(height:80)
+                    HStack{
+                        ForEach(0..<onBoardingSteps.count, id:\.self) { it in
+                            if it == currentStep {
+                                Rectangle()
+                                    .frame(width: 65, height: 15)
+                                    .cornerRadius(10)
+                                    .foregroundColor(Color(.systemYellow))
+                            } else {
+                                Circle()
+                                    .frame (width: 10, height: 10)
+                                    .foregroundColor(.clear)
+                                    .overlay(
+                                        Circle()
+                                            .stroke(lineWidth: 3)
+                                            .foregroundColor(Color(.systemYellow))
+                                    )
+                            }
                         }
-                        //                else {
-                        //                        mapViewModel.checkLocationService()
-                        //                        notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
-                        //                        viewModel.userSession = true
-                        //                        LocalStorage.myUserBool = true
-                        //                    }
-                    } label: {
-                        Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .font(.title3)
-                            .padding(16)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: UIScreen.main.bounds.width/6.09)
-                            .background(Color(.systemYellow))
-                            .cornerRadius(16)
-                            .padding(.horizontal)
                     }
-                } else {
-                    NavigationLink {
-                        PermissionView(mapViewModel: mapViewModel, notificationViewModel: notificationViewModel)
-                    } label: {
-                        Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .font(.title3)
-                            .padding(16)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: UIScreen.main.bounds.width/6.09)
-                            .background(Color(.systemYellow))
-                            .cornerRadius(16)
-                            .padding(.horizontal)
+                    .padding(.bottom)
+                    
+                    if self.currentStep < onBoardingSteps.count - 1 {
+                        Button {
+                            if self.currentStep < onBoardingSteps.count - 1 {
+                                self.currentStep += 1
+                            }
+                            //                else {
+                            //                        mapViewModel.checkLocationService()
+                            //                        notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
+                            //                        viewModel.userSession = true
+                            //                        LocalStorage.myUserBool = true
+                            //                    }
+                        } label: {
+                            Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                .font(.title3)
+                                .padding(16)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: UIScreen.main.bounds.width/6.09)
+                                .background(Color(.systemYellow))
+                                .cornerRadius(16)
+                                .padding(.horizontal)
+                        }
+                    } else {
+                        NavigationLink {
+                            PermissionView(mapViewModel: mapViewModel, notificationViewModel: notificationViewModel)
+                        } label: {
+                            Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                .font(.title3)
+                                .padding(16)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: UIScreen.main.bounds.width/6.09)
+                                .background(Color(.systemYellow))
+                                .cornerRadius(16)
+                                .padding(.horizontal)
+                        }
                     }
                 }
             }

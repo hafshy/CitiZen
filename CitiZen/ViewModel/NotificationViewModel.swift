@@ -34,7 +34,6 @@ class NotificationManager:NSObject, ObservableObject{
                 print(UserDefaults.standard.bool(forKey: "isNotificationalreadycreated"))
                 if(UserDefaults.standard.bool(forKey: "isNotificationalreadycreated") == false){
                     UserDefaults.standard.set(true, forKey: "isNotificationalreadycreated")
-                    print("HEHEHE")
                     self.scheduleNotification(places: places)
 //                    self.monitoring(places: places)
                 }
@@ -43,7 +42,6 @@ class NotificationManager:NSObject, ObservableObject{
     }
     
     func scheduleNotification(places: [MapLocation]){
-        print("Masuk")
         for place in places {
             let content = UNMutableNotificationContent()
             content.title = "You arrive at"
