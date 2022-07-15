@@ -44,7 +44,7 @@ struct Shake: View {
     @Binding var showArrivedPopUp: Bool
     @Binding var currenLocationId: Int
     @ObservedObject var saveViewModel: SavedLocationsViewModel
-    @Binding var Location:MapLocation
+    @Binding var Location: MapLocation
     
     var body: some View {
         ZStack {
@@ -60,21 +60,29 @@ struct Shake: View {
                 Int(item.locationID) == currenLocationId && currenLocationId != -1
             }) {
                 ZStack {
-                    Color(.white)
+                    Color.yellow
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 130, height: 130)
                     VStack {
                         Spacer ()
                         Text("You are Arrived!")
                             .font(.title2)
                             .bold()
-                        Image(systemName: "iphone.radiowaves.left.and.right")
+                        Spacer ()
+                        Spacer ()
+                        Image("ShakeImage")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 80)
+                            .frame(width: 90)
+                        Spacer ()
+                        Spacer ()
                         Text("Shake,Shake!")
                             .font(.title)
                             .bold()
                         Text("Shake Your Phone To Save The Progress")
                             .font(.caption2)
+                            .foregroundColor(.white)
                         Spacer ()
                     }.padding()
                 }
@@ -96,7 +104,6 @@ struct Shake: View {
             }
             
             if showPopUp {
-                
                 ZStack {
                     Color.yellow
                     Circle()
@@ -134,7 +141,7 @@ struct Shake: View {
                         })
                     }.padding()
                 }
-                .frame(width: 300, height: 200)
+                .frame(width: 300, height: 300)
                 .cornerRadius(20).shadow(radius: 20)
             }
         }
