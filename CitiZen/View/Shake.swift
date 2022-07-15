@@ -43,7 +43,7 @@ struct Shake: View {
     @State var showPopUp = false
     @Binding var showArrivedPopUp: Bool
     @ObservedObject var saveViewModel: SavedLocationsViewModel
-    @Binding var Location:MapLocation
+    @Binding var Location: MapLocation
     
     var body: some View {
         ZStack {
@@ -103,6 +103,7 @@ struct Shake: View {
                         .frame(width: 130, height: 130)
                     Image("\(Location.icon)")
                         .resizable()
+                        .renderingMode(.template)
                         .scaledToFit()
                         .frame(width: 115)
                     VStack {
