@@ -111,6 +111,7 @@ struct Shake: View {
                         .frame(width: 130, height: 130)
                     Image("\(Location.icon)")
                         .resizable()
+                        .renderingMode(.template)
                         .scaledToFit()
                         .frame(width: 115)
                     VStack {
