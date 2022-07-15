@@ -31,7 +31,7 @@ class ChatDataController: ObservableObject {
         }
     }
     
-    func sendText(landmarkId: Int, landmarkName: String, landmarkIconName: String, isUser: Bool, text: String, complete: Bool, context: NSManagedObjectContext) {
+    func sendText(landmarkId: Int, landmarkName: String, landmarkIconName: String, isUser: Bool, text: String, complete: Int, context: NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date.now
         message.messageID = UUID()
@@ -42,12 +42,12 @@ class ChatDataController: ObservableObject {
         message.conversation?.id = Int16(landmarkId)
         message.conversation?.landmarkName = landmarkName
         message.conversation?.landmarkIconName = landmarkIconName
-        message.conversation?.completedCount += complete ? 1 : 0
+        message.conversation?.completedCount = Int16(complete)
         
         save(context: context)
     }
     
-    func sendPhoto(landmarkId: Int, landmarkName: String, landmarkIconName: String, photo: UIImage, complete: Bool, context: NSManagedObjectContext) {
+    func sendPhoto(landmarkId: Int, landmarkName: String, landmarkIconName: String, photo: UIImage, complete: Int, context: NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date.now
         message.messageID = UUID()
@@ -58,7 +58,7 @@ class ChatDataController: ObservableObject {
         message.conversation?.id = Int16(landmarkId)
         message.conversation?.landmarkName = landmarkName
         message.conversation?.landmarkIconName = landmarkIconName
-        message.conversation?.completedCount += complete ? 1 : 0
+        message.conversation?.completedCount = Int16(complete)
         
         save(context: context)
     }
