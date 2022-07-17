@@ -125,9 +125,7 @@ struct MapView: View {
                     Spacer()
                     NavigationLink(
                         destination:
-                            ChatView(landmarkID: 1, challenge: Challenge.challenge.first(where: { challenge in
-                                challenge.id == 1
-                            }) ?? nil)
+                            ChatView(landmarkID: 3)
                             .environment(
                                 \.managedObjectContext,
                                  chatDataController.container.viewContext
