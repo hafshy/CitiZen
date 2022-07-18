@@ -61,9 +61,18 @@ struct ChatView: View {
     
     @ViewBuilder
     func ChatOptions(option: String) -> some View {
-        Text(option)
-            .padding()
-            .background(.black.opacity(0.2))
+        HStack {
+            Text(option)
+                .font(.caption2)
+                .padding(8)
+                .background(.yellow)
+                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 8))
+                .padding(.horizontal, 12)
+                .padding(.bottom, 8)
+                .frame(width: 300, alignment: .leading)
+            Spacer()
+        }
+        
     }
     
     var body: some View {
@@ -76,10 +85,25 @@ struct ChatView: View {
                         })
                     ) {
                         LazyVGrid(columns: columns, spacing: 0) {
-                            ForEach(chats.first(where: { chat in
+                            let messages = (chats.first(where: { chat in
                                 chat.id == landmarkID
-                            })?.messageArray ?? []) { message in
+                            })?.messageArray ?? [])
+                            let completedCount = Int(chats.first(where: { chat in
+                                chat.id == landmarkID
+                            })?.completedCount ?? 0)
+                            let latestChallengeChoice = viewModel.challenge?.challenges[completedCount].choices ?? []
+                            
+                            ForEach(messages) { message in
                                 BubbleChat(message: message)
+                            }
+                            
+                            if messages.last?.senderType == .receive && messages.last?.text == viewModel.challenge?.challenges[completedCount].question && viewModel.challenge?.challenges[completedCount].category == "quiz" && completedCount < 5 {
+                                ForEach(latestChallengeChoice, id:\.self) { choice in
+                                    ChatOptions(option: choice)
+                                        .onTapGesture {
+                                            viewModel.sendAnswer(choice: choice, completed: completedCount, context: moc)
+                                        }
+                                }
                             }
                             EmptyView()
                                 .frame(height: 1)
@@ -97,11 +121,7 @@ struct ChatView: View {
                     ) {
                         viewModel.initiateChallenge(context: moc)
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        withAnimation {
-                            value.scrollTo(bottomID)
-                        }
-                    }
+                    viewModel.scrollDown(proxy: value, namespaceId: bottomID)
                 }
                 
                 if Int(chats.first(where: { chat in
@@ -146,11 +166,7 @@ struct ChatView: View {
                                                     chat.id == landmarkID
                                                 })?.completedCount ?? 0)
                                                 viewModel.sendMessage(completedCount: challengeIndex, context: moc)
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                    withAnimation {
-                                                        value.scrollTo(bottomID)
-                                                    }
-                                                }
+                                                viewModel.scrollDown(proxy: value, namespaceId: bottomID)
                                             }
                                         }
                                     }
@@ -183,11 +199,7 @@ struct ChatView: View {
                                         chat.id == landmarkID
                                     })?.completedCount ?? 0)
                                     viewModel.sendMessage(completedCount: challengeIndex, context: moc)
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        withAnimation {
-                                            value.scrollTo(bottomID)
-                                        }
-                                    }
+                                    viewModel.scrollDown(proxy: value, namespaceId: bottomID)
                                 }
                         }
                         .background(

@@ -28,7 +28,6 @@ class ChatViewModel: ObservableObject {
     func sendMessage(completedCount: Int, context: NSManagedObjectContext) {
         var category = ""
         var answers: [String] = []
-        var choices: [String] = []
         category = challenge?.challenges[completedCount].category ?? "text"
         answers = challenge?.challenges[completedCount].answer ?? []
         
@@ -86,8 +85,8 @@ class ChatViewModel: ObservableObject {
         ChatDataController()
             .sendText(
                 landmarkId: landmarkID,
-                landmarkName: "",
-                landmarkIconName: "",
+                landmarkName: challenge?.name ?? "",
+                landmarkIconName: challenge?.icon ?? "",
                 isUser: false,
                 text: rightAnswer ?
                 (challenge?.challenges[completed + 1].question ?? "") :
@@ -95,15 +94,26 @@ class ChatViewModel: ObservableObject {
                 complete: rightAnswer ? completed + 1 : completed,
                 context: context
             )
+        
+        if rightAnswer == false {
+            ChatDataController()
+                .sendText(
+                    landmarkId: landmarkID,
+                    landmarkName: challenge?.name ?? "",
+                    landmarkIconName: challenge?.icon ?? "",
+                    isUser: false,
+                    text: challenge?.challenges[completed].question ?? "",
+                    complete: completed,
+                    context: context
+                )
+        }
     }
     
     func initiateChallenge(context: NSManagedObjectContext) {
         if let currentChallenge = challenge {
             let firstChallenge = currentChallenge.challenges[0]
-            print("Loading Challenge")
             ChatDataController()
                 .sendText(landmarkId: landmarkID, landmarkName: currentChallenge.name, landmarkIconName: currentChallenge.icon, isUser: false, text: firstChallenge.question, complete: 0, context: context)
-            print("Done")
         }
     }
     
@@ -117,5 +127,44 @@ class ChatViewModel: ObservableObject {
     func onClickImageSourceOption(sourceType: UIImagePickerController.SourceType) {
         showImagePicker = true
         self.sourceType = sourceType
+    }
+    
+    func sendAnswer(choice: String, completed: Int, context: NSManagedObjectContext) {
+        var category = ""
+        var answers: [String] = []
+        category = challenge?.challenges[completed].category ?? "text"
+        answers = challenge?.challenges[completed].answer ?? []
+        
+        ChatDataController()
+            .sendText(
+                landmarkId: landmarkID,
+                landmarkName: challenge?.name ?? "",
+                landmarkIconName: challenge?.icon ?? "",
+                isUser: true,
+                text: choice,
+                complete: completed,
+                context: context
+            )
+        
+        botReply(
+            "quiz",
+            category == "quiz" &&
+            (
+                answers != [] &&
+                answers.contains(where: { answer in
+                    answer == choice
+                })
+            ),
+            completed: completed,
+            context: context
+        )
+    }
+    
+    func scrollDown(proxy: ScrollViewProxy, namespaceId: Namespace.ID) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation {
+                proxy.scrollTo(namespaceId)
+            }
+        }
     }
 }
