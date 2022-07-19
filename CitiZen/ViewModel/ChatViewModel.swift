@@ -90,7 +90,7 @@ class ChatViewModel: ObservableObject {
                 isUser: false,
                 text: rightAnswer ?
                 (challenge?.challenges[completed + 1].question ?? "") :
-                    "Wrong answer template",
+                    "Maaf jawabanmu salah, Silahkan coba lagi!",
                 complete: rightAnswer ? completed + 1 : completed,
                 context: context
             )

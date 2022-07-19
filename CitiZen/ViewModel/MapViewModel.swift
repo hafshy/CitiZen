@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import MapKit
+import SwiftUI
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
@@ -97,10 +98,9 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     func startMonitoring(geotification: CLRegion) {
         // 1
         if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            print(123)
             return
-        }else{
-            print(5555)
+        } else{
+//            print(5555)
         }
         // 2
         let fenceRegion = geotification
@@ -135,16 +135,20 @@ extension NotificationManager: CLLocationManagerDelegate {
         didExitRegion region: CLRegion
     ) {
         print("Exit")
-        currentLocationId = -1
-        showPopUp = false
+        withAnimation {
+            currentLocationId = -1
+            showPopUp = false
+        }
     }
 
     func handleEvent(for region: CLRegion) {
         // Show an alert if application is active
         print("aktif")
         print(region.identifier)
-        currentLocationId = Int(region.identifier) ?? -1
-        showPopUp = true
+        withAnimation {
+            currentLocationId = Int(region.identifier) ?? -1
+            showPopUp = true
+        }
 //        if UIApplication.shared.applicationState == .active {
 //            print("aktif")
 //            print(region.identifier)
