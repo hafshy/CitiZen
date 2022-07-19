@@ -132,25 +132,30 @@ struct MapView: View {
                     .cornerRadius(20)
                     
                     Spacer()
+                }
+                .padding()
+                .padding(.horizontal)
+                
+                // MARK: Chat
+                VStack {
+                    Spacer()
                     NavigationLink(
                         destination:
-                            ChatView(landmarkID: 3)
+                            ChatView(landmarkID: notificationViewModel.currentLocationId)
                             .environment(
                                 \.managedObjectContext,
                                  chatDataController.container.viewContext
                             )
                     ) {
-                        HStack {
-                            Spacer()
-                            Text("Chat")
-                                .padding(.vertical)
-                            Spacer()
+                        if notificationViewModel.currentLocationId > 0 {
+                            MemoriesButtonView(landmarkID: $notificationViewModel.currentLocationId)
+                                .environment(
+                                    \.managedObjectContext,
+                                     chatDataController.container.viewContext
+                                )
                         }
-                        .background(.yellow)
                     }
                 }
-                .padding()
-                .padding(.horizontal)
                 
                 CustomBottomSheet(content: {
                     DetailView(offset: $offset, lastOffset: $lastOffset, item: detailViewModel.items.data[currentDetailId-1])

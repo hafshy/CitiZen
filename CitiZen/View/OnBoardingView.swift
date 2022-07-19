@@ -85,12 +85,6 @@ struct OnBoardingView: View {
                                     self.currentStep += 1
                                 }
                             }
-                            //                else {
-                            //                        mapViewModel.checkLocationService()
-                            //                        notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
-                            //                        viewModel.userSession = true
-                            //                        LocalStorage.myUserBool = true
-                            //                    }
                         } label: {
                             Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
                                 .fontWeight(.semibold)

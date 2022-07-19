@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5A0F6064287FB4CE00699095 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F6063287FB4CE00699095 /* ImagePicker.swift */; };
+		5A0F606628864FE500699095 /* MemoriesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F606528864FE500699095 /* MemoriesButtonView.swift */; };
+		5A0F60682886501800699095 /* MemoriesButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */; };
+		5A0F606A28865C0800699095 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F606928865C0800699095 /* BackButton.swift */; };
 		5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A0287C58A500EA1977 /* ChatView.swift */; };
 		5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */; };
 		5A26B1AA287C70D400EA1977 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A9287C70D400EA1977 /* ChatModel.swift */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		5A0F6063287FB4CE00699095 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5A0F606528864FE500699095 /* MemoriesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesButtonView.swift; sourceTree = "<group>"; };
+		5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesButtonViewModel.swift; sourceTree = "<group>"; };
+		5A0F606928865C0800699095 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		5A26B1A0287C58A500EA1977 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		5A26B1A9287C70D400EA1977 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				9CD46B49287FAA5F008440B4 /* PermissionView.swift */,
 				5A26B1A0287C58A500EA1977 /* ChatView.swift */,
 				5A0F6063287FB4CE00699095 /* ImagePicker.swift */,
+				5A0F606528864FE500699095 /* MemoriesButtonView.swift */,
+				5A0F606928865C0800699095 /* BackButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				E2E9BC86287D11DD0098E15D /* OnBoardingViewModel.swift */,
 				E253EE1A287E84910098999A /* ContentViewModel.swift */,
 				5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */,
+				5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -296,16 +305,19 @@
 				9CDFA530287D234A0055C745 /* AchievementViewModel.swift in Sources */,
 				5A26B1D0287F0F9000EA1977 /* Chat+CoreDataClass.swift in Sources */,
 				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
+				5A0F60682886501800699095 /* MemoriesButtonViewModel.swift in Sources */,
 				9C40714A286C17900033CE54 /* AchievementView.swift in Sources */,
 				5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
 				5A0F6064287FB4CE00699095 /* ImagePicker.swift in Sources */,
 				E200335D286A96C200459F4B /* Landmarks.swift in Sources */,
 				E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */,
+				5A0F606628864FE500699095 /* MemoriesButtonView.swift in Sources */,
 				5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */,
 				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				5A0F606A28865C0800699095 /* BackButton.swift in Sources */,
 				E253EE1B287E84910098999A /* ContentViewModel.swift in Sources */,
 				5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */,
 				5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */,
