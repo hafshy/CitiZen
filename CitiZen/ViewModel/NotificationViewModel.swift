@@ -34,16 +34,13 @@ class NotificationManager:NSObject, ObservableObject{
                 print(UserDefaults.standard.bool(forKey: "isNotificationalreadycreated"))
                 if(UserDefaults.standard.bool(forKey: "isNotificationalreadycreated") == false){
                     UserDefaults.standard.set(true, forKey: "isNotificationalreadycreated")
-                    print("HEHEHE")
                     self.scheduleNotification(places: places)
-//                    self.monitoring(places: places)
                 }
             }
         }
     }
     
     func scheduleNotification(places: [MapLocation]){
-        print("Masuk")
         for place in places {
             let content = UNMutableNotificationContent()
             content.title = "You arrive at"
@@ -67,72 +64,4 @@ class NotificationManager:NSObject, ObservableObject{
             UNUserNotificationCenter.current().add(request)
         }
     }
-    
-//    func monitoring(places:[MapLocation]){
-//        for place in places {
-//            let region = CLCircularRegion(
-//                center: place.coordinate,
-//                radius: 5,
-//                identifier: String(place.id))
-//            region.notifyOnExit = true
-//            region.notifyOnEntry = true
-//            startMonitoring(geotification: region)
-//        }
-//    }
-//
-//    func startMonitoring(geotification: CLRegion) {
-//        // 1
-//        if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-//            print(123)
-//            return
-//        }else{
-//            print(5555)
-//        }
-//        // 2
-//        let fenceRegion = geotification
-//        // 3
-//        locationManager.startMonitoring(for: fenceRegion)
-//    }
-//
-//    func stopMonitoring(geotification: [MapLocation]) {
-//        for location in geotification {
-//            guard
-//                let circularRegion = location.region as? CLCircularRegion
-//            else { continue }
-//            locationManager.stopMonitoring(for: circularRegion)
-//        }
-//
-//    }
 }
-
-//extension NotificationManager: CLLocationManagerDelegate {
-//    func locationManager(
-//        _ manager: CLLocationManager,
-//        didEnterRegion region: CLRegion
-//    ) {
-//        print("Enter")
-//        if region is CLCircularRegion {
-//            handleEvent(for: region)
-//        }
-//    }
-//
-//    func locationManager(
-//        _ manager: CLLocationManager,
-//        didExitRegion region: CLRegion
-//    ) {
-//        print("Exit")
-//        currentLocationId = -1
-//        showPopUp = false
-//    }
-//
-//    func handleEvent(for region: CLRegion) {
-//        // Show an alert if application is active
-//        if UIApplication.shared.applicationState == .active {
-//            print("aktif")
-//            print(region.identifier)
-//            currentLocationId = Int(region.identifier) ?? -1
-//            showPopUp = true
-//        }
-//    }
-//}
-//

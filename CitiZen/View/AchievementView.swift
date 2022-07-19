@@ -10,6 +10,9 @@ import SwiftUI
 struct AchievementView: View {
     
     @StateObject private var achievementViewModel = AchievementViewModel()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var chats: FetchedResults<Chat>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let columns = [GridItem(.flexible()),
                    GridItem(.flexible())]
@@ -17,7 +20,10 @@ struct AchievementView: View {
         ScrollView {
             LazyVGrid(columns: columns,spacing: 15) {
                 ForEach(0..<$achievementViewModel.items.count, id: \.self) { item in
-                    AchievementCardView(achievement: $achievementViewModel.items[item])
+                    let completedCount = Int(chats.first(where: { chat in
+                        chat.id == item
+                    })?.completedCount ?? 0)
+                    AchievementCardView(achievement: $achievementViewModel.items[item], completedTask: completedCount)
                     
                 }}
             .padding()
@@ -25,6 +31,10 @@ struct AchievementView: View {
         
         .navigationTitle("My Achievement")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton().onTapGesture {
+            self.presentationMode.wrappedValue.dismiss()
+        })
     }
 }
 

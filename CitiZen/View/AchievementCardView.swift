@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AchievementCardView: View {
     @Binding var achievement:Challenge
-    @State var rating: Int = 0
+    @State var completedTask:Int
     @State var status = "Visited"
     @ObservedObject private var saveViewModel = SavedLocationsViewModel()
     
@@ -47,12 +47,11 @@ struct AchievementCardView: View {
                          Int(item.locationID) == achievement.id
                     }) ? .yellow:.gray
                 )
-                .cornerRadius(20)
             HStack{
                 ForEach(1..<maxRating + 1, id:\.self){number in
                     image(for: number)
                         .renderingMode(.template).tint(.black)
-                        .foregroundColor(number > rating ? offColor:onColor)
+                        .foregroundColor(number > completedTask ? offColor:onColor)
                     
                 }
             }.padding(.bottom,5).padding(.vertical,5)
@@ -60,7 +59,7 @@ struct AchievementCardView: View {
     }
     
     func image(for number:Int) -> Image {
-        if number > rating{
+        if number > completedTask{
             return offImage ?? onImage
         }else{
             return onImage

@@ -14,40 +14,83 @@ struct PermissionView: View {
     @EnvironmentObject var viewModel: AuthtenticationVM
     
     var body: some View {
-        VStack{
-            Spacer().frame(height: 50)
-            Text("Ok, We need some access!").font(.title2)
-            Spacer()
-            HStack(alignment: .top){
-                Image(systemName: "mappin.circle")
-                VStack(alignment:.leading){
-                    Text("Location")
-                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
-                }
+        ZStack{
+            VStack(){
                 Spacer()
-            }
-            Divider()
-            HStack(alignment: .top){
-                Image(systemName: "mappin.circle")
-                VStack(alignment:.leading){
-                    Text("Location")
-                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
+                Rectangle().frame(height:UIScreen.main.bounds.height/1.22).foregroundColor(.yellow)
+            }.ignoresSafeArea()
+            VStack{
+                Text("Allow using my location on the next screen for :").font(.title).bold().padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "mappin.and.ellipse")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Navigate you to the").font(.title2)
+                        Text("landmarks").font(.title2)
+                    }
+                    Spacer()
+                }.padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "bell.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Alerts when you near").font(.title2)
+                        Text("the landmarks").font(.title2)
+                    }
+                    Spacer()
+                }.padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "hand.wave.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Better personal").font(.title2)
+                        Text("experience").font(.title2)
+                    }
+                    Spacer()
+                }.padding()
+                Button {
+                    mapViewModel.loadAllLocation()
+                    mapViewModel.checkLocationService()
+                    notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
+                    viewModel.userSession = true
+                    LocalStorage.myUserBool = true
+                } label: {
+                    Text("Continue")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                        .font(.title3)
+                        .padding(16)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: UIScreen.main.bounds.width/6.09)
+                        .background(.white)
+                        .cornerRadius(16)
+                        .padding()
                 }
+                Text("You can change this option later in the Setting app").font(.caption)
                 Spacer()
-            }
-            Spacer()
-            Button {
-                print(123)
-                mapViewModel.loadAllLocation()
-                mapViewModel.checkLocationService()
-                notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
-                viewModel.userSession = true
-                LocalStorage.myUserBool = true
-            } label: {
-                Text("ASD")
-            }
-
-        }.padding()
+            }.padding().padding(.top, 50)
+        }.navigationTitle("LocalHunt")
     }
 }
 
