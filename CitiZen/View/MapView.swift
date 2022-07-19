@@ -94,15 +94,18 @@ struct MapView: View {
                             HStack {
                                 Text("\((savedLocationViewModel.savedLocations.count) * 100 / (Constants.Defaults.totalLandmark))%")
                                     .font(.caption2)
-                                RoundedRectangle(cornerRadius: 2.5)
-                                    .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
-                                    .foregroundColor(.red)
-                                    .overlay(alignment: .leading) {
-                                        RoundedRectangle(cornerRadius: 2.5)
-                                            .stroke(lineWidth: 1)
-                                            .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
-                                            .foregroundColor(.gray)
-                                    }
+                                    .fontWeight(.bold)
+                                
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 2.5)
+                                        .frame(width: UIScreen.main.bounds.width / 3.48, height: UIScreen.main.bounds.width / 65)
+                                        .foregroundColor(.black)
+                                    
+                                    RoundedRectangle(cornerRadius: 2.5)
+                                        .frame(width: UIScreen.main.bounds.width / 3.48 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 65)
+                                        .foregroundColor(.yellow)
+                                    
+                                }
                                 Spacer()
                             }
                         }
@@ -113,18 +116,21 @@ struct MapView: View {
                             Image("trophy")
                                 .renderingMode(.template)
                                 .resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                                 .foregroundColor(.yellow)
-                                .frame(width: UIScreen.main.bounds.width / 7.3, height: UIScreen.main.bounds.width / 7.3)
-                                .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+                                .padding(6)
+                                .frame(width: UIScreen.main.bounds.width / 6.96, height: UIScreen.main.bounds.width / 6.39)
                                 .background(.black)
                                 .cornerRadius(8)
                                 .overlay(RoundedRectangle(cornerRadius: 8)
                                     .stroke(lineWidth: 4)
                                     .foregroundColor(.black))
                         }
-                        
                     }
+                    .padding()
+                    .background(Color(red: 245 / 255, green: 245 / 255, blue: 245 / 255).opacity(0.9))
+                    .cornerRadius(20)
+                    
                     Spacer()
                     NavigationLink(
                         destination:
