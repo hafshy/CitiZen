@@ -14,53 +14,83 @@ struct PermissionView: View {
     @EnvironmentObject var viewModel: AuthtenticationVM
     
     var body: some View {
-        VStack{
-            Spacer().frame(height: 50)
-            HStack{
-                
-                Text("OK!").font(.title).foregroundColor(.yellow)
-                Text("We need some access!").font(.title)
-            }
-            Spacer()
-            HStack(alignment: .top){
-                Image("location").resizable().scaledToFit().frame(width:30)
-                VStack(alignment:.leading){
-                    Text("Location").font(.title3).bold()
-                    Text("To display fun facts about the user's location").font(.caption)
-                }
+        ZStack{
+            VStack(){
                 Spacer()
-            }
-            Divider()
-            HStack(alignment: .top){
-                Image("notification").resizable().scaledToFit().frame(width:30)
-                VStack(alignment:.leading){
-                    Text("Notification").font(.title3).bold()
-                    Text("So we can let you know when you arrive at the landmark").font(.caption)
+                Rectangle().frame(height:UIScreen.main.bounds.height/1.22).foregroundColor(.yellow)
+            }.ignoresSafeArea()
+            VStack{
+                Text("Allow using my location on the next screen for :").font(.title).bold().padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "mappin.and.ellipse")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Navigate you to the").font(.title2).bold()
+                        Text("landmarks").font(.title2).bold()
+                    }
+                    Spacer()
+                }.padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "bell.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Alerts when you near").font(.title2).bold()
+                        Text("the landmarks").font(.title2).bold()
+                    }
+                    Spacer()
+                }.padding()
+                HStack(){
+                    ZStack{
+                        Circle().fill(.black).frame(width:55, height:55)
+                        Image(systemName: "hand.wave.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:25)
+                            .foregroundColor(.yellow)
+                    }
+                    Spacer().frame(width:20)
+                    VStack(alignment:.leading){
+                        Text("Better personal").font(.title2).bold()
+                        Text("experience").font(.title2).bold()
+                    }
+                    Spacer()
+                }.padding()
+                Button {
+                    mapViewModel.loadAllLocation()
+                    mapViewModel.checkLocationService()
+                    notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
+                    viewModel.userSession = true
+                    LocalStorage.myUserBool = true
+                } label: {
+                    Text("Continue")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                        .font(.title3)
+                        .padding(16)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: UIScreen.main.bounds.width/6.09)
+                        .background(.white)
+                        .cornerRadius(16)
+                        .padding()
                 }
+                Text("You can change this option later in the Setting app").font(.caption)
                 Spacer()
-            }
-            Spacer()
-            Spacer()
-            Button {
-                print(123)
-                mapViewModel.loadAllLocation()
-                mapViewModel.checkLocationService()
-                notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
-                viewModel.userSession = true
-                LocalStorage.myUserBool = true
-            } label: {
-                Text("Allow Access")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
-                    .font(.title3)
-                    .padding(16)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: UIScreen.main.bounds.width/6.09)
-                    .background(Color(.systemYellow))
-                    .cornerRadius(16)
-                    .padding(.horizontal)
-            }
-        }.padding()
+            }.padding().padding(.top, 50)
+        }.navigationTitle("LocalHunt")
     }
 }
 

@@ -14,9 +14,9 @@ struct OnBoardingStep {
 }
 
 private let onBoardingSteps = [
-    OnBoardingStep(image: "appstore", title: "LocalHunt", description: "Collect Your Local Landmarks"),
-    OnBoardingStep(image: "Onboarding2", title: "Temukan Landmark", description: "Ayo jelajahi kota-mu dengan mengunjungi landmark-landmark di sekitarmu"),
-    OnBoardingStep(image: "Onboarding3", title: "Selesaikan Misi", description: "Jalani misi-misi unik di setiap landmark dan jadikan kenangan"),
+    OnBoardingStep(image: "Onboarding1", title: "Find Landmarks", description: "Come explore your city by visiting the nearby landmarks"),
+    OnBoardingStep(image: "Onboarding2", title: "Complete the mission", description: "Take on unique missions in each landmark and make memories"),
+    OnBoardingStep(image: "Onboarding3", title: "Play it easily", description: "Zoom in, zoom out, and slide the screen to determine the destination landmark"),
 ]
 
 struct OnBoardingView: View {
@@ -32,10 +32,8 @@ struct OnBoardingView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                VStack(alignment:.leading){
-                    Image("Onboardingbg")
-                    .edgesIgnoringSafeArea(.top)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
+                VStack(){
+                    Rectangle().frame(height:UIScreen.main.bounds.height/1.8).foregroundColor(.yellow).ignoresSafeArea()
                     Spacer()
                 }
                 VStack() {
