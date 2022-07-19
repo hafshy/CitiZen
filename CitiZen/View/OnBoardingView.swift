@@ -81,16 +81,10 @@ struct OnBoardingView: View {
                     if self.currentStep < onBoardingSteps.count - 1 {
                         Button {
                             if self.currentStep < onBoardingSteps.count - 1 {
-                                withAnimation(.easeInOut(duration: 1.0)){
+                                withAnimation(.easeInOut(duration: 1)) {
                                     self.currentStep += 1
                                 }
                             }
-                            //                else {
-                            //                        mapViewModel.checkLocationService()
-                            //                        notificationViewModel.requestAuthorization(places: mapViewModel.allLocations)
-                            //                        viewModel.userSession = true
-                            //                        LocalStorage.myUserBool = true
-                            //                    }
                         } label: {
                             Text(currentStep < onBoardingSteps.count - 1 ? "Next" : "Get Started")
                                 .fontWeight(.semibold)

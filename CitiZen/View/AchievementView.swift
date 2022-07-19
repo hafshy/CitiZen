@@ -12,6 +12,7 @@ struct AchievementView: View {
     @StateObject private var achievementViewModel = AchievementViewModel()
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var chats: FetchedResults<Chat>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let columns = [GridItem(.flexible()),
                    GridItem(.flexible())]
@@ -30,6 +31,10 @@ struct AchievementView: View {
         
         .navigationTitle("My Achievement")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton().onTapGesture {
+            self.presentationMode.wrappedValue.dismiss()
+        })
     }
 }
 
