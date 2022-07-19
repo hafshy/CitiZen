@@ -41,7 +41,7 @@ struct MapView: View {
                                         }) ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
-                                        
+                                    
                                     Image(location.category)
                                         .resizable()
                                         .scaledToFit()
@@ -58,7 +58,7 @@ struct MapView: View {
                                             center: CLLocationCoordinate2D(
                                                 latitude: location.latitude + offset * 0.00001,
                                                 longitude: location.longitude
-                                        ),
+                                            ),
                                             span: Constants.Defaults.mapSpan
                                         )
                                     }
@@ -144,31 +144,25 @@ struct MapView: View {
                         
                         VStack {
                             Spacer()
-    
+                            
                             Button {
                                 detailViewModel.openMap(latitude: detailViewModel.items.data[currentDetailId-1].latitude, longitude: detailViewModel.items.data[currentDetailId-1].longitude)
                             } label: {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.primaryYellow)
-//                                        .foregroundColor(color)
-                                    HStack {
-                                        Image(systemName: "paperplane.fill")
-                                            .font(.body)
-                                            .foregroundColor(.white)
-                                        Text("Navigate")
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                    }
+                                    Text("Navigate")
+                                        .font(.headline)
+                                        .foregroundColor(.black)
                                 }
-                                .frame(width: 360, height: 48)
-                                .cornerRadius(8)
+                                .frame(width: UI_WIDTH/1.19, height: 50)
+                                .cornerRadius(14)
                             }
                         }
                     }
                 }
                 if notificationViewModel.currentLocationId != -1 {
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
+                    Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
                 }
             }
             .navigationBarHidden(true)
