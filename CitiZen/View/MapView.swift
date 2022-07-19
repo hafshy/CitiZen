@@ -106,7 +106,10 @@ struct MapView: View {
                                 Spacer()
                             }
                         }
-                        NavigationLink(destination: AchievementView()) {
+                        NavigationLink(destination: AchievementView().environment(
+                            \.managedObjectContext,
+                             chatDataController.container.viewContext
+                        )) {
                             Image("trophy")
                                 .renderingMode(.template)
                                 .resizable()
