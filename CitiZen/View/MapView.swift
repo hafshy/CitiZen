@@ -14,7 +14,7 @@ struct MapView: View {
     @StateObject private var savedLocationViewModel = SavedLocationsViewModel()
     @StateObject private var detailViewModel = DetailViewModel()
     @StateObject private var notificationViewModel = NotificationManager()
-    @State var Location = MapLocation(id: 1, name: "Hotel Majapahit", status: "", latitude: 0, longitude: 0, icon: "HotelMajapahit", category: "")
+    @StateObject private var chatDataController = ChatDataController()
     
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
@@ -123,6 +123,22 @@ struct MapView: View {
                         
                     }
                     Spacer()
+                    NavigationLink(
+                        destination:
+                            ChatView(landmarkID: 3)
+                            .environment(
+                                \.managedObjectContext,
+                                 chatDataController.container.viewContext
+                            )
+                    ) {
+                        HStack {
+                            Spacer()
+                            Text("Chat")
+                                .padding(.vertical)
+                            Spacer()
+                        }
+                        .background(.yellow)
+                    }
                 }
                 .padding()
                 .padding(.horizontal)
