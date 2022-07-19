@@ -41,7 +41,7 @@ struct DetailView: View {
                         .frame(width: 30, height: 30)
                     }
                 }
-                Text("\(item.category) | ")
+                Text("\(item.category)")
 //                + Text("CLOSE")
 //                    .foregroundColor(.red)
                 
