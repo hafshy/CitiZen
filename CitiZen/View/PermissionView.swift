@@ -16,25 +16,30 @@ struct PermissionView: View {
     var body: some View {
         VStack{
             Spacer().frame(height: 50)
-            Text("Ok, We need some access!").font(.title2)
+            HStack{
+                
+                Text("OK!").font(.title).foregroundColor(.yellow)
+                Text("We need some access!").font(.title)
+            }
             Spacer()
             HStack(alignment: .top){
-                Image(systemName: "mappin.circle")
+                Image("location").resizable().scaledToFit().frame(width:30)
                 VStack(alignment:.leading){
-                    Text("Location")
-                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
+                    Text("Location").font(.title3).bold()
+                    Text("To display fun facts about the user's location").font(.caption)
                 }
                 Spacer()
             }
             Divider()
             HStack(alignment: .top){
-                Image(systemName: "mappin.circle")
+                Image("notification").resizable().scaledToFit().frame(width:30)
                 VStack(alignment:.leading){
-                    Text("Location")
-                    Text("ASASDjhkjhggvhbjnkmjhgfghjkhg")
+                    Text("Notification").font(.title3).bold()
+                    Text("So we can let you know when you arrive at the landmark").font(.caption)
                 }
                 Spacer()
             }
+            Spacer()
             Spacer()
             Button {
                 print(123)
@@ -44,9 +49,17 @@ struct PermissionView: View {
                 viewModel.userSession = true
                 LocalStorage.myUserBool = true
             } label: {
-                Text("ASD")
+                Text("Allow Access")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
+                    .font(.title3)
+                    .padding(16)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.width/6.09)
+                    .background(Color(.systemYellow))
+                    .cornerRadius(16)
+                    .padding(.horizontal)
             }
-
         }.padding()
     }
 }
