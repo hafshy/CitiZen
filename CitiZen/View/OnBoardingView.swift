@@ -81,7 +81,9 @@ struct OnBoardingView: View {
                     if self.currentStep < onBoardingSteps.count - 1 {
                         Button {
                             if self.currentStep < onBoardingSteps.count - 1 {
-                                self.currentStep += 1
+                                withAnimation(.easeInOut(duration: 1.0)){
+                                    self.currentStep += 1
+                                }
                             }
                             //                else {
                             //                        mapViewModel.checkLocationService()
