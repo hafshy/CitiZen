@@ -47,7 +47,6 @@ struct AchievementCardView: View {
                          Int(item.locationID) == achievement.id
                     }) ? .yellow:.gray
                 )
-                .cornerRadius(20)
             HStack{
                 ForEach(1..<maxRating + 1, id:\.self){number in
                     image(for: number)
