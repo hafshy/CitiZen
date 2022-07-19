@@ -182,7 +182,9 @@ struct MapView: View {
                         }
                     }
                 }
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel)
+                if notificationViewModel.currentLocationId != -1 {
+                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
+                }
             }
             .navigationBarHidden(true)
         }
