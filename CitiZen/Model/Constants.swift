@@ -7,6 +7,7 @@
 
 import CoreLocation
 import MapKit
+import SwiftUI
 
 struct Constants {
     
@@ -24,4 +25,8 @@ struct Constants {
         static let totalLandmark = 10
     }
     
+}
+
+extension Color {
+    static let primaryYellow = Color(red: 255, green: 204, blue: 0)
 }
