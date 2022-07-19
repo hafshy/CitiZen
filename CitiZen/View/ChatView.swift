@@ -46,10 +46,10 @@ struct ChatView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, alignment: .center)
-                        .cornerRadius(16)
                 }
                 .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
                 .padding(.vertical, 8)
+                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 12))
             }
             
             if message.senderType == .receive {
@@ -130,8 +130,8 @@ struct ChatView: View {
                 })?.completedCount ?? 0) >= 5 {
                     HStack {
                         Spacer()
-                        Text("You have completed all memories")
-                            .foregroundColor(.green)
+                        Text("Mission Accomplished")
+                            .foregroundColor(.yellow)
                         Spacer()
                     }
                     .padding()
