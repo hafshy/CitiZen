@@ -32,8 +32,8 @@ struct PermissionView: View {
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
-                        Text("Navigate you to the").font(.title2).bold()
-                        Text("landmarks").font(.title2).bold()
+                        Text("Navigate you to the").font(.title2)
+                        Text("landmarks").font(.title2)
                     }
                     Spacer()
                 }.padding()
@@ -48,8 +48,8 @@ struct PermissionView: View {
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
-                        Text("Alerts when you near").font(.title2).bold()
-                        Text("the landmarks").font(.title2).bold()
+                        Text("Alerts when you near").font(.title2)
+                        Text("the landmarks").font(.title2)
                     }
                     Spacer()
                 }.padding()
@@ -64,8 +64,8 @@ struct PermissionView: View {
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
-                        Text("Better personal").font(.title2).bold()
-                        Text("experience").font(.title2).bold()
+                        Text("Better personal").font(.title2)
+                        Text("experience").font(.title2)
                     }
                     Spacer()
                 }.padding()
