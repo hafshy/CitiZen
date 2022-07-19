@@ -32,8 +32,10 @@ struct CustomBottomSheet<Content: View>: View {
                 // MARK: Bottom Sheet Container
                 ZStack {
                     // MARK: Background Blur
-                    BlurView(style: .systemUltraThinMaterial)
-                        .clipShape(CustomEdge(corner: [.topLeft, .topRight], radius: 32))
+//                    BlurView(style: .systemUltraThinMaterial)
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .clipShape(CustomEdge(corner: [.topLeft, .topRight], radius: 15))
                     
                     // MARK: Bottom Sheet Content
                     // TODO: Add Converter behind capsule

@@ -41,7 +41,7 @@ struct MapView: View {
                                         }) ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
-                                        
+                                    
                                     Image(location.category)
                                         .resizable()
                                         .scaledToFit()
@@ -58,7 +58,7 @@ struct MapView: View {
                                             center: CLLocationCoordinate2D(
                                                 latitude: location.latitude + offset * 0.00001,
                                                 longitude: location.longitude
-                                        ),
+                                            ),
                                             span: Constants.Defaults.mapSpan
                                         )
                                     }
@@ -94,15 +94,18 @@ struct MapView: View {
                             HStack {
                                 Text("\((savedLocationViewModel.savedLocations.count) * 100 / (Constants.Defaults.totalLandmark))%")
                                     .font(.caption2)
-                                RoundedRectangle(cornerRadius: 2.5)
-                                    .frame(width: UIScreen.main.bounds.width / 3.25 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 78)
-                                    .foregroundColor(.red)
-                                    .overlay(alignment: .leading) {
-                                        RoundedRectangle(cornerRadius: 2.5)
-                                            .stroke(lineWidth: 1)
-                                            .frame(width: UIScreen.main.bounds.width / 3.25, height: UIScreen.main.bounds.width / 78)
-                                            .foregroundColor(.gray)
-                                    }
+                                    .fontWeight(.bold)
+                                
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 2.5)
+                                        .frame(width: UIScreen.main.bounds.width / 3.48, height: UIScreen.main.bounds.width / 65)
+                                        .foregroundColor(.black)
+                                    
+                                    RoundedRectangle(cornerRadius: 2.5)
+                                        .frame(width: UIScreen.main.bounds.width / 3.48 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 65)
+                                        .foregroundColor(.yellow)
+                                    
+                                }
                                 Spacer()
                             }
                         }
@@ -113,18 +116,21 @@ struct MapView: View {
                             Image("trophy")
                                 .renderingMode(.template)
                                 .resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                                 .foregroundColor(.yellow)
-                                .frame(width: UIScreen.main.bounds.width / 7.3, height: UIScreen.main.bounds.width / 7.3)
-                                .frame(width: UIScreen.main.bounds.width / 5.06, height: UIScreen.main.bounds.width / 5.06)
+                                .padding(6)
+                                .frame(width: UIScreen.main.bounds.width / 6.96, height: UIScreen.main.bounds.width / 6.39)
                                 .background(.black)
                                 .cornerRadius(8)
                                 .overlay(RoundedRectangle(cornerRadius: 8)
                                     .stroke(lineWidth: 4)
                                     .foregroundColor(.black))
                         }
-                        
                     }
+                    .padding()
+                    .background(Color(red: 245 / 255, green: 245 / 255, blue: 245 / 255).opacity(0.9))
+                    .cornerRadius(20)
+                    
                     Spacer()
                 }
                 .padding()
@@ -168,31 +174,25 @@ struct MapView: View {
                         
                         VStack {
                             Spacer()
-    
+                            
                             Button {
                                 detailViewModel.openMap(latitude: detailViewModel.items.data[currentDetailId-1].latitude, longitude: detailViewModel.items.data[currentDetailId-1].longitude)
                             } label: {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.primaryYellow)
-//                                        .foregroundColor(color)
-                                    HStack {
-                                        Image(systemName: "paperplane.fill")
-                                            .font(.body)
-                                            .foregroundColor(.white)
-                                        Text("Navigate")
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                    }
+                                    Text("Navigate")
+                                        .font(.headline)
+                                        .foregroundColor(.black)
                                 }
-                                .frame(width: 360, height: 48)
-                                .cornerRadius(8)
+                                .frame(width: UI_WIDTH/1.19, height: 50)
+                                .cornerRadius(14)
                             }
                         }
                     }
                 }
                 if notificationViewModel.currentLocationId != -1 {
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
+                    Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
                 }
             }
             .navigationBarHidden(true)
