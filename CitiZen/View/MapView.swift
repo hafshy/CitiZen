@@ -125,7 +125,7 @@ struct MapView: View {
                     Spacer()
                     NavigationLink(
                         destination:
-                            ChatView(landmarkID: 3)
+                            ChatView(landmarkID: 7)
                             .environment(
                                 \.managedObjectContext,
                                  chatDataController.container.viewContext
