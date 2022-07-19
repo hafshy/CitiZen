@@ -13,6 +13,7 @@ struct ChatView: View {
     @FetchRequest(sortDescriptors: []) var chats: FetchedResults<Chat>
     @Namespace var bottomID
     @FocusState var isInputActive: Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let landmarkID: Int
     let columns = [GridItem(.flexible(minimum: 10))]
@@ -215,6 +216,11 @@ struct ChatView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(viewModel.challenge?.name ?? "")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton().onTapGesture {
+                self.presentationMode.wrappedValue.dismiss()
+            })
             .sheet(isPresented: $viewModel.showImagePicker) {
                 ImagePicker(image: $viewModel.tempImage, isShown: $viewModel.showImagePicker, sourceType: viewModel.sourceType)
             }
