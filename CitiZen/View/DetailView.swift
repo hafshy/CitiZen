@@ -28,16 +28,22 @@ struct DetailView: View {
                             lastOffset = 0
                         }
                     } label: {
-                        Image(systemName: "x.circle.fill")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .scaledToFill()
-                            .frame(width: 35, height: 35)
+                        ZStack {
+                            Circle()
+                                .foregroundColor(Color(.systemGray5))
+
+                            Image(systemName: "xmark")
+                                .resizable()
+                                .foregroundColor(.secondary)
+                                .scaledToFill()
+                                .frame(width: 11, height: 11)
+                        }
+                        .frame(width: 30, height: 30)
                     }
                 }
-                Text("\(item.category) | ") +
-                Text("CLOSE")
-                    .foregroundColor(.red)
+                Text("\(item.category) | ")
+//                + Text("CLOSE")
+//                    .foregroundColor(.red)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
