@@ -72,6 +72,19 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         checkLocationPermission()
     }
     
+    func checkFirstTime(){
+        if(UserDefaults.standard.bool(forKey: "isFirstTime") == false){
+            UserDefaults.standard.set(true, forKey: "isFirstTime")
+            currentCoordinate = MKCoordinateRegion(
+                center: Constants.Defaults.location,
+                span: MKCoordinateSpan(
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.01
+                )
+            )
+        }
+    }
+    
     func loadAllLocation(){
         let savedLocation = SavedLocationsViewModel()
         let detailedViewModel = DetailViewModel()

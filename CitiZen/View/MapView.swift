@@ -75,6 +75,7 @@ struct MapView: View {
                 .onAppear {
                     viewModel.checkLocationService()
                     viewModel.loadAllLocation()
+                    viewModel.checkFirstTime()
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
