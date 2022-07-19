@@ -458,6 +458,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs your camera for better experience";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -494,6 +495,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs your camera for better experience";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
