@@ -88,7 +88,12 @@ struct Shake: View {
                     {
                         showArrivedPopUp = false
                         showPopUp = true
-                        
+                        // CHANGE 2 to ID
+                        if !saveViewModel.savedLocations.contains(where: { item in
+                            Int(item.locationID) == currenLocationId && currenLocationId != -1
+                        }) {
+                            saveViewModel.addLocation(id: currenLocationId)
+                        }
                     }
                     
                 }
@@ -123,13 +128,6 @@ struct Shake: View {
                         Button(action: {
                             withAnimation{
                                 self.showPopUp = false
-                                showArrivedPopUp = false
-                                // CHANGE 2 to ID
-                                if !saveViewModel.savedLocations.contains(where: { item in
-                                    Int(item.locationID) == $Location.id && Location.id != -1
-                                }) {
-                                    saveViewModel.addLocation(id: $Location.id)
-                                }
                             }
                             
                             
