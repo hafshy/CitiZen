@@ -35,18 +35,16 @@ struct MapView: View {
                         ZStack{
                             VStack{
                                 ZStack {
-                                    Image("Background Pin")
+                                    Image(location.status=="Visited" ? "bg_pin_yellow" : "bg_pin_gray")
                                         .resizable()
-                                        .renderingMode(.template)
-                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
                                     
                                     Image(location.category)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 30.0)
-                                        .offset(x: 0, y: -4)
+                                        .frame(width: 25.0)
+                                        .offset(x: 0, y: -6)
                                 }
                                 .onTapGesture {
                                     //action here
@@ -115,7 +113,6 @@ struct MapView: View {
                              chatDataController.container.viewContext
                         )) {
                             Image("trophy")
-                                .renderingMode(.template)
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.yellow)
