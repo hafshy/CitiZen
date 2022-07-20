@@ -16,7 +16,7 @@ struct MapView: View {
     @StateObject private var notificationViewModel = NotificationManager()
     @State var Location = MapLocation(id: 1, name: "Hotel Majapahit", status: "", latitude: 0, longitude: 0, icon: "HotelMajapahit", category: "")
     
-    @State var Location = MapLocation(id: 1, name: "Hotel Majapahit", status: "", latitude: 0, longitude: 0, icon: "HotelMajapahit", category: "")
+    
     
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
@@ -162,7 +162,11 @@ struct MapView: View {
                     }
                 }
                 if notificationViewModel.currentLocationId != -1 {
-                Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
+                    Shake(showArrivedPopUp: $notificationViewModel.showPopUp,
+                          currenLocationId: $notificationViewModel.currentLocationId,
+                          saveViewModel: savedLocationViewModel,
+                          Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
+
                 }
                
 
