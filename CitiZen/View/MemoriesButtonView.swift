@@ -17,7 +17,7 @@ struct MemoriesButtonView: View {
     var body: some View {
         if (chats.first(where: { chat in
             chat.id == landmarkID
-        })?.completedCount ?? 0) < 10 {
+        })?.completedCount ?? 0) < 5 {
             let count = String(chats.first(where: { chat in
                 chat.id == landmarkID
             })?.completedCount ?? 0)
