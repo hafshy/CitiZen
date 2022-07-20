@@ -41,29 +41,26 @@ extension View {
 struct Shake: View {
     // @State private var showingAlert = false
     @State var showPopUp = false
-    @Binding var showArrivedPopUp: Bool
-    @Binding var currenLocationId: Int
-    @ObservedObject var saveViewModel: SavedLocationsViewModel
-    @Binding var Location: MapLocation
+        @Binding var showArrivedPopUp: Bool
+        @Binding var currenLocationId: Int
+        @ObservedObject var saveViewModel: SavedLocationsViewModel
+        @Binding var Location: MapLocation
     
     var body: some View {
         ZStack {
-            if showPopUp || (showArrivedPopUp && !saveViewModel.savedLocations.contains(where: { item in
-                Int(item.locationID) == currenLocationId && currenLocationId != -1
-            })) {
+            if showArrivedPopUp || showPopUp {
                 Color(.gray)
                     .opacity(0.3)
                     .ignoresSafeArea()
             }
-
-            if showArrivedPopUp && !saveViewModel.savedLocations.contains(where: { item in
-                Int(item.locationID) == currenLocationId && currenLocationId != -1
-            }) {
+            
+            if showArrivedPopUp {
                 ZStack {
-                    Color.yellow
+                    Color("kuning")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
+                    
                     VStack {
                         Spacer ()
                         Text("You are Arrived!")
@@ -82,7 +79,7 @@ struct Shake: View {
                             .bold()
                         Text("Shake Your Phone To Save The Progress")
                             .font(.caption2)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         Spacer ()
                     }.padding()
                 }
@@ -91,59 +88,70 @@ struct Shake: View {
                     {
                         showArrivedPopUp = false
                         showPopUp = true
-                        // CHANGE 2 to ID
-                        if !saveViewModel.savedLocations.contains(where: { item in
-                            Int(item.locationID) == currenLocationId && currenLocationId != -1
-                        }) {
-                            saveViewModel.addLocation(id: currenLocationId)
-                        }
+                        
                     }
+                    
                 }
-                .frame(width: 300, height: 200)
-                .cornerRadius(20).shadow(radius: 20)
+                .frame(width: 300, height: 300)
+                .cornerRadius(10).shadow(radius: 10)
             }
             
             if showPopUp {
+                
                 ZStack {
-                    Color.yellow
+                    Color("kuning")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
+                    Circle()
+                        .fill(Color("Hitam"))
+                        .frame(width: 120, height: 120)
                     Image("\(Location.icon)")
                         .resizable()
                         .renderingMode(.template)
                         .scaledToFit()
-                        .frame(width: 115)
+                        .frame(width: 105)
                     VStack {
-                        Spacer()
-                        Text("Selamat Datang Di \(Location.name)!")
+                        Text("Welcome to")
                             .font(.subheadline)
                             .bold()
                         Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Text("Ayo Abadikan Momen Unik Di Sini")
-                            .font(.caption2)
+                        Text("\(Location.name)")
+                            .font(.subheadline)
                             .bold()
+                        Spacer()
+                            .frame(height: 160)
                         Button(action: {
                             withAnimation{
                                 self.showPopUp = false
+                                showArrivedPopUp = false
+                                // CHANGE 2 to ID
+                                if !saveViewModel.savedLocations.contains(where: { item in
+                                    Int(item.locationID) == $Location.id && Location.id != -1
+                                }) {
+                                    saveViewModel.addLocation(id: $Location.id)
+                                }
                             }
+                            
+                            
                         }, label: {
-                            Text("BERIKUTNYA")
+                            Text("Next")
                                 .padding(.horizontal,50)
-                                .padding(.vertical,10)
-                                .background(.black)
-                                .foregroundColor(.yellow)
-                                .font(.caption)
-                                .cornerRadius(10) .shadow(radius: 20)
+                                .padding(.vertical,5)
+                                .background(.white)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .cornerRadius(10)
+                            
                         })
+                        Spacer()
                     }.padding()
                 }
                 .frame(width: 300, height: 300)
                 .cornerRadius(20).shadow(radius: 20)
+                
+                
+                
             }
         }
     }

@@ -16,6 +16,8 @@ struct MapView: View {
     @StateObject private var notificationViewModel = NotificationManager()
     @StateObject private var chatDataController = ChatDataController()
     
+    
+    
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -36,9 +38,7 @@ struct MapView: View {
                                     Image("Background Pin")
                                         .resizable()
                                         .renderingMode(.template)
-                                        .foregroundColor(savedLocationViewModel.savedLocations.contains(where: { saved in
-                                            saved.locationID == location.id
-                                        }) ? .yellow : .gray)
+                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
                                     
@@ -50,8 +50,9 @@ struct MapView: View {
                                 }
                                 .onTapGesture {
                                     //action here
-                                    currentDetailId = location.id
+                                    print(location.id)
                                     withAnimation(.spring()) {
+                                        currentDetailId = location.id
                                         offset = -(UIScreen.main.bounds.height - 100) / 2
                                         lastOffset = -(UIScreen.main.bounds.height - 100) / 2
                                         viewModel.currentCoordinate = MKCoordinateRegion(
@@ -194,6 +195,8 @@ struct MapView: View {
                 if notificationViewModel.currentLocationId != -1 {
                     Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
                 }
+               
+
             }
             .navigationBarHidden(true)
             .alert(isPresented: $viewModel.isFirstTime){
