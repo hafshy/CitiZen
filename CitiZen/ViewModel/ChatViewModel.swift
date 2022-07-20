@@ -168,8 +168,10 @@ class ChatViewModel: ObservableObject {
         }
     }
     
-    func saveImage(view: AnyView) {
-        
+    func saveImage(view: UIImage) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIImageWriteToSavedPhotosAlbum(view, nil, nil, nil)
+        }
     }
 }
 
