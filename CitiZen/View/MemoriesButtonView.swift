@@ -24,7 +24,6 @@ struct MemoriesButtonView: View {
             HStack {
                 Image("siola")
                     .resizable()
-                    .renderingMode(.template)
                     .scaledToFit()
                     .frame(width: 48)
                     .padding(.trailing)

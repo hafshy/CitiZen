@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Tempat Ibadah Bersejarah.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Tempat Ibadah Bersejarah@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Tempat Ibadah Bersejarah@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -16,6 +16,8 @@ struct MapView: View {
     @StateObject private var notificationViewModel = NotificationManager()
     @StateObject private var chatDataController = ChatDataController()
     
+    
+    
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -33,25 +35,24 @@ struct MapView: View {
                         ZStack{
                             VStack{
                                 ZStack {
-                                    Image("Background Pin")
+                                    Image(savedLocationViewModel.savedLocations.contains(where: { saved in
+                                        saved.locationID == location.id
+                                    }) ? "bg_pin_yellow" : "bg_pin_gray")
                                         .resizable()
-                                        .renderingMode(.template)
-                                        .foregroundColor(savedLocationViewModel.savedLocations.contains(where: { saved in
-                                            saved.locationID == location.id
-                                        }) ? .yellow : .gray)
                                         .scaledToFit()
                                         .frame(width: 40.0)
                                     
                                     Image(location.category)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 30.0)
-                                        .offset(x: 0, y: -4)
+                                        .frame(width: 25.0)
+                                        .offset(x: 0, y: -6)
                                 }
                                 .onTapGesture {
                                     //action here
-                                    currentDetailId = location.id
+                                    print(location.id)
                                     withAnimation(.spring()) {
+                                        currentDetailId = location.id
                                         offset = -(UIScreen.main.bounds.height - 100) / 2
                                         lastOffset = -(UIScreen.main.bounds.height - 100) / 2
                                         viewModel.currentCoordinate = MKCoordinateRegion(
@@ -114,7 +115,6 @@ struct MapView: View {
                              chatDataController.container.viewContext
                         )) {
                             Image("trophy")
-                                .renderingMode(.template)
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.yellow)
@@ -194,6 +194,8 @@ struct MapView: View {
                 if notificationViewModel.currentLocationId != -1 {
                     Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
                 }
+               
+
             }
             .navigationBarHidden(true)
             .alert(isPresented: $viewModel.isFirstTime){

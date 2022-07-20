@@ -30,7 +30,6 @@ struct AchievementCardView: View {
                         Spacer()
                         Image(achievement.icon)
                             .resizable()
-                            .renderingMode(.template)
                             .foregroundColor(saveViewModel.savedLocations.contains(where: { item in
                                 Int(item.locationID) == achievement.id
                            }) ? .black : .white)
