@@ -104,7 +104,7 @@ struct Shake: View {
                         .fill(.white)
                         .frame(width: 130, height: 130)
                     Circle()
-                        .fill(.black)
+                        .fill(Color("Hitam"))
                         .frame(width: 120, height: 120)
                     Image("\(Location.icon)")
                         .resizable()
