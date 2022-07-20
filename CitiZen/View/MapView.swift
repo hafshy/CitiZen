@@ -35,7 +35,9 @@ struct MapView: View {
                         ZStack{
                             VStack{
                                 ZStack {
-                                    Image(location.status=="Visited" ? "bg_pin_yellow" : "bg_pin_gray")
+                                    Image(savedLocationViewModel.savedLocations.contains(where: { saved in
+                                        saved.locationID == location.id
+                                    }) ? "bg_pin_yellow" : "bg_pin_gray")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 40.0)
