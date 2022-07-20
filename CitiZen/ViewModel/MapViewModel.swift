@@ -17,6 +17,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         locationManagerMonitoring.delegate = self
     }
     
+    @Published var isFirstTime = false
+    
     @Published var allLocations:[MapLocation] = []
     
     @Published var currentCoordinate = MKCoordinateRegion(
@@ -56,7 +58,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             print("Permission Denied")
         case .authorizedAlways, .authorizedWhenInUse:
             currentCoordinate = MKCoordinateRegion(
-                center: locationManager.location?.coordinate ?? Constants.Defaults.location,
+//                center: locationManager.location?.coordinate ?? Constants.Defaults.location,
+                center : checkFirstTime(),
                 span: MKCoordinateSpan(
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01
@@ -72,16 +75,14 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         checkLocationPermission()
     }
     
-    func checkFirstTime(){
+    func checkFirstTime() -> CLLocationCoordinate2D{
+        let locationManager = locationManager
         if(UserDefaults.standard.bool(forKey: "isFirstTime") == false){
             UserDefaults.standard.set(true, forKey: "isFirstTime")
-            currentCoordinate = MKCoordinateRegion(
-                center: Constants.Defaults.location,
-                span: MKCoordinateSpan(
-                    latitudeDelta: 0.01,
-                    longitudeDelta: 0.01
-                )
-            )
+            isFirstTime = true
+            return Constants.Defaults.location
+        }else{
+            return locationManager?.location?.coordinate ?? Constants.Defaults.location
         }
     }
     

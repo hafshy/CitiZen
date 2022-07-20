@@ -75,7 +75,6 @@ struct MapView: View {
                 .onAppear {
                     viewModel.checkLocationService()
                     viewModel.loadAllLocation()
-                    viewModel.checkFirstTime()
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }
                 
@@ -197,6 +196,9 @@ struct MapView: View {
                 }
             }
             .navigationBarHidden(true)
+            .alert(isPresented: $viewModel.isFirstTime){
+                Alert(title: Text("Choose your own landmark !"), message: Text("Zoom out, zoom in, and slide the phone screen to find  more landmarks"), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }

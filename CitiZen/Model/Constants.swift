@@ -13,8 +13,8 @@ struct Constants {
     
     struct Defaults {
         static let location = CLLocationCoordinate2D(
-            latitude: -7.255866,
-            longitude: 112.734346
+            latitude: -7.26133168292024,
+            longitude: 112.742845109226
         )
         
         static let mapSpan = MKCoordinateSpan(
