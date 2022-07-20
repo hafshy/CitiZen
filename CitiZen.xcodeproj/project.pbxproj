@@ -13,7 +13,6 @@
 		5A0F606A28865C0800699095 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F606928865C0800699095 /* BackButton.swift */; };
 		5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A0287C58A500EA1977 /* ChatView.swift */; };
 		5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */; };
-		5A26B1AA287C70D400EA1977 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A9287C70D400EA1977 /* ChatModel.swift */; };
 		5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */; };
 		5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */; };
 		5A26B1D0287F0F9000EA1977 /* Chat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CC287F0F8F00EA1977 /* Chat+CoreDataClass.swift */; };
@@ -57,7 +56,6 @@
 		5A0F606928865C0800699095 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		5A26B1A0287C58A500EA1977 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		5A26B1A9287C70D400EA1977 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		5A26B1B0287C723800EA1977 /* ChatDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataController.swift; sourceTree = "<group>"; };
 		5A26B1CC287F0F8F00EA1977 /* Chat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataClass.swift"; path = "CitiZen/Chat+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -114,7 +112,6 @@
 				5A26B1CD287F0F9000EA1977 /* Chat+CoreDataProperties.swift */,
 				5A26B1CE287F0F9000EA1977 /* Message+CoreDataClass.swift */,
 				5A26B1CF287F0F9000EA1977 /* Message+CoreDataProperties.swift */,
-				5A26B1A9287C70D400EA1977 /* ChatModel.swift */,
 				5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */,
 				5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */,
 			);
@@ -323,7 +320,6 @@
 				5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */,
 				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 				E2E9BC87287D11DD0098E15D /* OnBoardingViewModel.swift in Sources */,
-				5A26B1AA287C70D400EA1977 /* ChatModel.swift in Sources */,
 				5A26B1D2287F0F9000EA1977 /* Message+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

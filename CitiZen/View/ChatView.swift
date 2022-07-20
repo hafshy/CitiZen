@@ -76,6 +76,17 @@ struct ChatView: View {
         
     }
     
+    @ViewBuilder
+    func PhotoCollage(messages: [Message]) -> some View {
+        let photoMessage: [Message] = messages.filter { message in
+            message.messageType == .photo
+        }
+        let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+    }
+    
     var body: some View {
         ScrollViewReader { value in
             VStack {
