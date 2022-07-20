@@ -21,7 +21,7 @@ struct AchievementView: View {
             LazyVGrid(columns: columns,spacing: 15) {
                 ForEach(0..<$achievementViewModel.items.count, id: \.self) { item in
                     let completedCount = Int(chats.first(where: { chat in
-                        chat.id == item
+                        chat.id-1 == item
                     })?.completedCount ?? 0)
                     AchievementCardView(achievement: $achievementViewModel.items[item], completedTask: completedCount)
                     
