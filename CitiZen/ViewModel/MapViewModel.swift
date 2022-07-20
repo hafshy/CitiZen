@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import MapKit
+import SwiftUI
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
@@ -15,6 +16,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         super.init()
         locationManagerMonitoring.delegate = self
     }
+    
+    @Published var isFirstTime = false
     
     @Published var allLocations:[MapLocation] = []
     
@@ -55,7 +58,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             print("Permission Denied")
         case .authorizedAlways, .authorizedWhenInUse:
             currentCoordinate = MKCoordinateRegion(
-                center: locationManager.location?.coordinate ?? Constants.Defaults.location,
+//                center: locationManager.location?.coordinate ?? Constants.Defaults.location,
+                center : checkFirstTime(),
                 span: MKCoordinateSpan(
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01
@@ -69,6 +73,17 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationPermission()
+    }
+    
+    func checkFirstTime() -> CLLocationCoordinate2D{
+        let locationManager = locationManager
+        if(UserDefaults.standard.bool(forKey: "isFirstTime") == false){
+            UserDefaults.standard.set(true, forKey: "isFirstTime")
+            isFirstTime = true
+            return Constants.Defaults.location
+        }else{
+            return locationManager?.location?.coordinate ?? Constants.Defaults.location
+        }
     }
     
     func loadAllLocation(){
@@ -97,10 +112,9 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     func startMonitoring(geotification: CLRegion) {
         // 1
         if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            print(123)
             return
-        }else{
-            print(5555)
+        } else{
+//            print(5555)
         }
         // 2
         let fenceRegion = geotification
@@ -135,16 +149,20 @@ extension NotificationManager: CLLocationManagerDelegate {
         didExitRegion region: CLRegion
     ) {
         print("Exit")
-        currentLocationId = -1
-        showPopUp = false
+        withAnimation {
+            currentLocationId = -1
+            showPopUp = false
+        }
     }
 
     func handleEvent(for region: CLRegion) {
         // Show an alert if application is active
         print("aktif")
         print(region.identifier)
-        currentLocationId = Int(region.identifier) ?? -1
-        showPopUp = true
+        withAnimation {
+            currentLocationId = Int(region.identifier) ?? -1
+            showPopUp = true
+        }
 //        if UIApplication.shared.applicationState == .active {
 //            print("aktif")
 //            print(region.identifier)

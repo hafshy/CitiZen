@@ -13,8 +13,8 @@ struct Constants {
     
     struct Defaults {
         static let location = CLLocationCoordinate2D(
-            latitude: -7.285374204077755,
-            longitude: 112.63157190701298
+            latitude: -7.26133168292024,
+            longitude: 112.742845109226
         )
         
         static let mapSpan = MKCoordinateSpan(
@@ -24,9 +24,11 @@ struct Constants {
         
         static let totalLandmark = 10
     }
-    
 }
 
+let UI_WIDTH = UIScreen.main.bounds.width
+let UI_HEIGHT = UIScreen.main.bounds.height
+
 extension Color {
-    static let primaryYellow = Color(red: 255, green: 204, blue: 0)
+    static let primaryYellow = Color(red: 255 / 255, green: 204 / 255, blue: 0 / 255)
 }

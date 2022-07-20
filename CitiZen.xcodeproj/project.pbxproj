@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0F6064287FB4CE00699095 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F6063287FB4CE00699095 /* ImagePicker.swift */; };
+		5A0F606628864FE500699095 /* MemoriesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F606528864FE500699095 /* MemoriesButtonView.swift */; };
+		5A0F60682886501800699095 /* MemoriesButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */; };
+		5A0F606A28865C0800699095 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F606928865C0800699095 /* BackButton.swift */; };
+		5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A0287C58A500EA1977 /* ChatView.swift */; };
+		5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */; };
+		5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */; };
+		5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */; };
+		5A26B1D0287F0F9000EA1977 /* Chat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CC287F0F8F00EA1977 /* Chat+CoreDataClass.swift */; };
+		5A26B1D1287F0F9000EA1977 /* Chat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CD287F0F9000EA1977 /* Chat+CoreDataProperties.swift */; };
+		5A26B1D2287F0F9000EA1977 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CE287F0F9000EA1977 /* Message+CoreDataClass.swift */; };
+		5A26B1D3287F0F9000EA1977 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26B1CF287F0F9000EA1977 /* Message+CoreDataProperties.swift */; };
 		5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */; };
 		5AFC89FF286180DA00A2BFD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE286180DA00A2BFD7 /* MapView.swift */; };
 		5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC8A00286180DC00A2BFD7 /* Assets.xcassets */; };
@@ -38,6 +50,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A0F6063287FB4CE00699095 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5A0F606528864FE500699095 /* MemoriesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesButtonView.swift; sourceTree = "<group>"; };
+		5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesButtonViewModel.swift; sourceTree = "<group>"; };
+		5A0F606928865C0800699095 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		5A26B1A0287C58A500EA1977 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		5A26B1B0287C723800EA1977 /* ChatDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataController.swift; sourceTree = "<group>"; };
+		5A26B1CC287F0F8F00EA1977 /* Chat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataClass.swift"; path = "CitiZen/Chat+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5A26B1CD287F0F9000EA1977 /* Chat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chat+CoreDataProperties.swift"; path = "CitiZen/Chat+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5A26B1CE287F0F9000EA1977 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataClass.swift"; path = "CitiZen/Message+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5A26B1CF287F0F9000EA1977 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "CitiZen/Message+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		5AFC89F9286180DA00A2BFD7 /* CitiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFC89FC286180DA00A2BFD7 /* CitiZenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiZenApp.swift; sourceTree = "<group>"; };
 		5AFC89FE286180DA00A2BFD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -81,6 +105,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A26B1AE287C721B00EA1977 /* ChatModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A26B1CC287F0F8F00EA1977 /* Chat+CoreDataClass.swift */,
+				5A26B1CD287F0F9000EA1977 /* Chat+CoreDataProperties.swift */,
+				5A26B1CE287F0F9000EA1977 /* Message+CoreDataClass.swift */,
+				5A26B1CF287F0F9000EA1977 /* Message+CoreDataProperties.swift */,
+				5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */,
+				5A26B1CA287E6A7100EA1977 /* ChatDataController.swift */,
+			);
+			path = ChatModel;
+			sourceTree = "<group>";
+		};
 		5AFC89F0286180DA00A2BFD7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +172,10 @@
 				9C73E239287187080040C71B /* AchievementCardView.swift */,
 				E2E9BC83287D11C80098E15D /* OnBoardingView.swift */,
 				9CD46B49287FAA5F008440B4 /* PermissionView.swift */,
+				5A26B1A0287C58A500EA1977 /* ChatView.swift */,
+				5A0F6063287FB4CE00699095 /* ImagePicker.swift */,
+				5A0F606528864FE500699095 /* MemoriesButtonView.swift */,
+				5A0F606928865C0800699095 /* BackButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +190,8 @@
 				9CE958C628641CD9008D848C /* NotificationViewModel.swift */,
 				E2E9BC86287D11DD0098E15D /* OnBoardingViewModel.swift */,
 				E253EE1A287E84910098999A /* ContentViewModel.swift */,
+				5A26B1A2287C5A5300EA1977 /* ChatViewModel.swift */,
+				5A0F60672886501800699095 /* MemoriesButtonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -157,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				A52582B4287FCE0300A79C35 /* Challenges.swift */,
+				5A26B1AE287C721B00EA1977 /* ChatModel */,
 				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
 				E200335C286A96C200459F4B /* Landmarks.swift */,
 				5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */,
@@ -249,22 +293,35 @@
 				E253EE1D287E84CB0098999A /* ContentView.swift in Sources */,
 				9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */,
 				E2E9BC84287D11C80098E15D /* OnBoardingView.swift in Sources */,
+				5A26B1D1287F0F9000EA1977 /* Chat+CoreDataProperties.swift in Sources */,
 				9C2F87C22862C170007F1915 /* MapLocation.swift in Sources */,
 				5AFC8A1A28654A1800A2BFD7 /* BlurView.swift in Sources */,
+				5A26B1D3287F0F9000EA1977 /* Message+CoreDataProperties.swift in Sources */,
 				A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */,
 				5AFC89FD286180DA00A2BFD7 /* CitiZenApp.swift in Sources */,
 				5AFC8A0D2862186A00A2BFD7 /* MapViewModel.swift in Sources */,
+				9CDFA530287D234A0055C745 /* AchievementViewModel.swift in Sources */,
+				5A26B1D0287F0F9000EA1977 /* Chat+CoreDataClass.swift in Sources */,
 				E2967AE8286401B800168F83 /* DetailView.swift in Sources */,
+				5A0F60682886501800699095 /* MemoriesButtonViewModel.swift in Sources */,
 				9C40714A286C17900033CE54 /* AchievementView.swift in Sources */,
+				5A26B1CB287E6A7100EA1977 /* ChatDataController.swift in Sources */,
 				5AFC8A142862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld in Sources */,
+				5A0F6064287FB4CE00699095 /* ImagePicker.swift in Sources */,
 				E200335D286A96C200459F4B /* Landmarks.swift in Sources */,
 				E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */,
+				5A0F606628864FE500699095 /* MemoriesButtonView.swift in Sources */,
+				5A26B1A1287C58A500EA1977 /* ChatView.swift in Sources */,
 				5AFC8A1C28654A3900A2BFD7 /* CustomEdge.swift in Sources */,
 				5AFC8A1128621FA400A2BFD7 /* Constants.swift in Sources */,
 				5AFC8A162863214D00A2BFD7 /* SavedLocationsViewModel.swift in Sources */,
+				5A0F606A28865C0800699095 /* BackButton.swift in Sources */,
 				E253EE1B287E84910098999A /* ContentViewModel.swift in Sources */,
+				5A26B1A3287C5A5300EA1977 /* ChatViewModel.swift in Sources */,
+				5A26B1B1287C723800EA1977 /* ChatDataModel.xcdatamodeld in Sources */,
 				5AFC8A18286549AC00A2BFD7 /* CustomBottomSheet.swift in Sources */,
 				E2E9BC87287D11DD0098E15D /* OnBoardingViewModel.swift in Sources */,
+				5A26B1D2287F0F9000EA1977 /* Message+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +455,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs your camera for better experience";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -434,6 +492,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitiZen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LocalHunt;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs your camera for better experience";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to always detect nearby landmark";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to detect nearby landmark";
@@ -481,6 +540,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		5A26B1AF287C723800EA1977 /* ChatDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5A26B1B0287C723800EA1977 /* ChatDataModel.xcdatamodel */,
+			);
+			currentVersion = 5A26B1B0287C723800EA1977 /* ChatDataModel.xcdatamodel */;
+			path = ChatDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		5AFC8A122862C48700A2BFD7 /* SavedLocationsDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
