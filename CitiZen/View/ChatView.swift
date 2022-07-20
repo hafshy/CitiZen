@@ -77,7 +77,7 @@ struct ChatView: View {
     }
     
     @ViewBuilder
-    func PhotoCollage(messages: [Message]) -> some View {
+    func PhotoCollage(messages: [Message], name: String, icon: String, size: CGFloat) -> some View {
         let photoMessage: [Message] = messages.filter { message in
             message.messageType == .photo
         }
@@ -85,6 +85,37 @@ struct ChatView: View {
             GridItem(.flexible()),
             GridItem(.flexible())
         ]
+        
+        if photoMessage.count > 0 {
+            VStack {
+                LazyVGrid(columns: columns) {
+                    ForEach(photoMessage) { message in
+                        Image(uiImage: UIImage(data: message.photo!)!)
+                            .resizable()
+                            .aspectRatio(1.0, contentMode: .fill)
+                            .clipShape(CustomEdge(corner: [.allCorners], radius: 12))
+                    }
+                }
+                HStack(alignment: .center) {
+                    VStack(alignment: .leading) {
+                        Text("Memories at")
+                            .font(.body)
+                        Text(name)
+                            .font(.title)
+                            .bold()
+                    }
+                    Spacer()
+                    Image(icon)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: size)
+                }
+                .padding(.vertical)
+            }
+            .padding()
+            .background(.yellow)
+            .frame(width: 280)
+        }
     }
     
     var body: some View {
@@ -104,6 +135,12 @@ struct ChatView: View {
                                 chat.id == landmarkID
                             })?.completedCount ?? 0)
                             let latestChallengeChoice = viewModel.challenge?.challenges[completedCount].choices ?? []
+                            let name = (chats.first(where: { chat in
+                                chat.id == landmarkID
+                            })?.wrappedLandmarkName)
+                            let icon = (chats.first(where: { chat in
+                                chat.id == landmarkID
+                            })?.wrappedLandmarkIconName)
                             
                             ForEach(messages) { message in
                                 BubbleChat(message: message)
@@ -117,6 +154,26 @@ struct ChatView: View {
                                         }
                                 }
                             }
+                            
+                            if completedCount == 5 {
+                                HStack(alignment: .bottom) {
+                                    PhotoCollage(messages: messages, name: name ?? "", icon: icon ?? "", size: 60)
+                                        .padding(.leading)
+                                    Button {
+                                        var tempView: some View {
+                                            PhotoCollage(messages: messages, name: name ?? "", icon: icon ?? "", size: 0)
+                                        }
+                                        viewModel.saveImage(view: tempView.snapshot())
+                                    } label: {
+                                        Image(systemName: "arrow.down.circle")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 28)
+                                    }
+                                    Spacer()
+                                }
+                            }
+                            
                             EmptyView()
                                 .frame(height: 1)
                                 .id(bottomID)
