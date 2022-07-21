@@ -47,9 +47,9 @@ struct ChatView: View {
                         .scaledToFit()
                         .frame(width: 200, alignment: .center)
                 }
+                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 12))
                 .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
                 .padding(.vertical, 8)
-                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 12))
             }
             
             if message.senderType == .receive {
@@ -99,10 +99,11 @@ struct ChatView: View {
                 HStack(alignment: .center) {
                     VStack(alignment: .leading) {
                         Text("Memories at")
-                            .font(.body)
+                            .font(.callout)
                         Text(name)
-                            .font(.title)
+                            .font(.title3)
                             .bold()
+                            .lineLimit(2)
                     }
                     Spacer()
                     Image(icon)
@@ -163,9 +164,11 @@ struct ChatView: View {
                                         var tempView: some View {
                                             PhotoCollage(messages: messages, name: name ?? "", icon: icon ?? "", size: 0)
                                         }
-                                        viewModel.saveImage(view: tempView.snapshot())
+                                        if (!viewModel.collageSaved) {
+                                            viewModel.saveImage(view: tempView.snapshot())
+                                        }
                                     } label: {
-                                        Image(systemName: "arrow.down.circle")
+                                        Image(systemName: viewModel.collageSaved ? "checkmark.circle" : "arrow.down.circle")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 28)
@@ -200,10 +203,11 @@ struct ChatView: View {
                         Spacer()
                         Text("Mission Accomplished")
                             .foregroundColor(.yellow)
+                            .bold()
                         Spacer()
                     }
                     .padding()
-                    .background(.thinMaterial)
+                    .background(.black)
                 } else {
                     HStack {
                         Button {
