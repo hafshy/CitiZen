@@ -152,7 +152,7 @@ class ChatViewModel: ObservableObject {
             (
                 answers != [] &&
                 answers.contains(where: { answer in
-                    answer == choice
+                    answer.lowercased() == choice.lowercased()
                 })
             ),
             completed: completed,
