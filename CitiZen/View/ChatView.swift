@@ -18,107 +18,6 @@ struct ChatView: View {
     let landmarkID: Int
     let columns = [GridItem(.flexible(minimum: 10))]
     
-    @ViewBuilder
-    func BubbleChat(message: Message) -> some View {
-        HStack {
-            if message.senderType == .send {
-                Spacer()
-            }
-            
-            if (message.messageType == .text) {
-                ZStack {
-                    Text(message.wrappedText)
-                        .font(.caption)
-                        .padding(.horizontal)
-                        .padding(.vertical, 12)
-                        .background(
-                            message.senderType == .send ?
-                            Color.primaryYellow : .black.opacity(0.2)
-                        )
-                        .clipShape(CustomEdge(corner: [.topLeft, .topRight, message.senderType == .send ? .bottomLeft : .bottomRight], radius: 12))
-                }
-                .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
-                .padding(.vertical, 8)
-            } else {
-                // Photo
-                ZStack {
-                    Image(uiImage: UIImage(data: message.photo!)!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, alignment: .center)
-                }
-                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 12))
-                .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
-                .padding(.vertical, 8)
-            }
-            
-            if message.senderType == .receive {
-                Spacer()
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: message.senderType == .send ? .trailing : .leading)
-        .padding(.horizontal, 12)
-    }
-    
-    @ViewBuilder
-    func ChatOptions(option: String) -> some View {
-        HStack {
-            Text(option)
-                .font(.caption2)
-                .padding(8)
-                .background(Color.primaryYellow)
-                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 8))
-                .padding(.horizontal, 12)
-                .padding(.bottom, 8)
-                .frame(width: 300, alignment: .leading)
-            Spacer()
-        }
-        
-    }
-    
-    @ViewBuilder
-    func PhotoCollage(messages: [Message], name: String, icon: String, size: CGFloat) -> some View {
-        let photoMessage: [Message] = messages.filter { message in
-            message.messageType == .photo
-        }
-        let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
-        
-        if photoMessage.count > 0 {
-            VStack {
-                LazyVGrid(columns: columns) {
-                    ForEach(photoMessage) { message in
-                        Image(uiImage: UIImage(data: message.photo!)!)
-                            .resizable()
-                            .aspectRatio(1.0, contentMode: .fill)
-                            .clipShape(CustomEdge(corner: [.allCorners], radius: 12))
-                    }
-                }
-                HStack(alignment: .center) {
-                    VStack(alignment: .leading) {
-                        Text("Memories at")
-                            .font(.callout)
-                        Text(name)
-                            .font(.title3)
-                            .bold()
-                            .lineLimit(2)
-                    }
-                    Spacer()
-                    Image(icon)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: size)
-                }
-                .padding(.vertical)
-            }
-            .padding()
-            .background(.yellow)
-            .frame(width: 280)
-        }
-    }
-    
     var body: some View {
         ScrollViewReader { value in
             VStack {
@@ -295,6 +194,107 @@ struct ChatView: View {
             .sheet(isPresented: $viewModel.showImagePicker) {
                 ImagePicker(image: $viewModel.tempImage, isShown: $viewModel.showImagePicker, sourceType: viewModel.sourceType)
             }
+        }
+    }
+    
+    @ViewBuilder
+    func BubbleChat(message: Message) -> some View {
+        HStack {
+            if message.senderType == .send {
+                Spacer()
+            }
+            
+            if (message.messageType == .text) {
+                ZStack {
+                    Text(message.wrappedText)
+                        .font(.caption)
+                        .padding(.horizontal)
+                        .padding(.vertical, 12)
+                        .background(
+                            message.senderType == .send ?
+                            Color.primaryYellow : .black.opacity(0.2)
+                        )
+                        .clipShape(CustomEdge(corner: [.topLeft, .topRight, message.senderType == .send ? .bottomLeft : .bottomRight], radius: 12))
+                }
+                .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
+                .padding(.vertical, 8)
+            } else {
+                // Photo
+                ZStack {
+                    Image(uiImage: UIImage(data: message.photo!)!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, alignment: .center)
+                }
+                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 12))
+                .frame(width: 240, alignment: message.senderType == .send ? .trailing : .leading)
+                .padding(.vertical, 8)
+            }
+            
+            if message.senderType == .receive {
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: message.senderType == .send ? .trailing : .leading)
+        .padding(.horizontal, 12)
+    }
+    
+    @ViewBuilder
+    func ChatOptions(option: String) -> some View {
+        HStack {
+            Text(option)
+                .font(.caption2)
+                .padding(8)
+                .background(Color.primaryYellow)
+                .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 8))
+                .padding(.horizontal, 12)
+                .padding(.bottom, 8)
+                .frame(width: 300, alignment: .leading)
+            Spacer()
+        }
+        
+    }
+    
+    @ViewBuilder
+    func PhotoCollage(messages: [Message], name: String, icon: String, size: CGFloat) -> some View {
+        let photoMessage: [Message] = messages.filter { message in
+            message.messageType == .photo
+        }
+        let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+        
+        if photoMessage.count > 0 {
+            VStack {
+                LazyVGrid(columns: columns) {
+                    ForEach(photoMessage) { message in
+                        Image(uiImage: UIImage(data: message.photo!)!)
+                            .resizable()
+                            .aspectRatio(1.0, contentMode: .fill)
+                            .clipShape(CustomEdge(corner: [.allCorners], radius: 12))
+                    }
+                }
+                HStack(alignment: .center) {
+                    VStack(alignment: .leading) {
+                        Text("Memories at")
+                            .font(.callout)
+                        Text(name)
+                            .font(.title3)
+                            .bold()
+                            .lineLimit(2)
+                    }
+                    Spacer()
+                    Image(icon)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: size)
+                }
+                .padding(.vertical)
+            }
+            .padding()
+            .background(.yellow)
+            .frame(width: 280)
         }
     }
 }
