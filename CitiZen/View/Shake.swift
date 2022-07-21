@@ -56,7 +56,7 @@ struct Shake: View {
             
             if showArrivedPopUp {
                 ZStack {
-                    Color("kuning")
+                    Color("primary_yellow")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
@@ -104,12 +104,12 @@ struct Shake: View {
             if showPopUp {
                 
                 ZStack {
-                    Color("kuning")
+                    Color("primary_yellow")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
                     Circle()
-                        .fill(Color("Hitam"))
+                        .fill(Color("dark_purple"))
                         .frame(width: 120, height: 120)
                     Image("\(Location.icon)")
                         .resizable()

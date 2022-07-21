@@ -42,7 +42,7 @@ struct MemoriesButtonView: View {
             }
             .foregroundColor(.black)
             .padding()
-            .background(.yellow)
+            .background(Color.primaryYellow)
             .ignoresSafeArea()
             .onAppear {
                 viewModel.landmarkID = landmarkID

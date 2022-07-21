@@ -33,7 +33,7 @@ struct OnBoardingView: View {
         NavigationView {
             ZStack{
                 VStack(){
-                    Rectangle().frame(height:UIScreen.main.bounds.height/1.8).foregroundColor(.yellow).ignoresSafeArea()
+                    Rectangle().frame(height:UIScreen.main.bounds.height/1.8).foregroundColor(.primaryYellow).ignoresSafeArea()
                     Spacer()
                 }
                 VStack() {
@@ -63,7 +63,7 @@ struct OnBoardingView: View {
                                 Rectangle()
                                     .frame(width: 65, height: 15)
                                     .cornerRadius(10)
-                                    .foregroundColor(Color(.systemYellow))
+                                    .foregroundColor(.primaryYellow)
                             } else {
                                 Circle()
                                     .frame (width: 10, height: 10)
@@ -71,7 +71,7 @@ struct OnBoardingView: View {
                                     .overlay(
                                         Circle()
                                             .stroke(lineWidth: 3)
-                                            .foregroundColor(Color(.systemYellow))
+                                            .foregroundColor(.primaryYellow)
                                     )
                             }
                         }
@@ -93,7 +93,7 @@ struct OnBoardingView: View {
                                 .padding(16)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: UIScreen.main.bounds.width/6.09)
-                                .background(Color(.systemYellow))
+                                .background(Color.primaryYellow)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
                         }
@@ -108,7 +108,7 @@ struct OnBoardingView: View {
                                 .padding(16)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: UIScreen.main.bounds.width/6.09)
-                                .background(Color(.systemYellow))
+                                .background(Color.primaryYellow)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
                         }
