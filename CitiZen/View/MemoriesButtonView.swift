@@ -14,9 +14,9 @@ struct MemoriesButtonView: View {
     @FetchRequest(sortDescriptors: []) var chats: FetchedResults<Chat>
     
     var body: some View {
-        let count = String(chats.first(where: { chat in
+        let count = chats.first(where: { chat in
             chat.id == landmarkID
-        })?.completedCount ?? 0)
+        })?.completedCount ?? 0
         HStack {
             Image("siola")
                 .resizable()
@@ -27,7 +27,7 @@ struct MemoriesButtonView: View {
                 Text(viewModel.landmark?.name ?? "Gaada")
                     .font(.headline)
                     .bold()
-                Text("\(count) / 5 On going missions")
+                Text(count < 5 ? "\(String(count)) / 5 on going missions" : "Mission accomplished")
                     .font(.caption2)
             }
             Spacer()
