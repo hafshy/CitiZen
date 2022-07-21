@@ -91,6 +91,7 @@ struct PermissionView: View {
                 Spacer()
             }.padding().padding(.top, 50)
         }.navigationTitle("LocalHunt")
+            .navigationBarBackButtonHidden(true)
     }
 }
 
