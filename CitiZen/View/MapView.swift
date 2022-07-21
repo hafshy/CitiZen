@@ -16,8 +16,6 @@ struct MapView: View {
     @StateObject private var notificationViewModel = NotificationManager()
     @StateObject private var chatDataController = ChatDataController()
     
-    
-    
     @State var currentDetailId = 1
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -35,18 +33,18 @@ struct MapView: View {
                         ZStack{
                             VStack{
                                 ZStack {
-                                    Image("Background Pin")
-                                        .resizable()
-                                        .renderingMode(.template)
-                                        .foregroundColor(location.status=="Visited" ? .yellow : .gray)
-                                        .scaledToFit()
-                                        .frame(width: 40.0)
+                                    Image(savedLocationViewModel.savedLocations.contains(where: { saved in
+                                        saved.locationID == location.id
+                                    }) ? "bg_pin_yellow" : "bg_pin_gray")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40.0)
                                     
                                     Image(location.category)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 30.0)
-                                        .offset(x: 0, y: -4)
+                                        .frame(height: 25.0)
+                                        .offset(x: 0, y: -6)
                                 }
                                 .onTapGesture {
                                     //action here
@@ -104,7 +102,7 @@ struct MapView: View {
                                     
                                     RoundedRectangle(cornerRadius: 2.5)
                                         .frame(width: UIScreen.main.bounds.width / 3.48 * CGFloat(savedLocationViewModel.savedLocations.count) / CGFloat(Constants.Defaults.totalLandmark), height: UIScreen.main.bounds.width / 65)
-                                        .foregroundColor(.yellow)
+                                        .foregroundColor(.primaryYellow)
                                     
                                 }
                                 Spacer()
@@ -115,10 +113,8 @@ struct MapView: View {
                              chatDataController.container.viewContext
                         )) {
                             Image("trophy")
-                                .renderingMode(.template)
                                 .resizable()
                                 .scaledToFit()
-                                .foregroundColor(.yellow)
                                 .padding(6)
                                 .frame(width: UIScreen.main.bounds.width / 6.96, height: UIScreen.main.bounds.width / 6.39)
                                 .background(.black)
@@ -133,6 +129,26 @@ struct MapView: View {
                     .cornerRadius(20)
                     
                     Spacer()
+                    HStack{
+                        Spacer()
+                        Button {
+                            withAnimation(.spring()) {
+                                viewModel.currentCoordinate = MKCoordinateRegion(
+                                    center : viewModel.locationManager?.location?.coordinate ?? Constants.Defaults.location,
+                                    span: MKCoordinateSpan(
+                                        latitudeDelta: 0.01,
+                                        longitudeDelta: 0.01
+                                    )
+                                )
+                            }
+                        } label: {
+                            ZStack{
+                                Circle().frame(width: 40, height: 40).foregroundColor(.primaryYellow)
+                                Image(systemName: "location.circle.fill").resizable().frame(width: 40, height: 40).foregroundColor(.black).padding()
+                            }
+                        }
+                        
+                    }
                 }
                 .padding()
                 .padding(.horizontal)
@@ -195,8 +211,8 @@ struct MapView: View {
                 if notificationViewModel.currentLocationId != -1 {
                     Shake(showArrivedPopUp: $notificationViewModel.showPopUp, currenLocationId: $notificationViewModel.currentLocationId, saveViewModel: savedLocationViewModel, Location: $viewModel.allLocations[notificationViewModel.currentLocationId-1])
                 }
-               
-
+                
+                
             }
             .navigationBarHidden(true)
             .alert(isPresented: $viewModel.isFirstTime){

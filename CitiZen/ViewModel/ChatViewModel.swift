@@ -18,6 +18,7 @@ class ChatViewModel: ObservableObject {
     @Published var tempImage: UIImage?
     @Published var landmarkID: Int = 0
     @Published var challenge: Challenge?
+    @Published var collageSaved: Bool = false
     
     func loadChallenge() {
         challenge = Challenge.challenge.first(where: { challenge in
@@ -152,7 +153,7 @@ class ChatViewModel: ObservableObject {
             (
                 answers != [] &&
                 answers.contains(where: { answer in
-                    answer == choice
+                    answer.lowercased() == choice.lowercased()
                 })
             ),
             completed: completed,
@@ -168,8 +169,18 @@ class ChatViewModel: ObservableObject {
         }
     }
     
-    func saveImage(view: AnyView) {
-        
+    func saveImage(view: UIImage) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIImageWriteToSavedPhotosAlbum(view, nil, nil, nil)
+            withAnimation {
+                self.collageSaved = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation {
+                    self.collageSaved = false
+                }
+            }
+        }
     }
 }
 
@@ -177,13 +188,13 @@ extension View {
     func snapshot() -> UIImage {
         let controller = UIHostingController(rootView: self)
         let view = controller.view
-
+        
         let targetSize = controller.view.intrinsicContentSize
         view?.bounds = CGRect(origin: .zero, size: targetSize)
         view?.backgroundColor = .clear
-
+        
         let renderer = UIGraphicsImageRenderer(size: targetSize)
-
+        
         return renderer.image { _ in
             view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
         }

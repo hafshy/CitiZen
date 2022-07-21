@@ -11,10 +11,10 @@ struct BackButton: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.yellow)
+                .foregroundColor(.primaryYellow)
                 .scaledToFit()
                 .frame(width: 40)
-            Image(systemName: "chevron.backward") // set image here
+            Image(systemName: "chevron.backward")
                 .foregroundColor(.black)
         }
     }

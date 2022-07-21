@@ -56,7 +56,7 @@ struct Shake: View {
             
             if showArrivedPopUp {
                 ZStack {
-                    Color("kuning")
+                    Color("primary_yellow")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
@@ -88,7 +88,12 @@ struct Shake: View {
                     {
                         showArrivedPopUp = false
                         showPopUp = true
-                        
+                        // CHANGE 2 to ID
+                        if !saveViewModel.savedLocations.contains(where: { item in
+                            Int(item.locationID) == currenLocationId && currenLocationId != -1
+                        }) {
+                            saveViewModel.addLocation(id: currenLocationId)
+                        }
                     }
                     
                 }
@@ -99,16 +104,15 @@ struct Shake: View {
             if showPopUp {
                 
                 ZStack {
-                    Color("kuning")
+                    Color("primary_yellow")
                     Circle()
                         .fill(.white)
                         .frame(width: 130, height: 130)
                     Circle()
-                        .fill(Color("Hitam"))
+                        .fill(Color("dark_purple"))
                         .frame(width: 120, height: 120)
                     Image("\(Location.icon)")
                         .resizable()
-                        .renderingMode(.template)
                         .scaledToFit()
                         .frame(width: 105)
                     VStack {
@@ -124,13 +128,6 @@ struct Shake: View {
                         Button(action: {
                             withAnimation{
                                 self.showPopUp = false
-                                showArrivedPopUp = false
-                                // CHANGE 2 to ID
-                                if !saveViewModel.savedLocations.contains(where: { item in
-                                    Int(item.locationID) == $Location.id && Location.id != -1
-                                }) {
-                                    saveViewModel.addLocation(id: $Location.id)
-                                }
                             }
                             
                             

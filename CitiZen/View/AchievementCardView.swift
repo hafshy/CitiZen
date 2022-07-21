@@ -19,7 +19,7 @@ struct AchievementCardView: View {
     var onImage = Image(systemName: "star.fill")
     
     var offColor = Color(.systemGray2)
-    var onColor = Color.yellow
+    var onColor = Color.primaryYellow
     
     var body: some View {
         VStack{
@@ -30,7 +30,6 @@ struct AchievementCardView: View {
                         Spacer()
                         Image(achievement.icon)
                             .resizable()
-                            .renderingMode(.template)
                             .foregroundColor(saveViewModel.savedLocations.contains(where: { item in
                                 Int(item.locationID) == achievement.id
                            }) ? .black : .white)
@@ -45,7 +44,7 @@ struct AchievementCardView: View {
                 .background(
                     saveViewModel.savedLocations.contains(where: { item in
                          Int(item.locationID) == achievement.id
-                    }) ? .yellow:.gray
+                    }) ? Color.primaryYellow:.gray
                 )
             HStack{
                 ForEach(1..<maxRating + 1, id:\.self){number in

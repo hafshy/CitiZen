@@ -82,7 +82,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             isFirstTime = true
             return Constants.Defaults.location
         }else{
-            return locationManager?.location?.coordinate ?? Constants.Defaults.location
+//            return locationManager?.location?.coordinate ?? Constants.Defaults.location
+            return Constants.Defaults.location
         }
     }
     
