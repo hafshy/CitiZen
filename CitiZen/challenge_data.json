@@ -21,7 +21,11 @@
                     "C. Tahun 1900-an"
                 ],
                 "answer": [
-                    "B. 1800"
+                    "B. Tahun 1800-an",
+                    "Tahun 1800-an",
+                    "B",
+                    "1800-an",
+                    "B."
                 ]
             },
             {
@@ -76,7 +80,9 @@
                     "C. Perobekan bendera merah-putih-biru menjadi bendera merah-putih"
                 ],
                 "answer": [
-                    "C. Perobekan bendera merah-putih-biru menjadi bendera merah-putih"
+                    "C. Perobekan bendera merah-putih-biru menjadi bendera merah-putih",
+                    "C",
+                    "C."
                 ]
             },
             {
@@ -124,14 +130,17 @@
             {
                 "id": 1,
                 "category": "quiz",
-                "question": "Sebagai salah satu monumen kebanggan kota Surabaya, apa tujuan Tugu Pahlawan dibangun ?",
+                "question": "Sebagai salah satu monumen kebanggan kota Surabaya, apa tujuan Tugu Pahlawan dibangun?",
                 "choices": [
                     "A. Memperingati hari pahlawan 10 November 1945",
                     "B. Memperingati hari kemerdekaan 17 Agustus 1945",
                     "C. Memberingati hari ulang tahun Surabaya 31 Mei 1293"
                 ],
                 "answer": [
-                    "A. Memperingati hari pahlawan 10 November 1945"
+                    "A. Memperingati hari pahlawan 10 November 1945",
+                    "A",
+                    "A.",
+                    "Memperingati hari pahlawan"
                 ]
             },
             {
@@ -186,7 +195,10 @@
                     "C. Keselamatan"
                 ],
                 "answer": [
-                    "B. Jalan-jalan"
+                    "B. Jalan-jalan",
+                    "B",
+                    "B.",
+                    "Jalan-jalan"
                 ]
             },
             {
@@ -241,7 +253,10 @@
                     "C. Soemitro-Ing Wibisono-Ong-Liem-Ang"
                 ],
                 "answer": [
-                    "C. Soemitro-Ing Wibisono-Ong-Liem-Ang"
+                    "C. Soemitro-Ing Wibisono-Ong-Liem-Ang",
+                    "Soemitro-Ing Wibisono-Ong-Liem-Ang",
+                    "C",
+                    "C."
                 ]
             },
             {
@@ -296,7 +311,10 @@
                     "C. Taman ini berisi replika piala - piala prestasi kota Surabaya"
                 ],
                 "answer": [
-                    "C. Taman ini berisi replika piala - piala prestasi kota Surabaya"
+                    "C. Taman ini berisi replika piala - piala prestasi kota Surabaya",
+                    "C.",
+                    "C",
+                    "Taman ini berisi replika piala - piala prestasi kota Surabaya"
                 ]
             },
             {
@@ -346,12 +364,15 @@
                 "category": "quiz",
                 "question": "Dari sekian banyak nama tokoh yang ada Indonesia, kenapa nama Cheng Hoo digunakan untuk menamakan masjd ini?",
                 "choices": [
-                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam.",
-                    "B. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah membuka jalur perdagangan di Indonesia dari Cina.",
-                    "C. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah bersekutu baik dengan kerajaan Islam di Indonesia."
+                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam",
+                    "B. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah membuka jalur perdagangan di Indonesia dari Cina",
+                    "C. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena telah bersekutu baik dengan kerajaan Islam di Indonesia"
                 ],
                 "answer": [
-                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam."
+                    "A. Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam",
+                    "Masjid Cengho Surabaya merupakan bentuk penghormatan pada Laksamana Cheng Ho karena berkontribusi dalam penyebaran ajaran agama Islam",
+                    "A.",
+                    "A"
                 ]
             },
             {
@@ -406,7 +427,10 @@
                     "C. Guest House tamu kenegaraan"
                 ],
                 "answer": [
-                    "B. Rumah dinas gubernur Jawa Timur"
+                    "B. Rumah dinas gubernur Jawa Timur",
+                    "Rumah dinas gubernur Jawa Timur",
+                    "B",
+                    "B."
                 ]
             },
             {
@@ -461,7 +485,11 @@
                     "C. 400an tahun"
                 ],
                 "answer": [
-                    "A. 200an tahun"
+                    "A. 200an tahun",
+                    "200an tahun",
+                    "200",
+                    "A",
+                    "A."
                 ]
             },
             {
@@ -516,7 +544,10 @@
                     "C. 60an tahun"
                 ],
                 "answer": [
-                    "B. 50an tahun"
+                    "B. 50an tahun",
+                    "50",
+                    "B",
+                    "B."
                 ]
             },
             {
