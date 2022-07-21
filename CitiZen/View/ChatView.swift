@@ -33,7 +33,7 @@ struct ChatView: View {
                         .padding(.vertical, 12)
                         .background(
                             message.senderType == .send ?
-                                .yellow : .black.opacity(0.2)
+                            Color.primaryYellow : .black.opacity(0.2)
                         )
                         .clipShape(CustomEdge(corner: [.topLeft, .topRight, message.senderType == .send ? .bottomLeft : .bottomRight], radius: 12))
                 }
@@ -66,7 +66,7 @@ struct ChatView: View {
             Text(option)
                 .font(.caption2)
                 .padding(8)
-                .background(.yellow)
+                .background(Color.primaryYellow)
                 .clipShape(CustomEdge(corner: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 8))
                 .padding(.horizontal, 12)
                 .padding(.bottom, 8)
@@ -199,7 +199,7 @@ struct ChatView: View {
                     HStack {
                         Spacer()
                         Text("Mission Accomplished")
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.primaryYellow)
                         Spacer()
                     }
                     .padding()

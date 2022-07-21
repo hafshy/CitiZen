@@ -17,7 +17,7 @@ struct PermissionView: View {
         ZStack{
             VStack(){
                 Spacer()
-                Rectangle().frame(height:UIScreen.main.bounds.height/1.22).foregroundColor(.yellow)
+                Rectangle().frame(height:UIScreen.main.bounds.height/1.22).foregroundColor(.primaryYellow)
             }.ignoresSafeArea()
             VStack{
                 Text("Allow using my location on the next screen for :").font(.title).bold().padding()
@@ -28,7 +28,7 @@ struct PermissionView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:25)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.primaryYellow)
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
@@ -44,7 +44,7 @@ struct PermissionView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:25)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.primaryYellow)
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
@@ -60,7 +60,7 @@ struct PermissionView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:25)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.primaryYellow)
                     }
                     Spacer().frame(width:20)
                     VStack(alignment:.leading){
