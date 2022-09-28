@@ -263,6 +263,32 @@
                 "pura2",
                 "pura3"
             ]
+        },
+        {
+            "id": 11,
+            "category": "Monumen",
+            "name": "Monumen Sura dan Baya",
+            "icon": "tugu_pahlawan",
+            "latitude": -7.296041853909658,
+            "longitude": 112.7386963741844,
+            "adress": "Jl. Diponegoro No.1-B, Darmo, Kec. Wonokromo, Kota Surabaya",
+            "operasional_hours":
+            {
+                "Senin": "00.00 - 23.59",
+                "Selasa": "00.00 - 23.59",
+                "Rabu": "00.00 - 23.59",
+                "Kamis": "00.00 - 23.59",
+                "Jumat": "00.00 - 23.59",
+                "Sabtu": "00.00 - 23.59",
+                "Minggu": "00.00 - 23.59"
+            },
+            "trivia": "Patung Sura dan Baya adalah sebuah patung yang merupakan lambang kota Surabaya.",
+            "cerita": "Mengutip dari laman resmi Pemerintah Kota Surabaya, sejarah Kota Surabaya kental dengan nilai-nilai kepahlawanan atau heroisme.  Latar belakang itu yang membentuk arti nama Surabaya secara harfiah. Surabaya terdiri dari kata sura atau suro, yang berarti berani dan baya berarti bahaya. Secara harfiah, Surabaya berarti berani menghadapi bahaya yang datang. Peristiwa bersejarah di Surabaya yang mempunyai nilai heroisme salah satunya adalah pertempuran antara Raden Wijaya dari Kerajaan Majapahit dan pasukan Mongol pimpinan Kubilai Khan. Pertempuran itu terjadi pada 1293.  Untuk mengenang pertempuran bersejarah itu, maka waktu pertempuran diabadikan menjadi tanggal berdirinya Kota Surabaya, yaitu 31 Mei. Raden Wijaya berhasil memukul mundur pasukan Kubilai Khan. Peristiwa heroik lainnya sepanjang sejarah Surabaya adalah pertempuran 10 November 1945. Saat itu, arek-arek Suroboyo dengan berbekal bambu runcing berani melawan pasukan sekutu yang memiliki persenjataan canggih.  Puluhan ribu warga meninggal membela tanah air. Peristiwa heroik ini kemudian diabadikan sebagai peringatan Hari Pahlawan. Oleh sebab itu, Kota Surabaya dijuluki sebagai Kota Pahlawan. Sumber: https://travel.kompas.com/read/2022/06/07/222940027/asal-usul-kota-surabaya-ada-versi-cerita-pertarungan-sura-dan-baya?page=all",
+            "photo": [
+                "suro1",
+                "suro2",
+                "suro3"
+            ]
         }
     ]
 }

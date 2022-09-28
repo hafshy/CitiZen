@@ -36,13 +36,13 @@
 		9C63BBA22887BDC800D59268 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C63BBA12887BDC800D59268 /* LocationButton.swift */; };
 		9CD46B4A287FAA5F008440B4 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD46B49287FAA5F008440B4 /* PermissionView.swift */; };
 		9CE958C728641CD9008D848C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE958C628641CD9008D848C /* NotificationViewModel.swift */; };
+		A5203E0428E3DDC800711C35 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E2003362286AB61F00459F4B /* data.json */; };
 		A52582B5287FCE0300A79C35 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52582B4287FCE0300A79C35 /* Challenges.swift */; };
 		A52582B7287FCE1A00A79C35 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52582B6287FCE1A00A79C35 /* AchievementViewModel.swift */; };
 		A52582B8287FCEDF00A79C35 /* AchievementCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73E239287187080040C71B /* AchievementCardView.swift */; };
 		A5D45EFF2862ABED001FFEDD /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D45EFE2862ABED001FFEDD /* Shake.swift */; };
 		E200335D286A96C200459F4B /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335C286A96C200459F4B /* Landmarks.swift */; };
 		E200335F286A97B100459F4B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200335E286A97B100459F4B /* DetailViewModel.swift */; };
-		E2003363286AB61F00459F4B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E2003362286AB61F00459F4B /* data.json */; };
 		E253EE1B287E84910098999A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253EE1A287E84910098999A /* ContentViewModel.swift */; };
 		E253EE1D287E84CB0098999A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253EE1C287E84CB0098999A /* ContentView.swift */; };
 		E2967AE8286401B800168F83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2967AE7286401B800168F83 /* DetailView.swift */; };
@@ -202,7 +202,6 @@
 		5AFC8A0E28621F7C00A2BFD7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A52582B4287FCE0300A79C35 /* Challenges.swift */,
 				5A26B1AE287C721B00EA1977 /* ChatModel */,
 				A52582B4287FCE0300A79C35 /* Challenges.swift */,
 				5AFC8A1028621FA400A2BFD7 /* Constants.swift */,
@@ -275,9 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5203E0428E3DDC800711C35 /* data.json in Resources */,
 				5AFC8A04286180DC00A2BFD7 /* Preview Assets.xcassets in Resources */,
 				5AFC8A01286180DC00A2BFD7 /* Assets.xcassets in Resources */,
-				E2003363286AB61F00459F4B /* data.json in Resources */,
 				9C5CAA6F287E8AF70040BBBF /* challenge_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
