@@ -579,5 +579,63 @@
                 "answer": []
             }
         ]
+    },
+    {
+        "id": 11,
+        "name": "Monumen Sura dan Baya",
+        "icon": "tugu_pahlawan",
+        "challenges": [
+            {
+                "id": 0,
+                "category": "photo",
+                "question": "Hai, sobat kalcer ! Swafoto sebentar yuk di depan Monumen Sura dan Baya sebelum kita eksplor Monumen ini.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 1,
+                "category": "quiz",
+                "question": "Sebagai Monumen Heroik di Surbaya, kira - kira Apakah arti dari nama Suro dan Boyo?",
+                "choices": [
+                    "A. Tampan dan Berani",
+                    "B. Berani dan Mengerikan",
+                    "C. Berani dan Bahaya"
+                ],
+                "answer": [
+                    "C. Berani dan Bahaya",
+                    "Berani dan Bahaya",
+                    "C",
+                    "C."
+                ]
+            },
+            {
+                "id": 2,
+                "category": "photo",
+                "question": "Wahh, menarik ya Monumen yang melambangkan Surabaya, rasanya seperti melihat Surabaya secara langsung nih hehehe. Sebelah Monumen tersebut ada kebun binatang, silahkan foto di depan kebun binatang tersebut",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 3,
+                "category": "photo",
+                "question": "Sura dan Baya, makna dari patung Sura dan Baya menjadi simbol keberanian pemuda-pemuda Surabaya dalam mempertahankan wilayahnya dengan menentang bahaya.Bahaya yang dimaksud pada saat itu ialah pemuda Surabaya bersama Raden Wijaya selamat dari serangan dan ancaman tentara Tar-Tar. Selanjutnya, hari kemenangan tersebut dijadikan sebagai hari ulang tahun Kota Surabaya. Jangan lupa berfoto ya.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 4,
+                "category": "photo",
+                "question": "Selain menjadi simbol Kota Surabaya,  Patung Sura dan Baya juga pernah beberapa kali digunakan untuk latar syuting sebuah film. Hal itu dilakukan untuk menunjukkan film tersebut benar-benar berada di Surabaya. Coba foto lagi dari sudut yang.",
+                "choices": [],
+                "answer": []
+            },
+            {
+                "id": 5,
+                "category": "photo",
+                "question": "5/5! Yeay, kamu berhasil melengkapi momenmu di spot - spot unik Pura Agung Jagat Karana. Silahkan diunduh secara cuma - cuman souvenir kecil dari kami berupa kolase foto 😄",
+                "choices": [],
+                "answer": []
+            }
+        ]
     }
 ]
